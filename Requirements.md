@@ -7,6 +7,9 @@ Create a simple but proficient Serverless Form for the volunteers to use.
 * It should work offline with a few limitations (external API's)
 * It should not require mantainment
 
+### Recurse Shout Out
+Will include a simple footer or logo for the Recurse Center. Pre-made logos/banners/footers can be found here: https://swag.recurse.com/
+
 
 ### User Profile
 
