@@ -15,7 +15,7 @@ Create a simple but proficient Serverless Form for the volunteers to use.
 
 ### The work flow
 
-* The user must enter his name/username
+* The user must enter their name/username
 * The application must export the works day to a csv file
 * The CSV will have a timestamp and the username as it's name
 * [Export to CSV client side](https://stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side)
