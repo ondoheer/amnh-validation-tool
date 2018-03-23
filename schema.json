@@ -1,0 +1,138 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["tracking", "taxonomy", "determinedBy", "specimenData", "collectionData", "locationData", "donationData"],
+    "definitions": {
+        "person": {
+            "type": "object",
+            "properties": {
+                "verbatim": { "type": "string" },
+                "firstName": { "type": "string" },
+                "middleName1": { "type": "string" },
+                "middleName2": { "type": "string" },
+                "lastName1": { "type": "string" },
+                "lastName2": { "type": "string" },
+                "year": { "type": "string" }
+            }
+        }
+    },
+    "properties": {
+        "tracking":{
+            "type": "object",
+            "properties": {
+                "id": { "type": "string", "pattern": "^/dev/[^/]+(/[^/]+)*$" },
+                "catalogNumber": { "type": "string" },
+                "barcodeNumber": { "type": "string" },
+                "notes": { "type": "string" }
+            }
+        },
+        "taxonomy": {
+            "type": "object",
+            "properties": {
+                "verbatim": { "type": "string" },
+                "class": { "type": "string" },
+                "subclass": { "type": "string" },
+                "order": { "type": "string" },
+                "suborder": { "type": "string" },
+                "family": { "type": "string" },
+                "genus": { "type": "string" },
+                "species": { "type": "string" },
+                "notes": { "type": "string" }
+            }
+        },
+        "determinedBy":{
+            "type":"object",
+            "properties": {
+                "people": {            
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/person" }
+                },
+                "notes": {"type":"string"}
+            }
+        },
+        "specimenData": {
+            "type": "object",
+            "properties": {
+                "numberOfSpecimens": { "type": "integer" },
+                "storageMedium": { "type": "string" },
+                "typeOfType": { "type": "string" },
+                "sex": { "enum": ["male", "female"] },
+                "developmentStage": { "type": "string" },
+                "bodyPartLocation": { "type": "string" },                
+                "notes": { "type": "string" }
+            }
+        },
+        "hostData":{
+            "type": "object",
+            "properties": {
+                "catalogNumber": { "type": "integer" },
+                "relationship": { "type": "string" },
+                "species": { "type": "string" },
+                "genus": { "type": "string" },
+                "sex": { "enum": ["male", "female"] },
+                "condition": { "type": "string" },
+                "notes": { "type": "string" }
+            }
+        },
+        "collectionData": {
+            "type": "object",
+            "properties": {
+                "method": { "type": "integer" },
+                "relationship": { "type": "string" },
+                "verbatiamDate": { "type": "string" },
+                "fromDate": { "type": "string" },
+                "toDate": { "type": "string" },
+                "expeditionName": { "type": "string" },
+                "notes": { "type": "string" },
+                "collectors": {
+                    "type":"array",
+                    "items": { "$ref": "#/definitions/person" }
+                }
+            }
+        },
+        "locationData":{
+            "type": "object",
+            "properties": {
+                "verbatim": {"type":"string"},
+                "continent": {"type": "string"},
+                "ocean": {"type": "string"},
+                "seaGulfStrait": {"type": "string"},
+                "lakePondReservoir": {"type": "string"},
+                "bayHarbor": {"type": "string"},
+                "riverCreek": {"type": "string"},
+                "stream": {"type": "string"},
+                "mountainRange": {"type": "string"},
+                "mountain": {"type": "string"},
+                "islandGroup": {"type": "string"},
+                "island": {"type": "string"},
+                "country": {"type": "string"},
+                "department": {"type": "string"},
+                "county": {"type": "string"},
+                "cityTownHamlet": {"type": "string"},
+                "specificLocale": {"type": "string"},
+                "temperature": {
+                    "type": "object",
+                    "properties": {
+                        "celsius": {"type": "number"},
+                        "fahrenheit": {"type": "number"}
+                    }
+                },
+                "fromLat": {"type": "string"},
+                "fromLon": {"type": "string"},
+                "toLat": {"type": "string"},
+                "toLon": {"type": "string"},
+                "notes": {"type":"string"}
+            }
+        },
+        "donationData":{
+            "type": "object",
+            "properties": {
+                "donors": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/person" }
+                },
+                "date": {"type":"string"}
+            }
+        }  
+    }
+}
