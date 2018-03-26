@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
-    "required": ["tracking", "taxonomy", "determinedBy", "specimenData", "collectionData", "locationData", "donationData"],
+    "required": ["recordData", "taxonomy", "determinedBy", "specimenData", "collectionData", "locationData", "donationData"],
     "definitions": {
         "person": {
             "type": "object",
@@ -13,18 +13,21 @@
                 "lastName1": { "type": "string" },
                 "lastName2": { "type": "string" },
                 "year": { "type": "string" }
-            }
+            },
+            "additionalProperties": false
         }
     },
     "properties": {
-        "tracking":{
+        "id": {"type": "integer"},
+        "recordData":{
             "type": "object",
             "properties": {
-                "id": { "type": "string", "pattern": "^/dev/[^/]+(/[^/]+)*$" },
+                "id": { "type": "string" },
                 "catalogNumber": { "type": "string" },
                 "barcodeNumber": { "type": "string" },
                 "notes": { "type": "string" }
-            }
+            },
+            "additionalProperties": false
         },
         "taxonomy": {
             "type": "object",
@@ -38,7 +41,8 @@
                 "genus": { "type": "string" },
                 "species": { "type": "string" },
                 "notes": { "type": "string" }
-            }
+            },
+            "additionalProperties": false
         },
         "determinedBy":{
             "type":"object",
@@ -48,7 +52,8 @@
                     "items": { "$ref": "#/definitions/person" }
                 },
                 "notes": {"type":"string"}
-            }
+            },
+            "additionalProperties": false
         },
         "specimenData": {
             "type": "object",
@@ -58,21 +63,23 @@
                 "typeOfType": { "type": "string" },
                 "sex": { "enum": ["male", "female"] },
                 "developmentStage": { "type": "string" },
-                "bodyPartLocation": { "type": "string" },                
+                "bodyPartLocation": { "type": "string" },
+                "hasHost": {"type": "boolean"},
+                "hostData": {
+                    "type": "object",
+                    "properties": {
+                        "catalogNumber": { "type": "integer" },
+                        "relationship": { "type": "string" },
+                        "species": { "type": "string" },
+                        "genus": { "type": "string" },
+                        "sex": { "enum": ["male", "female"] },
+                        "condition": { "type": "string" },
+                        "notes": { "type": "string" }
+                    }
+                },
                 "notes": { "type": "string" }
-            }
-        },
-        "hostData":{
-            "type": "object",
-            "properties": {
-                "catalogNumber": { "type": "integer" },
-                "relationship": { "type": "string" },
-                "species": { "type": "string" },
-                "genus": { "type": "string" },
-                "sex": { "enum": ["male", "female"] },
-                "condition": { "type": "string" },
-                "notes": { "type": "string" }
-            }
+            },
+            "additionalProperties": false
         },
         "collectionData": {
             "type": "object",
@@ -88,7 +95,8 @@
                     "type":"array",
                     "items": { "$ref": "#/definitions/person" }
                 }
-            }
+            },
+            "additionalProperties": false
         },
         "locationData":{
             "type": "object",
@@ -122,7 +130,8 @@
                 "toLat": {"type": "string"},
                 "toLon": {"type": "string"},
                 "notes": {"type":"string"}
-            }
+            },
+            "additionalProperties": false
         },
         "donationData":{
             "type": "object",
@@ -132,7 +141,8 @@
                     "items": { "$ref": "#/definitions/person" }
                 },
                 "date": {"type":"string"}
-            }
+            },
+            "additionalProperties": false
         }  
     }
 }

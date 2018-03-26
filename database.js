@@ -3,14 +3,14 @@ function initDB () {
         window.alert('Your browser doesnt support a stable version of IndexedDB. Please use a compatible browser.')
     }
 
-    var request = window.indexedDB.open('MarineDatabase', 1)
+    var request = window.indexedDB.open('AMNHMarineDatabase', 1)
 
     request.onerror = (event) => {
         console.error('You need to allow IndexedDB to use this application.')
     };
 
     request.onsuccess = (event) => {
-        console.log('Using IndexedDB!')
+        console.log('Using IndexedDB')
         db = event.target.result
         db.onerror = function(event) {
             console.error('Database error: ' + event.target.errorCode)
@@ -18,7 +18,7 @@ function initDB () {
     };
 
     request.onupgradeneeded = (event) => {
-        console.log('Creating/Upgrading DB')
+        console.log('Upgrading IndexedDB')
         db = event.target.result
         db.createObjectStore('records',  {keyPath: 'id', autoIncrement: true})
     }
