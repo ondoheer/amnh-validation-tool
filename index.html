@@ -7,8 +7,16 @@
   <body>
     <button onclick="addRecord(record)">Click me</button>
     <script src="database.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.3.0/ajv.min.js" integrity="sha256-EVfgaB029AVXpfwAWrwTff/MHJWB49+zNRrmEj5ju6k=" crossorigin="anonymous"></script>
     <script>
+      let jsonValidator
+      loadJSON("schema.json", function(response) {
+        let schema = JSON.parse(response)
+        let ajv = new Ajv()
+        jsonValidator = ajv.compile(schema)
+      })      
       let db
+      initDB()
       let record = {
           "name": "sean",
           "age": 12,
