@@ -1,13 +1,19 @@
 @import "00.resets/reset";
 
-@import "01.settings/variables";
+@import "01.settings/variables",
+		"01.settings/base";
+		
 
+@import "03.layouts/base";
 
 @import "04.components/titles",
 		"04.components/buttons",
 		"04.components/inputs",
 		"04.components/form",
-		"04.components/searchbox";
+		"04.components/searchbox",
+		"04.components/header";
 
 
-@import "05.utilities/separators";
+@import "05.utilities/separators",
+		"05.utilities/backgrounds",
+		"05.utilities/text";
