@@ -6,13 +6,13 @@
         "person": {
             "type": "object",
             "properties": {
-                "verbatim": { "type": "string" },
+                "prefix": { "type": "string" },
                 "firstName": { "type": "string" },
                 "middleName1": { "type": "string" },
                 "middleName2": { "type": "string" },
                 "lastName1": { "type": "string" },
                 "lastName2": { "type": "string" },
-                "year": { "type": "string" }
+                "suffix": {"type": "string"}
             },
             "additionalProperties": false
         }
@@ -22,12 +22,10 @@
         "recordData":{
             "type": "object",
             "properties": {
-                "trackingNumber": { 
-                    "type": "string",
-                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-.*$"
-                },
+                "trackingNumber": { "type": "string"},
                 "catalogNumber": { "type": "string" },
                 "barcodeNumber": { "type": "string" },
+                "collectionSubset": { "type": "string" },
                 "notes": { "type": "string" }
             },
             "additionalProperties": false
@@ -50,6 +48,8 @@
         "determinedBy":{
             "type":"object",
             "properties": {
+                "verbatim": { "type": "string" },
+                "year": { "type": "string" },
                 "people": {            
                     "type": "array",
                     "items": { "$ref": "#/definitions/person" }
@@ -94,6 +94,7 @@
                 "toDate": { "type": "string" },
                 "expeditionName": { "type": "string" },
                 "notes": { "type": "string" },
+                "verbatimCollectors": { "type": "string" },
                 "collectors": {
                     "type":"array",
                     "items": { "$ref": "#/definitions/person" }
@@ -139,6 +140,7 @@
         "donationData":{
             "type": "object",
             "properties": {
+                "verbatim": { "type": "string" },
                 "donors": {
                     "type": "array",
                     "items": { "$ref": "#/definitions/person" }

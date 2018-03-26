@@ -1,76 +1,100 @@
-let jsonValidator
-let db
+import Ajv from 'ajv'
+import idb from 'idb'
+const jsonSchema = require('./schema.json')
+const csvHeaders = require('./headers.json')
 
-function initDB () {
-    if (!window.indexedDB) {
-        window.alert('Your browser doesnt support a stable version of IndexedDB. Please use a compatible browser.')
-    }
 
-    var request = window.indexedDB.open('AMNHMarineDatabase', 1)
-
-    request.onerror = (event) => {
-        console.error('You need to allow IndexedDB to use this application.')
-    };
-
-    request.onsuccess = (event) => {
-        console.log('Using IndexedDB')
-        db = event.target.result
-        db.onerror = function(event) {
-            console.error('Database error: ' + event.target.errorCode)
-        };
-    };
-
-    request.onupgradeneeded = (event) => {
-        console.log('Upgrading IndexedDB')
-        db = event.target.result
-        db.createObjectStore('records',  {keyPath: 'id', autoIncrement: true})
+function upgradeCallback (upgradeDb) {
+    console.log('Upgrading IndexedDB')
+    if (!upgradeDb.objectStoreNames.contains('records')) {
+        upgradeDb.createObjectStore('records',  {keyPath: 'id', autoIncrement: true})
     }
 }
 
-function addRecord (record) {
+let db = idb.open('AMNHMarineDatabase', 1, upgradeCallback)
+let ajv = new Ajv()
+let jsonValidator = ajv.compile(jsonSchema)
+
+function putRecord (record) {
     if (!jsonValidator(record)){
         console.error(jsonValidator.errors)
         return
     }
 
-    var transaction = db.transaction(['records'], 'readwrite')
-    transaction.oncomplete = (event) => {
-        console.log('Transaction all done!')
-    }
-      
-    transaction.onerror = (event) => {
-        console.error('Bad transaction')
-    }
-    
-    var objectStore = transaction.objectStore('records')
-    var request = objectStore.add(record)
-
-    request.onsuccess = (event) => {
-        console.log('Record added!')
-    }
-
-    request.onerror = (event) => {
-        console.error('Whomp whomp no record added.')
-    }
+    return dbPromise.then(db => {
+        const tx = db.transaction('records', 'readwrite')
+        tx.objectStore('records').put(record)
+        return tx.complete
+    })
 }
 
-function loadJSON(file, callback) {   
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', file, true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-          if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xobj.responseText);
-          }
-    };
-    xobj.send(null);  
- }
+function getRecord (recordId) {
+    return dbPromise.then(db => {
+        return db.transaction('records').objectStore('records').get(recordId)
+    })
+}
 
- loadJSON("schema.json", function(response) {
-   let schema = JSON.parse(response)
-   let ajv = new Ajv()
-   jsonValidator = ajv.compile(schema)
- })  
+function deleteRecord (recordId) {
+    return dbPromise.then(db => {
+        const tx = db.transaction('records', 'readwrite')
+        tx.objectStore('records').delete(recordId)
+        return tx.complete
+    })
+}
 
- initDB()
+function clearRecords () {
+    return dbPromise.then(db => {
+        const tx = db.transaction('records', 'readwrite')
+        tx.objectStore('records').clear()
+        return tx.complete
+    })
+}
+
+function recordsToCSV () {
+    let records
+    let columnDelimiter = ','
+    let lineDelimiter = '\n'
+    let result = ''
+    let firstElement = true
+
+    dbPromise.then(db => {
+        return db.transaction('records').objectStore('records').getAll()
+    }).then(items => records = items)
+
+    if (records == null || !records.length) {
+        return null;
+    }
+
+    let headers = Object.keys(csvHeaders)
+    result += headers.join(columnDelimiter) + lineDelimiter
+
+    records.forEach(record => {
+        headers.forEach(header => {
+            if (!firstElement) result += columnDelimiter
+            result += record[csvHeaders[header]]
+            firstElement = false
+        })
+        result += lineDelimiter
+        firstElement = true
+    })
+
+    return result
+}
+
+function exportCVS () {
+    var data, filename, link;
+    var csvString = recordsToCSV()
+    if (csvString == null) return
+
+    filename = 'export.csv'
+
+    if (!csv.match(/^data:text\/csv/i)) {
+        csv = 'data:text/csv;charset=utf-8,' + csvString
+    }
+    data = encodeURI(csvString)
+
+    link = document.createElement('a')
+    link.setAttribute('href', data)
+    link.setAttribute('download', filename)
+    link.click()
+}
