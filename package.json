@@ -1,0 +1,23 @@
+{
+  "name": "amnh",
+  "version": "1.0.0",
+  "description": "# mocks",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel  index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ondoheer/amnh-validation-tool.git"
+  },
+  "author": "RC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ondoheer/amnh-validation-tool/issues"
+  },
+  "homepage": "https://github.com/ondoheer/amnh-validation-tool#readme",
+  "devDependencies": {
+    "node-sass": "^4.8.3"
+  }
+}
