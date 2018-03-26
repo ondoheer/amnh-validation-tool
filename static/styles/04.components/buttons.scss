@@ -1,0 +1,40 @@
+.c-button {
+	padding: 1rem 3rem;
+
+	font-size: $md;
+	font-family: $body;
+	color: $light-text;
+	border: none;
+	border-radius: 4px;
+	text-align: center;
+	background-color: $dark-btn;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $light-btn;
+	}
+
+	&--light {
+		background-color: $light-btn;
+
+		&:hover {
+			background-color: $dark-btn;
+		}
+	}
+
+	&--uppercase {
+		text-transform: uppercase;
+	}
+
+	&--capitalize {
+		text-transform: capitalize;
+	}
+
+	&--large {
+		font-size: $xl;
+	}
+
+	&--body-size {
+		font-size: $body-size;
+	}
+}

@@ -3,11 +3,91 @@
 <head>
 	<meta charset="UTF-8">
 
-	<title>AMNH</title>
-
+	<title>Styleguide</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet"> 
 	<link rel="stylesheet" href="./static/styles/style.scss">
+
 </head>
 <body>
 	
+	<h1>Styleguide</h1>
+	<p>This is our AMNH styleguide.</p>
+
+	<section>
+		<h2>Titles</h2>
+		<div style="background: #000;">
+			<h1 class="c-title c-title--light c-title--xl">This is a light xl</h1>
+
+			<h1 class="c-title c-title--dark c-title--xl">This is a dark xl</h1>
+
+			<h2 class="c-title c-title--light  c-title--lg">This is a light lg</h2>
+
+			<h2 class="c-title c-title--dark  c-title--lg">This is a dark lg</h2>
+		</div>
+		
+	</section>
+
+	<section>
+		<h2>Buttons</h2>
+		<button class="c-button c-button--uppercase">Uppercase</button>
+
+		<button class="c-button c-button--captalize c-button--light">Capitalize Light</button>
+
+		<button class="c-button c-button--large"> Large</button>
+	</section>
+
+	<section style="background-color: red;">
+		<h2>Forms</h2>
+		<form class="c-form">
+			<fieldset class="c-form__fieldset">
+				<label class="c-label" for="">Text Input</label>
+				<input type="text" placeholder="This is a text input" class=c-input>
+			</fieldset>
+
+			<div>
+				<textarea cols="30" rows="10" placeholder="This is a textarea" class=c-input></textarea>
+			</div>
+
+			<div>
+				<input type="number" placeholder="number input" class=c-input>
+			</div>
+
+			<div>
+				<input type="date"  class=c-input>
+			</div>
+			<div>
+				<select placeholder="Select input" class="c-input c-input--square c-input--select ">
+					<option selected>option-1</option>
+					<option>option-2</option>
+					<option>option-3</option>
+				</select>
+			</div>
+
+			<div>
+				<div class='c-radio'>
+					<input name="test" type="radio" class="">
+					<label for="">radio label</label>
+				</div>
+				<div class='c-radio'>
+					<input name="test" type="radio" class="">
+					<label for="">radio label</label>
+				</div>
+				<div class='c-radio'>
+					<input name="test" type="radio" class="">
+					<label for="">radio label</label>
+				</div>
+			</div>
+
+			<div class="c-searchbox" >
+				<input type="search" placeholder="This is a search box" class="c-input c-input--square">
+				<button class="c-button c-button--captalize c-button--body-size">Go!</button>
+			</div>
+		</form>
+	</section>
+
+
+
+
 </body>
 </html>
