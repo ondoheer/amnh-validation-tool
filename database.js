@@ -1,3 +1,6 @@
+let jsonValidator
+let db
+
 function initDB () {
     if (!window.indexedDB) {
         window.alert('Your browser doesnt support a stable version of IndexedDB. Please use a compatible browser.')
@@ -63,3 +66,11 @@ function loadJSON(file, callback) {
     };
     xobj.send(null);  
  }
+
+ loadJSON("schema.json", function(response) {
+   let schema = JSON.parse(response)
+   let ajv = new Ajv()
+   jsonValidator = ajv.compile(schema)
+ })  
+
+ initDB()
