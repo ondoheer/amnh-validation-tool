@@ -11,14 +11,14 @@
 	cursor: pointer;
 
 	&:hover {
-		background-color: $light-btn;
+		background-color: rgba($dark-btn , .7);
 	}
 
 	&--light {
 		background-color: $light-btn;
 
 		&:hover {
-			background-color: $dark-btn;
+			background-color: rgba($light-btn , .7);
 		}
 	}
 
