@@ -1,0 +1,39 @@
+.c-input {
+	padding: 0.5rem 1rem;
+
+	color: $dark-text;
+	font-size: $body-size;
+	font-family: $body;
+	background-color: $light-text;
+	border: 1px solid $border-color;
+	border-radius: 1rem;
+
+
+	&--select{
+		-webkit-appearance: none !important;
+		-moz-appearance: none !important;
+		background: transparent;
+
+		
+	}
+
+	&--square {
+		border-radius: 0;
+	}
+}
+
+.c-radio {
+	/* radio button */
+	color: $dark-text;
+
+	/* label */
+	font-size: $body-size;
+
+}
+
+.c-label{
+	font-family: $titles;
+	font-size: $body-size;
+	color: $light-text;
+	line-height: 1.6;
+}

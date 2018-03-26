@@ -1,0 +1,13 @@
+.c-searchbox{
+	display: grid;
+
+	grid-template-columns: 4fr 1fr;
+
+	input{
+		border-radius: 1rem 0 0 1rem ;
+	}
+
+	button{
+		border-radius: 0 4px 4px 0;
+	}
+}
