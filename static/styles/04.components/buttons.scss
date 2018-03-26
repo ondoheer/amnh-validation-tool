@@ -37,4 +37,9 @@
 	&--body-size {
 		font-size: $body-size;
 	}
+
+	&--centered{
+		display: block;
+		margin: 0 auto;
+	}
 }
