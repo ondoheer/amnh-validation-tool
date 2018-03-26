@@ -22,7 +22,10 @@
         "recordData":{
             "type": "object",
             "properties": {
-                "id": { "type": "string" },
+                "trackingNumber": { 
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-.*$"
+                },
                 "catalogNumber": { "type": "string" },
                 "barcodeNumber": { "type": "string" },
                 "notes": { "type": "string" }
