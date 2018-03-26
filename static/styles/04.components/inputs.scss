@@ -10,9 +10,9 @@
 
 
 	&--select{
-		-webkit-appearance: none !important;
+		/* -webkit-appearance: none !important;
 		-moz-appearance: none !important;
-		background: transparent;
+		background: transparent; */
 
 		
 	}
@@ -36,4 +36,53 @@
 	font-size: $body-size;
 	color: $light-text;
 	line-height: 1.6;
+}
+
+.c-input-group {
+	display: grid;
+
+	grid-template-columns: 6fr 1fr;
+	
+
+	label {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+
+	&__sidekick {
+		// display: inline-block;
+		text-align: center;
+		line-height: 48px;
+		// vertical-align: middle;
+
+		font-size: $body-size;
+		font-family: $body;
+		color: $light-text;
+		background-color: $bkg12;
+		border-color: $border-color;
+		border-top: 1px;
+		border-right: 1px;
+		border-bottom: 1px;
+		border-style: solid;
+	}
+}
+
+.c-datepicker{
+
+	display: grid;
+	grid-template-columns: 1fr 20px;
+	
+	&__icon{
+		font-size: $body-size;
+		font-family: $body;
+		color: $light-text;
+		line-height: 48px;
+		padding-left: 10px;
+	}
+	
+	label {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+
 }
