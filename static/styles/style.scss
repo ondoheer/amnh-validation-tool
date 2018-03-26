@@ -1,12 +1,21 @@
+<<<<<<< HEAD
+=======
+body{
+	background: red;
+}
+>>>>>>> dfea7d8ac48c8ee0a6566ebbb67a4545bfe51973
 
 @import "00.resets/reset";
 
 @import "01.settings/variables";
 
+<<<<<<< HEAD
 @import "04.components/titles",
 		"04.components/buttons",
 		"04.components/inputs",
 		"04.components/form",
 		"04.components/searchbox";
 
+=======
+>>>>>>> dfea7d8ac48c8ee0a6566ebbb67a4545bfe51973
 @import "05.utilities/separators";
