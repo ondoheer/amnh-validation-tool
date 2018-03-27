@@ -104,23 +104,34 @@
 		<h2 class="style-sec__title">Forms</h2>
 		<form class="c-form">
 			<fieldset class="c-form__fieldset" class="c-form__fieldset">
-				<label class="c-label" for="">Text Input</label>
+                <div>
+                    <label class="c-label" for="">Text Input</label>
+                    <span class="c-info" tooltip="Info about Text Input"><i class="fas fa-info-circle"></i></span>
+                </div>
 				<input type="text" placeholder="This is a text input" class=c-input>
 			</fieldset>
 
 			<fieldset class="c-form__fieldset">
-				<label class="c-label" for="">Text Area</label>
+                <div>
+                    <label class="c-label" for="">Text Area</label>
+                    <span class="c-info" tooltip="Info about Text Area"><i class="fas fa-info-circle"></i></span>
+                </div>
 				<textarea cols="30" rows="10" placeholder="This is a textarea" class=c-input></textarea>
 			</fieldset>
 
 			<fieldset class="c-form__fieldset">
-				<label class="c-label" for="number">Number Input</label>
+                <div>
+                    <label class="c-label" for="number">Number Input</label>
+                    <span class="c-info" tooltip="Info about Number Field"><i class="fas fa-info-circle"></i></span>
+                </div>
 				<input type="number" id="number" placeholder="number input" class=c-input>
 			</fieldset>
 
 			<fieldset class="c-form__fieldset c-datepicker">
-
-				<label class="c-label" for="datePicker">Datepicker</label>
+                <div>
+                    <label class="c-label" for="datePicker">Datepicker</label>
+                    <span class="c-info" tooltip="Info about Datepicker"><i class="fas fa-info-circle"></i></span>
+                </div>
                 <div>
 				    <input id="datePicker" name="datePicker" type="text"  class="c-input datePicker">
 				    <span class="c-datepicker__icon"><i class="fas fa-calendar-alt"></i></span>
@@ -128,7 +139,10 @@
 			</fieldset>
 
 			<fieldset class="c-form__fieldset">
-				<label class="c-label" for="">Selector</label>
+                <div>
+                    <label class="c-label" for="">Selector</label>
+                    <span class="c-info" tooltip="Info about Selector"><i class="fas fa-info-circle"></i></span>
+                </div>
 				<select placeholder="Select input" class="c-input c-input--square c-input--select ">
 					<option selected>option-1</option>
 					<option>option-2</option>
@@ -137,7 +151,10 @@
 			</fieldset>
 
 			<fieldset class="c-form__fieldset">
-				<label class="c-label" for="">Radio Button</label>
+                <div>
+                    <label class="c-label" for="">Radio Button</label>
+                    <span class="c-info" tooltip="Info about Radio Button"><i class="fas fa-info-circle"></i></span>
+                </div>
 				<div class='c-radio'>
 					<input name="test" type="radio" class="">
 					<label for="">radio label</label>
@@ -153,7 +170,10 @@
 			</fieldset>
 
 			<fieldset class="c-searchbox c-form__fieldset" >
-				<label class="c-label" for="">Search Box</label>
+                <div>
+                    <label class="c-label" for="">Search Box</label>
+                    <span class="c-info" tooltip="Info about Text Area"><i class="fas fa-info-circle"></i></span>
+                </div>
                 <div>
 				    <input type="search" placeholder="This is a search box" class="c-input c-input--square">
 				    <button class="c-button c-button--captalize c-button--body-size">Go!</button>
@@ -161,7 +181,10 @@
 			</fieldset>
 
 			<fieldset class="c-input-group">
-				<label class="c-label" for="">Input Group</label>
+                <div>
+                    <label class="c-label" for="">Input Group</label>
+                    <span class="c-info" tooltip="Info about Text Area"><i class="fas fa-info-circle"></i></span>
+                </div>
                 <div>
 				    <input type="search" placeholder="°C" class="c-input c-input--square">
 				    <span class="c-input-group__sidekick">°C</span>
