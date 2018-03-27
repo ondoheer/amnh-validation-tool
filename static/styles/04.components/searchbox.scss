@@ -1,0 +1,15 @@
+.c-searchbox{
+	input{
+		border-radius: 1rem 0 0 1rem ;
+	}
+
+	button{
+		border-radius: 0 4px 4px 0;
+        margin-left: -3px;
+	}
+
+	label {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+}

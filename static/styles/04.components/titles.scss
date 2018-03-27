@@ -1,0 +1,20 @@
+.c-title{
+	font-family: $titles;
+
+
+	&--light{
+		color: $light-text;
+	}
+
+	&--dark{
+		color: $dark-text;
+	}
+
+	&--xl{
+		font-size: $xl;
+	}
+
+	&--lg {
+		font-size: $lg;
+	}
+}

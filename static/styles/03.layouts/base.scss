@@ -1,0 +1,29 @@
+.l-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 5rem 0;
+}
+
+.l-vertical-full {
+  display: grid;
+  grid-row-gap: 50px;
+}
+
+.l-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 8rem;
+
+  &__block {
+    &--with-separator {
+      border-right: 2px solid $bkg2;
+    }
+  }
+}
+
+.l-btn-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 50px;
+}
