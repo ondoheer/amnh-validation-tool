@@ -1,12 +1,17 @@
 .l-wrapper {
-	max-width: 1200px;
-	margin: 0 auto;
-	min-height: 100vh;
-	padding: 5rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 5rem 0;
 }
 
 .l-vertical-full {
-	display: grid;
-	grid-row-gap: 50px;
+  display: grid;
+  grid-row-gap: 50px;
+}
 
+.l-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 12rem;
 }
