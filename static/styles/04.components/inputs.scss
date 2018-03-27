@@ -1,78 +1,75 @@
 .c-input {
-	padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  color: $dark-text;
+  font-size: $body-size;
+  font-family: $body;
+  background-color: $light-text;
+  border: 1px solid $border-color;
+  border-radius: 1rem;
 
-	color: $dark-text;
-	font-size: $body-size;
-	font-family: $body;
-	background-color: $light-text;
-	border: 1px solid $border-color;
-	border-radius: 1rem;
-
-
-	&--select{
-		/* -webkit-appearance: none !important;
+  &--select {
+    /* -webkit-appearance: none !important;
 		-moz-appearance: none !important;
 		background: transparent; */
-	}
+  }
 
-	&--square {
-		border-radius: 0;
-	}
+  &--square {
+    border-radius: 0;
+  }
 }
 
 .c-radio {
-	/* radio button */
-	color: $dark-text;
+  /* radio button */
+  color: $dark-text;
 
-	/* label */
-	font-size: $body-size;
-
+  /* label */
+  font-size: $body-size;
 }
 
-.c-label{
-	font-family: $titles;
-	font-size: $body-size;
-	color: $light-text;
-	line-height: 1.6;
+.c-label {
+  font-family: $titles;
+  font-size: $body-size;
+  color: $light-text;
+  line-height: 1.6;
 }
 
 .c-input-group {
-	label {
-		grid-column-start: 1;
-		grid-column-end: 3;
-	}
+  label {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
 
-	&__sidekick {
-		text-align: center;
-        display: inline-block;
-        line-height: 46px;
-        min-width: 46px;
-        margin-left: -3px;
+  &__sidekick {
+    text-align: center;
+    display: inline-block;
+    line-height: 46px;
+    min-width: 46px;
+    margin-left: -3px;
 
-		font-size: $body-size;
-		font-family: $body;
-		color: $light-text;
-		background-color: $bkg12;
-		border-color: $border-color;
-		border-top: 1px;
-		border-right: 1px;
-		border-bottom: 1px;
-		border-style: solid;
-	}
+    font-size: $body-size;
+    font-family: $body;
+    color: $light-text;
+    background-color: $bkg12;
+    border-color: $border-color;
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-style: solid;
+  }
 }
 
-.c-datepicker{
-	&__icon{
-		font-size: $body-size;
-		font-family: $body;
-		color: $light-text;
-		line-height: 48px;
-		padding-left: 10px;
-	}
+.c-datepicker {
+  &__icon {
+    font-size: $body-size;
+    font-family: $body;
+    color: $light-text;
+    line-height: 48px;
+    padding-left: 10px;
+  }
 
-	label {
-		grid-column-start: 1;
-		grid-column-end: 3;
-	}
-
+  label {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
 }
