@@ -1,0 +1,11 @@
+.c-footer {
+  padding: 2rem;
+
+  a {
+    color: $recurse;
+
+    &:hover {
+      color: $bkg2;
+    }
+  }
+}
