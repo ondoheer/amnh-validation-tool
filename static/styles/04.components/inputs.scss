@@ -13,8 +13,6 @@
 		/* -webkit-appearance: none !important;
 		-moz-appearance: none !important;
 		background: transparent; */
-
-		
 	}
 
 	&--square {
@@ -39,21 +37,17 @@
 }
 
 .c-input-group {
-	display: grid;
-
-	grid-template-columns: 6fr 1fr;
-	
-
 	label {
 		grid-column-start: 1;
 		grid-column-end: 3;
 	}
 
 	&__sidekick {
-		// display: inline-block;
 		text-align: center;
-		line-height: 48px;
-		// vertical-align: middle;
+        display: inline-block;
+        line-height: 46px;
+        min-width: 46px;
+        margin-left: -3px;
 
 		font-size: $body-size;
 		font-family: $body;
@@ -68,10 +62,6 @@
 }
 
 .c-datepicker{
-
-	display: grid;
-	grid-template-columns: 1fr 20px;
-	
 	&__icon{
 		font-size: $body-size;
 		font-family: $body;
@@ -79,7 +69,7 @@
 		line-height: 48px;
 		padding-left: 10px;
 	}
-	
+
 	label {
 		grid-column-start: 1;
 		grid-column-end: 3;
