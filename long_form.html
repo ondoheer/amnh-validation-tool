@@ -20,8 +20,20 @@
 
 <body>
 
-	<header class="c-header c-header--dark">
+	<header class="c-header c-header--dark c-header--fixed">
 		<img src="./static/assets/img/logo_header.png" alt="" class="c-header__logo">
+		<ul>
+			<li>
+				<span id="num_records">0</span> records added</li>
+			<li>
+				<span id="username">
+					<i class="fas fa-user"></i> Eric Not Perrotta</span>
+			</li>
+			<li>
+				<button class="c-button c-button--light c-button--body-size">
+					<i class="fas fa-save"></i> Save </button>
+			</li>
+		</ul>
 	</header>
 	<main>
 		<div class="c-form">
@@ -873,6 +885,34 @@
 						<input type="number" id="number" placeholder="# of specimens" class="c-input">
 					</fieldset>
 
+
+					<div class="l-person">
+
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Verbatim Name</label>
+							<input placeholder="collector Name (as written on label)" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">First Name</label>
+							<input placeholder="enter the Genus" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Middle Name 1</label>
+							<input placeholder="enter the Family" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Middle Name 2</label>
+							<input placeholder="enter the Order" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Last Name 1</label>
+							<input placeholder="enter the Suborder" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Last Name 2</label>
+							<input placeholder="class" id="bar-number" class="c-input" type="text">
+						</fieldset>
+					</div>
 					<button class="c-button c-button--uppercase c-button--centered u-separator-lg">
 						<i class="fas fa-user"></i> Add donor</button>
 
