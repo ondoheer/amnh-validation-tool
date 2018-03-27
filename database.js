@@ -50,6 +50,40 @@ function clearRecords () {
     })
 }
 
+// function flatternObject (nestedObj, baseObj, prefix) {
+//     for (var key in nestedObj){
+//         var type = typeof nestedObj[key]
+//         var flatKey = prefix + key
+
+//         if (type === 'object'){
+//             flatternObject(nestedObj[key], baseObj, flatKey)
+//         } else if (type === 'array') {
+//             flatternArray(nestedObj[key], baseObj, flatKey)
+//         } else if ( type === 'undefined') {
+//             continue
+//         } else {
+//             baseObj[flatKey] = nestedObj[key]
+//         }
+
+//     }
+// }
+
+// function flatternArray (nestedArray, baseObj, prefix) {
+//     for (var i = 0; i < nestedArray.length; i++){
+//         var type = typeof nestedObj[key]
+//         var flatKey = prefix + i
+//         if (type === 'object'){
+//             flatternObject(nestedObj[key], baseObj, flatKey)
+//         } else if (type === 'array') {
+//             flatternArray(nestedObj[key], baseObj, flatKey)
+//         } else if ( type === 'undefined') {
+//             continue
+//         } else {
+//             baseObj[flatKey] = nestedArray[i]
+//         }
+//     }
+// }
+
 function recordsToCSV () {
     let records
     let columnDelimiter = ','
@@ -71,7 +105,7 @@ function recordsToCSV () {
     records.forEach(record => {
         headers.forEach(header => {
             if (!firstElement) result += columnDelimiter
-            result += record[csvHeaders[header]]
+            result += record[eval("csvHeaders." + header)]
             firstElement = false
         })
         result += lineDelimiter

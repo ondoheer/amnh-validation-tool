@@ -145,7 +145,8 @@
                     "type": "array",
                     "items": { "$ref": "#/definitions/person" }
                 },
-                "date": {"type":"string"}
+                "date": {"type":"string"},
+                "notes": {"type": "string"}
             },
             "additionalProperties": false
         }  
