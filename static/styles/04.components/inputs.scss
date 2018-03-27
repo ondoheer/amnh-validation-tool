@@ -1,6 +1,6 @@
 .c-input {
   padding: 0.5rem 1rem;
-  width: 100%;
+
   color: $dark-text;
   font-size: $body-size;
   font-family: $body;
@@ -9,9 +9,7 @@
   border-radius: 1rem;
 
   &--select {
-    /* -webkit-appearance: none !important;
-		-moz-appearance: none !important;
-		background: transparent; */
+    display: block;
   }
 
   &--square {
