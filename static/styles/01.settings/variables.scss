@@ -2,48 +2,42 @@
 	COLORS
  */
 
-
 /* Backgrounds */
-$bkg1: #080D29;
-$bkg2: #2C3159;
-$bkg3: #2D4A79;
-$bkg4: #1792A7;
-$bkg5: #E59883;
-$bkg6: #FDAB8D;
-$bkg7: #F9C7B4;
-$bkg8: #4FBE9F;
-$bkg9: #1794A0;
-$bkg10: #2D4A79;
-$bkg11: #2C3159;
-$bkg12: #8387A5;
-$bkg13: #134EA2;
-
-
+$bkg1: #080d29;
+$bkg2: #2c3159;
+$bkg3: #2d4a79;
+$bkg4: #1792a7;
+$bkg5: #e59883;
+$bkg6: #fdab8d;
+$bkg7: #f9c7b4;
+$bkg8: #4fbe9f;
+$bkg9: #1794a0;
+$bkg10: #2d4a79;
+$bkg11: red;
+$bkg12: #8387a5;
+$bkg13: #134ea2;
 
 /*  text */
-$dark-text: #1792A7;
-$light-text: #FFF;
+$dark-text: #1792a7;
+$light-text: #fff;
 
+$recurse: #3dc06c;
 
 /* buttons */
-$light-btn: #1792A7;
-$dark-btn: #080D29;
-
+$light-btn: #1792a7;
+$dark-btn: #080d29;
 
 /* inputs */
-$border-color: #BCE0FD;
+$border-color: #bce0fd;
 
 /*  FONTS */
 
 /* families */
-$titles: 'Roboto Slab', serif;
-$body:  'Roboto', sans-serif;
+$titles: "Roboto Slab", serif;
+$body: "Roboto", sans-serif;
 
 /*  sizes */
 $body-size: 1.6rem;
 $xl: 4.6rem;
 $lg: 3.4rem;
 $md: 2.4rem;
-
-
-

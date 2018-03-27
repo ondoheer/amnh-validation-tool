@@ -13,3 +13,17 @@ iframe {
   width: 100%;
   min-height: 500px;
 }
+
+textarea {
+  width: 100%;
+}
+
+select {
+  width: 350px;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid $bkg2;
+  margin: 30px 0;
+}
