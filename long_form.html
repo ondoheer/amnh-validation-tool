@@ -1,33 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 
 
 	<title>Form - AMNH</title>
 
-	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet"> 
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+	 crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+	 crossorigin="anonymous"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
 	<link rel="stylesheet" href="./static/styles/style.scss">
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/eggplant/jquery-ui.css">
 </head>
+
 <body>
-	
+
 	<header class="c-header c-header--dark">
 		<img src="./static/assets/img/logo_header.png" alt="" class="c-header__logo">
-	</header>	
-	
-	<section class=".u-bkg11">
-		<div class="l-wrapper ">
-			
-			<fieldset class="c-form__fieldset u-separator-md">
-				<label class="c-title c-title--light c-title--xl u-align-center u-separator-lg" for="name">Enter your name</label>
-				<input id="name" placeholder="Name" class="c-input" type="text">
-			</fieldset>
-			
+	</header>
+	<main>
+		<div class="c-form">
+			<section class="u-bkg2">
+				<div class="l-wrapper ">
+
+					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Tracking data</h2>
+
+					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
+						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
+						esse modi quisquam?</p>
+					<fieldset class="c-form__fieldset u-separator-md">
+						<label class="c-label u-separator-xs" for="cat-number">Catalog Number</label>
+						<input placeholder="enter the catalog number" id="cat-number" class="c-input" type="text">
+					</fieldset>
+
+
+					<fieldset class="c-form__fieldset u-separator-md">
+						<label class="c-label u-separator-xs" for="bar-number">Barcode Number</label>
+						<input placeholder="enter the barcode number" id="bar-number" class="c-input" type="text">
+					</fieldset>
+
+					<fieldset class="c-form__fieldset">
+						<label class="c-label u-separator-xs" for="track-notes">Notes</label>
+						<textarea cols="30" rows="10" placeholder="Enter notes" id="track-notes" class="c-input"></textarea>
+					</fieldset>
+
+				</div>
+			</section>
+			<!-- End tracking section -->
+
+			<section class="u-bkg3">
+				<div class="l-wrapper">
+					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Taxonomy</h2>
+
+					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
+						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
+						esse modi quisquam?</p>
+
+					<fieldset class="c-searchbox c-form__fieldset u-separator-md">
+						<label class="c-label u-separator-xs" for="">Search Tanonomy</label>
+						<div>
+							<input placeholder="Enter species" class="c-input c-input--square" type="search">
+							<button class="c-button c-button--captalize c-button--body-size">Go!</button>
+						</div>
+					</fieldset>
+
+					<div class="l-taxonomy-tree">
+
+
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label u-separator-xs" for="bar-number">Species</label>
+							<input placeholder="enter the Species" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label u-separator-xs" for="bar-number">Genus</label>
+							<input placeholder="enter the Genus" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label u-separator-xs" for="bar-number">Family</label>
+							<input placeholder="enter the Family" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label u-separator-xs" for="bar-number">Order</label>
+							<input placeholder="enter the Order" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label u-separator-xs" for="bar-number">Suborder</label>
+							<input placeholder="enter the Suborder" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label u-separator-xs" for="bar-number">Class</label>
+							<input placeholder="class" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label u-separator-xs" for="bar-number">Subclass</label>
+							<input placeholder="enter the Subclass" id="bar-number" class="c-input" type="text">
+						</fieldset>
+
+					</div>
+					<div class="l-side-iframe">
+						<iframe src="http://www.marinespecies.org/aphia.php?p=taxdetails&id=1837" frameborder="0"></iframe>
+					</div>
+
+					<fieldset class="c-form__fieldset">
+						<label class="c-label u-separator-xs" for="track-notes">Notes</label>
+						<textarea cols="30" rows="10" placeholder="Enter notes" id="track-notes" class="c-input"></textarea>
+					</fieldset>
+				</div>
+			</section>
+
+
 		</div>
-	</section>
+	</main>
 </body>
+
 </html>
