@@ -9,7 +9,7 @@
 	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
 	<link rel="stylesheet" href="./static/styles/style.scss">
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/eggplant/jquery-ui.css">
 
@@ -19,7 +19,7 @@
 			background-color: #2C3159 !important;
 
 		}
-		
+
 		.style-sec{
 			border-bottom: 3px solid black;
 			padding: 50px;
@@ -35,7 +35,7 @@
 
 </head>
 <body class="u-bkg1">
-	
+
 	<section class="style-sec" >
 		<h2 class="style-sec__title">Backgrounds</h2>
 		<div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; grid-row-gap: 30px;">
@@ -52,7 +52,7 @@
 			<div style="height:250px; width: 250px; color: white;  padding: 20px; font-size: 25px;" class="u-bkg12">.u-bkg12</div>
 			<div style="height:250px; width: 250px; color: white;  padding: 20px; font-size: 25px;" class="u-bkg13">.u-bkg13</div>
 		</div>
-		
+
 	</section>
 	<section class="style-sec" >
 		<h2 class="style-sec__title">Titles</h2>
@@ -65,7 +65,7 @@
 
 			<h2 class="c-title c-title--dark  c-title--lg">This is a dark lg</h2>
 		</div>
-		
+
 	</section>
 
 	<section class="style-sec" >
@@ -78,7 +78,7 @@
 			<p class="u-separator-sm">.u-separator-sm (20px)</p>
 			<p class="u-separator-xs">.u-separator-xs (10px)</p>
 		</div>
-		
+
 	</section>
 
 	<section class="style-sec" >
@@ -88,7 +88,7 @@
 
 			<p class="u-text-dark">This is a dark paragraph. Nihil velit accusamus, ea, qui error cumque dolores obcaecati cupiditate quaerat dolor odit aliquid minus consequatur tempora quos possimus aperiam sapiente, esse voluptatibus sequi. Suscipit, sequi, omnis. Impedit doloremque atque quod sed earum, praesentium itaque officiis culpa quia, in totam veniam iste laboriosam reiciendis! Veniam animi quo, vero quos! Tenetur, perspiciatis facere delectus nostrum placeat, magni non?</p>
 		</div>
-		
+
 	</section>
 
 	<section class="style-sec">
@@ -119,10 +119,12 @@
 			</fieldset>
 
 			<fieldset class="c-form__fieldset c-datepicker">
-				
+
 				<label class="c-label" for="datePicker">Datepicker</label>
-				<input id="datePicker" name="datePicker" type="text"  class="c-input datePicker">
-				<span class="c-datepicker__icon"><i class="fas fa-calendar-alt"></i></span>
+                <div>
+				    <input id="datePicker" name="datePicker" type="text"  class="c-input datePicker">
+				    <span class="c-datepicker__icon"><i class="fas fa-calendar-alt"></i></span>
+                </div>
 			</fieldset>
 
 			<fieldset class="c-form__fieldset">
@@ -152,32 +154,35 @@
 
 			<fieldset class="c-searchbox c-form__fieldset" >
 				<label class="c-label" for="">Search Box</label>
-				<input type="search" placeholder="This is a search box" class="c-input c-input--square">
-				<button class="c-button c-button--captalize c-button--body-size">Go!</button>
+                <div>
+				    <input type="search" placeholder="This is a search box" class="c-input c-input--square">
+				    <button class="c-button c-button--captalize c-button--body-size">Go!</button>
+                </div>
 			</fieldset>
 
 			<fieldset class="c-input-group">
 				<label class="c-label" for="">Input Group</label>
-				<input type="search" placeholder="°C" class="c-input c-input--square">
-				<span class="c-input-group__sidekick">°C</span>
+                <div>
+				    <input type="search" placeholder="°C" class="c-input c-input--square">
+				    <span class="c-input-group__sidekick">°C</span>
+                </div>
 			</fieldset>
 		</form>
 	</section>
 
 
-	
 	<script
 			  src="https://code.jquery.com/jquery-3.3.1.min.js"
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			  crossorigin="anonymous"></script>	
+			  crossorigin="anonymous"></script>
 			<script
 			  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
 			  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
 			  crossorigin="anonymous"></script>
-		
+
 
 			  <script>
-			  	
+
 			  	const datepicker = document.querySelector('datePicker');
 			  	$("#datePicker").datepicker({
 				        changeMonth: true,
