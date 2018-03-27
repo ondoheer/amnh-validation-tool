@@ -2,7 +2,7 @@
 
 @import "01.settings/variables",
 		"01.settings/base";
-		
+
 
 @import "03.layouts/base";
 
@@ -11,7 +11,8 @@
 		"04.components/inputs",
 		"04.components/form",
 		"04.components/searchbox",
-		"04.components/header";
+		"04.components/header",
+        "04.components/people_list";
 
 
 @import "05.utilities/separators",
