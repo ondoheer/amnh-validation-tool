@@ -59,8 +59,8 @@
 					</fieldset>
 
 					<fieldset class="c-form__fieldset">
-						<label class="c-label " for="track-notes-track">Notes</label>
-						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-track" class="c-input"></textarea>
+						<label class="c-label " for="track-notes">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes" class="c-input"></textarea>
 					</fieldset>
 
 				</div>
@@ -76,50 +76,45 @@
 						esse modi quisquam?</p>
 
 					<fieldset class="c-searchbox c-form__fieldset u-separator-md">
-						<label class="c-label " for="taxonomy-search">Search Taxonomy</label>
+						<label class="c-label " for="">Search Tanonomy</label>
 						<div>
-							<input placeholder="Enter species" id="taxonomy-search" class="c-input c-input--square" type="search">
-							<button id="worms" class="c-button c-button--captalize c-button--body-size">Go!</button>
+							<input placeholder="Enter species" class="c-input c-input--square" type="search">
+							<button class="c-button c-button--captalize c-button--body-size">Go!</button>
 						</div>
 					</fieldset>
-
-					<div id="spinner">
-						<img id="whales-spinner" class="u-hidden" src="./static/assets/img/giphy.gif" alt="">
-					</div>
-					<div class="l-two-col u-hidden" id="taxForm">
+					<div class="l-two-col">
 						<div class="l-two-col__block">
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="scientificname">Species</label>
-								<input placeholder="enter the Species" id="scientificname" class="c-input" type="text">
+								<label class="c-label " for="bar-number">Species</label>
+								<input placeholder="enter the Species" id="bar-number" class="c-input" type="text">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="genus">Genus</label>
-								<input placeholder="enter the Genus" id="genus" class="c-input" type="text">
+								<label class="c-label " for="bar-number">Genus</label>
+								<input placeholder="enter the Genus" id="bar-number" class="c-input" type="text">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="family">Family</label>
-								<input placeholder="enter the Family" id="family" class="c-input" type="text">
+								<label class="c-label " for="bar-number">Family</label>
+								<input placeholder="enter the Family" id="bar-number" class="c-input" type="text">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="order">Order</label>
-								<input placeholder="enter the Order" id="order" class="c-input" type="text">
+								<label class="c-label " for="bar-number">Order</label>
+								<input placeholder="enter the Order" id="bar-number" class="c-input" type="text">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="suborder">Suborder</label>
-								<input placeholder="enter the Suborder" id="suborder" class="c-input" type="text">
+								<label class="c-label " for="bar-number">Suborder</label>
+								<input placeholder="enter the Suborder" id="bar-number" class="c-input" type="text">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="class">Class</label>
-								<input placeholder="class" id="class" class="c-input" type="text">
+								<label class="c-label " for="bar-number">Class</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="subclass">Subclass</label>
-								<input placeholder="enter the Subclass" id="subclass" class="c-input" type="text">
+								<label class="c-label " for="bar-number">Subclass</label>
+								<input placeholder="enter the Subclass" id="bar-number" class="c-input" type="text">
 							</fieldset>
 						</div>
 						<div class="l-two-col__block">
-							<iframe id="worms-iframe" class="c-iframe--full-height" src="http://www.marinespecies.org/aphia.php?p=taxdetails&id=1837"
-							 frameborder="0"></iframe>
+							<iframe class="c-iframe--full-height" src="http://www.marinespecies.org/aphia.php?p=taxdetails&id=1837" frameborder="0"></iframe>
 						</div>
 					</div>
 
@@ -129,8 +124,8 @@
 
 
 					<fieldset class="c-form__fieldset">
-						<label class="c-label " for="track-notes-tax">Notes</label>
-						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-tax" class="c-input"></textarea>
+						<label class="c-label " for="track-notes">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes" class="c-input"></textarea>
 					</fieldset>
 				</div>
 			</section>
@@ -144,46 +139,49 @@
 						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
 						esse modi quisquam?</p>
 
-					<div class="c-people-list u-separator-md">
-						<label class="c-label" for="">Determined By Added</label>
-						<ul id="determined-by-list">
-						</ul>
+                    <div class="c-people-list u-separator-md">
+                        <label class="c-label" for="">Determined By Added</label>
+                        <ul>
+                            <li><span><i class="fas fa-user"></i></span>Cookie Monster</li>
+                            <li><span><i class="fas fa-user"></i></span>Lord Baron the 20th</li>
+                            <li><span><i class="fas fa-user"></i></span>Agatha Christie</li>
+                        </ul>
+                    </div>
+
+					<div class="l-person">
+
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Verbatim Name</label>
+							<input placeholder="collector Name (as written on label)" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">First Name</label>
+							<input placeholder="enter the Genus" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Middle Name 1</label>
+							<input placeholder="enter the Family" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Middle Name 2</label>
+							<input placeholder="enter the Order" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Last Name 1</label>
+							<input placeholder="enter the Suborder" id="bar-number" class="c-input" type="text">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Last Name 2</label>
+							<input placeholder="class" id="bar-number" class="c-input" type="text">
+						</fieldset>
 					</div>
 
-					<div id="determined-by-form" class="l-person">
-
-						<fieldset class="c-form__fieldset u-separator-xs">
-							<label class="c-label " for="collector-name">Verbatim Name</label>
-							<input placeholder="Verbatim Name" id="collector-name" class="c-input" type="text">
-						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs">
-							<label class="c-label " for="first-name">First Name</label>
-							<input placeholder="First Name" id="first-name" class="c-input" type="text">
-						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs">
-							<label class="c-label " for="middle-name-1">Middle Name 1</label>
-							<input placeholder="Middle Name 1" id="middle-name-1" class="c-input" type="text">
-						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs">
-							<label class="c-label " for="middle-name-2">Middle Name 2</label>
-							<input placeholder="Middle Name 2" id="middle-name-2" class="c-input" type="text">
-						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs">
-							<label class="c-label " for="last-name-1">Last Name 1</label>
-							<input placeholder="Last Name 1" id="last-name-1" class="c-input" type="text">
-						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs">
-							<label class="c-label " for="last-name-2">Last Name 2</label>
-							<input placeholder="Last Name 2" id="last-name-2" class="c-input" type="text">
-						</fieldset>
-					</div>
-
-					<button id="determined-person-bttn" class="c-button c-button--uppercase c-button--centered">
+					<button class="c-button c-button--uppercase c-button--centered">
 						<i class="fas fa-user"></i> Add person</button>
 
 					<fieldset class="c-form__fieldset">
-						<label class="c-label " for="track-notes-det">Notes</label>
-						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-det" class="c-input"></textarea>
+						<label class="c-label " for="track-notes">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes" class="c-input"></textarea>
 					</fieldset>
 				</div>
 			</section>
@@ -198,13 +196,13 @@
 						esse modi quisquam?</p>
 
 					<fieldset class="c-form__fieldset u-separator-xs">
-						<label class="c-label " for="spec-number">Number of Specimens</label>
-						<input type="number" id="spec-number" placeholder="# of specimens" class="c-input">
+						<label class="c-label " for="number">Number of Specimens</label>
+						<input type="number" id="number" placeholder="# of specimens" class="c-input">
 					</fieldset>
 
 					<fieldset class="c-form__fieldset u-separator-xs">
-						<label class="c-label " for="storage-medium">Storage Medium</label>
-						<select placeholder="Select input" id="storage-medium" class="c-input c-input--square c-input--select ">
+						<label class="c-label " for="">Storage Medium</label>
+						<select placeholder="Select input" class="c-input c-input--square c-input--select ">
 							<option selected="">option-1</option>
 							<option>option-2</option>
 							<option>option-3</option>
@@ -212,8 +210,8 @@
 					</fieldset>
 
 					<fieldset class="c-form__fieldset u-separator-xs">
-						<label class="c-label " for="type-type">Type of Type</label>
-						<select placeholder="Select input" id="type-type" class="c-input c-input--square c-input--select ">
+						<label class="c-label " for="">Type of Type</label>
+						<select placeholder="Select input" class="c-input c-input--square c-input--select ">
 							<option selected="">option-1</option>
 							<option>option-2</option>
 							<option>option-3</option>
@@ -221,8 +219,8 @@
 					</fieldset>
 
 					<fieldset class="c-form__fieldset u-separator-xs">
-						<label class="c-label " for="sex">Sex</label>
-						<select placeholder="Select input" id="sex" class="c-input c-input--square c-input--select ">
+						<label class="c-label " for="">Sex</label>
+						<select placeholder="Select input" class="c-input c-input--square c-input--select ">
 							<option selected="">option-1</option>
 							<option>option-2</option>
 							<option>option-3</option>
@@ -230,160 +228,156 @@
 					</fieldset>
 
 					<fieldset class="c-form__fieldset u-separator-xs">
-						<label class="c-label " for="dev-stage">Development Stage</label>
-						<select placeholder="Select input" id="dev-stage" class="c-input c-input--square c-input--select ">
+						<label class="c-label " for="">Development Stage</label>
+						<select placeholder="Select input" class="c-input c-input--square c-input--select ">
 							<option selected="">option-1</option>
 							<option>option-2</option>
 							<option>option-3</option>
 						</select>
 					</fieldset>
 					<fieldset class="c-form__fieldset u-separator-xs">
-						<label class="c-label " for="body-part-location">Body part location</label>
-						<input placeholder="enter the body part" id="body-part-location" class="c-input" type="text">
+						<label class="c-label " for="bar-number">Body part location</label>
+						<input placeholder="enter the body part" id="bar-number" class="c-input" type="text">
 					</fieldset>
 
 					<fieldset class="c-form__fieldset">
-						<label class="c-label " for="track-notes-spec">Notes</label>
-						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-spec" class="c-input"></textarea>
+						<label class="c-label " for="track-notes">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes" class="c-input"></textarea>
 					</fieldset>
 				</div>
 			</section>
 			<!-- End Specimen section -->
 			<section class="u-bkg6">
-				<div class="l-wrapper ">
+				<div class="l-wrapper">
 					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Found in host?</h2>
 
 
 
+					<div class="l-btn-container u-separator-md">
+						<button class="c-button c-button--uppercase">
+							Yes</button>
+
+						<button class="c-button c-button--uppercase">
+							No</button>
+					</div>
 					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
 						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
 						esse modi quisquam?</p>
-					<div class="l-btn-container u-separator-md">
-						<button id="hostFound" class="c-button c-button--uppercase">
-							Yes</button>
 
-						<a class="c-button c-button--uppercase" href="#collectingSection">
-							No
-						</a>
-					</div>
-					<div id="optionalHostInfo" class="u-hidden">
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label " for="bar-number">Host Catalog Number</label>
+						<input placeholder="enter the body part" id="bar-number" class="c-input" type="text">
+					</fieldset>
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label " for="bar-number">Host Relationship</label>
+						<input placeholder="enter the body part" id="bar-number" class="c-input" type="text">
+					</fieldset>
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label " for="bar-number">Host Species</label>
+						<input placeholder="enter the body part" id="bar-number" class="c-input" type="text">
+					</fieldset>
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label " for="bar-number">Host Genus Name</label>
+						<input placeholder="enter the body part" id="bar-number" class="c-input" type="text">
+					</fieldset>
 
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label " for="">Sex</label>
+						<select placeholder="Select input" class="c-input c-input--square c-input--select ">
+							<option selected="">option-1</option>
+							<option>option-2</option>
+							<option>option-3</option>
+						</select>
+					</fieldset>
 
-						<fieldset class=" c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="host-catalog ">Host Catalog Number</label>
-							<input placeholder="enter the host catalog number " id="host-catalog " class="c-input " type="text ">
-						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="host-relationship ">Host Relationship</label>
-							<input placeholder="enter the host-relationship " id="host-relationship " class="c-input " type="text ">
-						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="host-species ">Host Species</label>
-							<input placeholder="enter the host species " id="host-pecies " class="c-input " type="text ">
-						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="host-genus ">Host Genus Name</label>
-							<input placeholder="enter the host genus " id="host-genus " class="c-input " type="text ">
-						</fieldset>
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label " for="bar-number">Host Condition</label>
+						<input placeholder="enter the body part" id="bar-number" class="c-input" type="text">
+					</fieldset>
 
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="host-sex ">Sex</label>
-							<select placeholder="Select input " id="host-sex " class="c-input c-input--square c-input--select ">
-								<option selected=" ">option-1</option>
-								<option>option-2</option>
-								<option>option-3</option>
-							</select>
-						</fieldset>
-
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="host-condition ">Host Condition</label>
-							<input placeholder="enter the host condition " id="host-condition " class="c-input " type="text ">
-						</fieldset>
-
-						<fieldset class="c-form__fieldset ">
-							<label class="c-label " for="track-notes-host ">Notes</label>
-							<textarea cols="30 " rows="6 " placeholder="Enter notes " id="track-notes-host " class="c-input "></textarea>
-						</fieldset>
-					</div>
+					<fieldset class="c-form__fieldset">
+						<label class="c-label " for="track-notes">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes" class="c-input"></textarea>
+					</fieldset>
 				</div>
 			</section>
 			<!-- End Host section -->
 
-			<section id="collectingSection " class="u-bkg7 u-padder-top--lg ">
-				<div class="l-wrapper ">
-					<h2 class="c-title c-title--light c-title--lg u-separator-lg ">Collecting Data</h2>
-					<p class="u-separator-md ">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
+			<section class="u-bkg7">
+				<div class="l-wrapper">
+					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Collecting Data</h2>
+					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
 						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
 						esse modi quisquam?</p>
 
-					<fieldset class="c-form__fieldset u-separator-xs ">
-						<label class="c-label " for="collection-method ">Collecting Method</label>
-						<input placeholder="enter the method " id="collection-method " class="c-input " type="text ">
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label " for="bar-number">Collecting Method</label>
+						<input placeholder="enter the method" id="bar-number" class="c-input" type="text">
 					</fieldset>
-					<fieldset class="c-form__fieldset u-separator-xs ">
-						<label class="c-label " for="expedition-name ">Expedition name</label>
-						<input placeholder="enter the expedition name " id="expedition-name " class="c-input " type="text ">
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label " for="bar-number">Expedition name</label>
+						<input placeholder="enter the expedition name" id="bar-number" class="c-input" type="text">
 					</fieldset>
-					<fieldset class="c-form__fieldset u-separator-xs ">
-						<label class="c-label " for="verbatim-date ">Verbatim date</label>
-						<input placeholder="enter the verbatim date " id="verbatim-date " class="c-input " type="text ">
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label " for="bar-number">Verbatim date</label>
+						<input placeholder="enter the verbatim date" id="bar-number" class="c-input" type="text">
 					</fieldset>
 
-					<div class="l-two-col ">
-						<div class="l-two-col__block ">
+					<div class="l-two-col">
+						<div class="l-two-col__block">
 
-							<fieldset class="c-form__fieldset c-datepicker u-separator-sm ">
+							<fieldset class="c-form__fieldset c-datepicker u-separator-sm">
 
-								<label class="c-label " for="collected-from ">Collected from</label>
+								<label class="c-label" for="datePicker">Collected from</label>
 								<div>
-									<input id="collected-from" name="datePicker " type="text " class="c-input  ">
-									<span class="c-datepicker__icon ">
+									<input id="datePicker" name="datePicker" type="text" class="c-input datePicker hasDatepicker">
+									<span class="c-datepicker__icon">
 
-										<i class="fas fa-calendar-alt "></i>
+										<i class="fas fa-calendar-alt"></i>
 									</span>
 								</div>
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="from-day ">Day</label>
-								<input type="number " id="from-day" placeholder=" " class="c-input ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="number">Day</label>
+								<input type="number" id="number" placeholder="# of specimens" class="c-input">
 							</fieldset>
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="from-month ">Month</label>
-								<input type="number " id="from-month" placeholder="" class="c-input ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="number">Month</label>
+								<input type="number" id="number" placeholder="# of specimens" class="c-input">
 							</fieldset>
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="from-year ">Year</label>
-								<input type="number " id="from-year" placeholder=" " class="c-input ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="number">Year</label>
+								<input type="number" id="number" placeholder="# of specimens" class="c-input">
 							</fieldset>
 
 
 						</div>
-						<div class="l-two-col__block ">
+						<div class="l-two-col__block">
 
-							<fieldset class="c-form__fieldset c-datepicker u-separator-sm ">
+							<fieldset class="c-form__fieldset c-datepicker u-separator-sm">
 
-								<label class="c-label " for="collected-to ">Collected to</label>
+								<label class="c-label" for="datePicker">Collected to</label>
 								<div>
-									<input id="collected-to " name="datePicker " type="text " class="c-input datePicker hasDatepicker ">
-									<span class="c-datepicker__icon ">
+									<input id="datePicker" name="datePicker" type="text" class="c-input datePicker hasDatepicker">
+									<span class="c-datepicker__icon">
 
-										<i class="fas fa-calendar-alt "></i>
+										<i class="fas fa-calendar-alt"></i>
 									</span>
 								</div>
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="to-day ">Day</label>
-								<input type="number " id="to-day " placeholder="# of specimens " class="c-input ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="number">Day</label>
+								<input type="number" id="number" placeholder="# of specimens" class="c-input">
 							</fieldset>
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="to-month ">Month</label>
-								<input type="number " id="to-month " placeholder="# of specimens " class="c-input ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="number">Month</label>
+								<input type="number" id="number" placeholder="# of specimens" class="c-input">
 							</fieldset>
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="to-year ">Year</label>
-								<input type="number " id="to-year " placeholder="# of specimens " class="c-input ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="number">Year</label>
+								<input type="number" id="number" placeholder="# of specimens" class="c-input">
 							</fieldset>
 
 
@@ -392,617 +386,608 @@
 					</div>
 					<hr>
 					<!-- end from to sub-section -->
-					<div class="c-people-list u-separator-md ">
-						<label class="c-label " for=" ">Collected By Added</label>
-						<ul>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Cookie Monster</li>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Lord Baron the 20th</li>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Agatha Christie</li>
-						</ul>
-					</div>
+                    <div class="c-people-list u-separator-md">
+                        <label class="c-label" for="">Collected By Added</label>
+                        <ul>
+                            <li><span><i class="fas fa-user"></i></span>Cookie Monster</li>
+                            <li><span><i class="fas fa-user"></i></span>Lord Baron the 20th</li>
+                            <li><span><i class="fas fa-user"></i></span>Agatha Christie</li>
+                        </ul>
+                    </div>
 
-					<div class="l-person u-separator-lg ">
+					<div class="l-person u-separator-lg">
 
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-name ">Verbatim Name</label>
-							<input placeholder="Verbatim Name " id="verbatim-name " class="c-input " type="text ">
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Verbatim Name</label>
+							<input placeholder="collector Name (as written on label)" id="bar-number" class="c-input" type="text">
 						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-first ">First Name</label>
-							<input placeholder="enter the first name " id="verbatim-first " class="c-input " type="text ">
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">First Name</label>
+							<input placeholder="enter the Genus" id="bar-number" class="c-input" type="text">
 						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-middle-1 ">Middle Name 1</label>
-							<input placeholder="enter middle name 1 " id="verbatim-middle-1 " class="c-input " type="text ">
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Middle Name 1</label>
+							<input placeholder="enter the Family" id="bar-number" class="c-input" type="text">
 						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-middle-2 ">Middle Name 2</label>
-							<input placeholder="enter middle name 2 " id="verbatim-middle-2 " class="c-input " type="text ">
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Middle Name 2</label>
+							<input placeholder="enter the Order" id="bar-number" class="c-input" type="text">
 						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-last-1 ">Last Name 1</label>
-							<input placeholder="enter last name 1 " id="verbatim-last-1 " class="c-input " type="text ">
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Last Name 1</label>
+							<input placeholder="enter the Suborder" id="bar-number" class="c-input" type="text">
 						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-last-2 ">Last Name 2</label>
-							<input placeholder="enter last name 2 " id="verbatim-last-2 " class="c-input " type="text ">
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Last Name 2</label>
+							<input placeholder="class" id="bar-number" class="c-input" type="text">
 						</fieldset>
 					</div>
-					<button class="c-button c-button--uppercase c-button--centered ">
-						<i class="fas fa-user "></i> Add person</button>
+					<button class="c-button c-button--uppercase c-button--centered">
+						<i class="fas fa-user"></i> Add person</button>
 
-					<fieldset class="c-form__fieldset ">
-						<label class="c-label " for="track-notes-coll ">Notes</label>
-						<textarea cols="30 " rows="6 " placeholder="Enter notes " id="track-notes-coll " class="c-input "></textarea>
+					<fieldset class="c-form__fieldset">
+						<label class="c-label " for="track-notes">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes" class="c-input"></textarea>
 					</fieldset>
 
 				</div>
 			</section>
 			<!-- End collecting data -->
 
-			<section class="u-bkg8 ">
-				<div class="l-wrapper ">
-					<h2 class="c-title c-title--light c-title--lg u-separator-lg ">Location</h2>
-					<p class="u-separator-md ">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
+			<section class="u-bkg8">
+				<div class="l-wrapper">
+					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Location</h2>
+					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
 						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
 						esse modi quisquam?</p>
 
-					<fieldset class="c-searchbox c-form__fieldset u-separator-md ">
-						<label class="c-label " for="search-location ">Search location</label>
+					<fieldset class="c-searchbox c-form__fieldset u-separator-md">
+						<label class="c-label" for="">Search location</label>
 						<div>
-							<input type="search " id="search-location " placeholder="This is a search box " class="c-input c-input--square ">
-							<button class="c-button c-button--captalize c-button--body-size ">Find!</button>
+							<input id="location-autocomplete" placeholder="Enter a location" class="c-input c-input--square">
+							<button class="c-button c-button--captalize c-button--body-size">Go!</button>
 						</div>
 					</fieldset>
 
-					<iframe class="u-separator-xl " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.53283805215!2d-73.97838308426104!3d40.6842611472484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bade200a8e1%3A0x14c9c73a950be88b!2sTarget!5e0!3m2!1sen!2sus!4v1522177582629 "
-					 width="600 " height="450 " frameborder="0 " style="border:0 " allowfullscreen></iframe>
+					<!-- <iframe class="u-separator-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.53283805215!2d-73.97838308426104!3d40.6842611472484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bade200a8e1%3A0x14c9c73a950be88b!2sTarget!5e0!3m2!1sen!2sus!4v1522177582629"
+					 width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
 
-					<fieldset class="c-form__fieldset u-separator-md ">
-						<label class="c-label " for="verbatim-address ">Verbatim Location / Address</label>
-						<input placeholder="class " id="verbatim-address " class="c-input " type="text ">
+
+				<div id="location-map" style="width:600px;height:400px;" class="u-separator-md"></div>
+
+
+					<fieldset class="c-form__fieldset u-separator-md">
+						<label class="c-label " for="bar-number">Verbatim Location / Address</label>
+						<input placeholder="class" id="bar-number" class="c-input" type="text">
 					</fieldset>
 
-					<div class="l-two-col u-separator-lg ">
-						<div class="l-two-col__block ">
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="continent ">Continent</label>
-								<select placeholder="Select input " id="continent " class="c-input c-input--square c-input--select ">
-									<option value="North America ">North America</option>
-									<option value="South America ">South America</option>
-									<option value="Africa ">Africa</option>
-									<option value="Europe ">Europe</option>
-									<option value="Asia ">Asia</option>
-									<option value="oceania ">Oceania</option>
-									<option value="Antartica ">Antartica</option>
+					<div class="l-two-col u-separator-lg">
+						<div class="l-two-col__block">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="">Continent</label>
+								<select placeholder="Select input" class="c-input c-input--square c-input--select ">
+									<option value="North America">North America</option>
+									<option value="South America">South America</option>
+									<option value="Africa">Africa</option>
+									<option value="Europe">Europe</option>
+									<option value="Asia">Asia</option>
+									<option value="oceania">Oceania</option>
+									<option value="Antartica">Antartica</option>
 								</select>
 							</fieldset>
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="country ">Country</label>
-								<select placeholder="Select input " id="country " class="c-input c-input--square c-input--select ">
-									<option value="AF ">Afghanistan</option>
-									<option value="AX ">Åland Islands</option>
-									<option value="AL ">Albania</option>
-									<option value="DZ ">Algeria</option>
-									<option value="AS ">American Samoa</option>
-									<option value="AD ">Andorra</option>
-									<option value="AO ">Angola</option>
-									<option value="AI ">Anguilla</option>
-									<option value="AQ ">Antarctica</option>
-									<option value="AG ">Antigua and Barbuda</option>
-									<option value="AR ">Argentina</option>
-									<option value="AM ">Armenia</option>
-									<option value="AW ">Aruba</option>
-									<option value="AU ">Australia</option>
-									<option value="AT ">Austria</option>
-									<option value="AZ ">Azerbaijan</option>
-									<option value="BS ">Bahamas</option>
-									<option value="BH ">Bahrain</option>
-									<option value="BD ">Bangladesh</option>
-									<option value="BB ">Barbados</option>
-									<option value="BY ">Belarus</option>
-									<option value="BE ">Belgium</option>
-									<option value="BZ ">Belize</option>
-									<option value="BJ ">Benin</option>
-									<option value="BM ">Bermuda</option>
-									<option value="BT ">Bhutan</option>
-									<option value="BO ">Bolivia, Plurinational State of</option>
-									<option value="BQ ">Bonaire, Sint Eustatius and Saba</option>
-									<option value="BA ">Bosnia and Herzegovina</option>
-									<option value="BW ">Botswana</option>
-									<option value="BV ">Bouvet Island</option>
-									<option value="BR ">Brazil</option>
-									<option value="IO ">British Indian Ocean Territory</option>
-									<option value="BN ">Brunei Darussalam</option>
-									<option value="BG ">Bulgaria</option>
-									<option value="BF ">Burkina Faso</option>
-									<option value="BI ">Burundi</option>
-									<option value="KH ">Cambodia</option>
-									<option value="CM ">Cameroon</option>
-									<option value="CA ">Canada</option>
-									<option value="CV ">Cape Verde</option>
-									<option value="KY ">Cayman Islands</option>
-									<option value="CF ">Central African Republic</option>
-									<option value="TD ">Chad</option>
-									<option value="CL ">Chile</option>
-									<option value="CN ">China</option>
-									<option value="CX ">Christmas Island</option>
-									<option value="CC ">Cocos (Keeling) Islands</option>
-									<option value="CO ">Colombia</option>
-									<option value="KM ">Comoros</option>
-									<option value="CG ">Congo</option>
-									<option value="CD ">Congo, the Democratic Republic of the</option>
-									<option value="CK ">Cook Islands</option>
-									<option value="CR ">Costa Rica</option>
-									<option value="CI ">Côte d'Ivoire</option>
-									<option value="HR ">Croatia</option>
-									<option value="CU ">Cuba</option>
-									<option value="CW ">Curaçao</option>
-									<option value="CY ">Cyprus</option>
-									<option value="CZ ">Czech Republic</option>
-									<option value="DK ">Denmark</option>
-									<option value="DJ ">Djibouti</option>
-									<option value="DM ">Dominica</option>
-									<option value="DO ">Dominican Republic</option>
-									<option value="EC ">Ecuador</option>
-									<option value="EG ">Egypt</option>
-									<option value="SV ">El Salvador</option>
-									<option value="GQ ">Equatorial Guinea</option>
-									<option value="ER ">Eritrea</option>
-									<option value="EE ">Estonia</option>
-									<option value="ET ">Ethiopia</option>
-									<option value="FK ">Falkland Islands (Malvinas)</option>
-									<option value="FO ">Faroe Islands</option>
-									<option value="FJ ">Fiji</option>
-									<option value="FI ">Finland</option>
-									<option value="FR ">France</option>
-									<option value="GF ">French Guiana</option>
-									<option value="PF ">French Polynesia</option>
-									<option value="TF ">French Southern Territories</option>
-									<option value="GA ">Gabon</option>
-									<option value="GM ">Gambia</option>
-									<option value="GE ">Georgia</option>
-									<option value="DE ">Germany</option>
-									<option value="GH ">Ghana</option>
-									<option value="GI ">Gibraltar</option>
-									<option value="GR ">Greece</option>
-									<option value="GL ">Greenland</option>
-									<option value="GD ">Grenada</option>
-									<option value="GP ">Guadeloupe</option>
-									<option value="GU ">Guam</option>
-									<option value="GT ">Guatemala</option>
-									<option value="GG ">Guernsey</option>
-									<option value="GN ">Guinea</option>
-									<option value="GW ">Guinea-Bissau</option>
-									<option value="GY ">Guyana</option>
-									<option value="HT ">Haiti</option>
-									<option value="HM ">Heard Island and McDonald Islands</option>
-									<option value="VA ">Holy See (Vatican City State)</option>
-									<option value="HN ">Honduras</option>
-									<option value="HK ">Hong Kong</option>
-									<option value="HU ">Hungary</option>
-									<option value="IS ">Iceland</option>
-									<option value="IN ">India</option>
-									<option value="ID ">Indonesia</option>
-									<option value="IR ">Iran, Islamic Republic of</option>
-									<option value="IQ ">Iraq</option>
-									<option value="IE ">Ireland</option>
-									<option value="IM ">Isle of Man</option>
-									<option value="IL ">Israel</option>
-									<option value="IT ">Italy</option>
-									<option value="JM ">Jamaica</option>
-									<option value="JP ">Japan</option>
-									<option value="JE ">Jersey</option>
-									<option value="JO ">Jordan</option>
-									<option value="KZ ">Kazakhstan</option>
-									<option value="KE ">Kenya</option>
-									<option value="KI ">Kiribati</option>
-									<option value="KP ">Korea, Democratic People's Republic of</option>
-									<option value="KR ">Korea, Republic of</option>
-									<option value="KW ">Kuwait</option>
-									<option value="KG ">Kyrgyzstan</option>
-									<option value="LA ">Lao People's Democratic Republic</option>
-									<option value="LV ">Latvia</option>
-									<option value="LB ">Lebanon</option>
-									<option value="LS ">Lesotho</option>
-									<option value="LR ">Liberia</option>
-									<option value="LY ">Libya</option>
-									<option value="LI ">Liechtenstein</option>
-									<option value="LT ">Lithuania</option>
-									<option value="LU ">Luxembourg</option>
-									<option value="MO ">Macao</option>
-									<option value="MK ">Macedonia, the former Yugoslav Republic of</option>
-									<option value="MG ">Madagascar</option>
-									<option value="MW ">Malawi</option>
-									<option value="MY ">Malaysia</option>
-									<option value="MV ">Maldives</option>
-									<option value="ML ">Mali</option>
-									<option value="MT ">Malta</option>
-									<option value="MH ">Marshall Islands</option>
-									<option value="MQ ">Martinique</option>
-									<option value="MR ">Mauritania</option>
-									<option value="MU ">Mauritius</option>
-									<option value="YT ">Mayotte</option>
-									<option value="MX ">Mexico</option>
-									<option value="FM ">Micronesia, Federated States of</option>
-									<option value="MD ">Moldova, Republic of</option>
-									<option value="MC ">Monaco</option>
-									<option value="MN ">Mongolia</option>
-									<option value="ME ">Montenegro</option>
-									<option value="MS ">Montserrat</option>
-									<option value="MA ">Morocco</option>
-									<option value="MZ ">Mozambique</option>
-									<option value="MM ">Myanmar</option>
-									<option value="NA ">Namibia</option>
-									<option value="NR ">Nauru</option>
-									<option value="NP ">Nepal</option>
-									<option value="NL ">Netherlands</option>
-									<option value="NC ">New Caledonia</option>
-									<option value="NZ ">New Zealand</option>
-									<option value="NI ">Nicaragua</option>
-									<option value="NE ">Niger</option>
-									<option value="NG ">Nigeria</option>
-									<option value="NU ">Niue</option>
-									<option value="NF ">Norfolk Island</option>
-									<option value="MP ">Northern Mariana Islands</option>
-									<option value="NO ">Norway</option>
-									<option value="OM ">Oman</option>
-									<option value="PK ">Pakistan</option>
-									<option value="PW ">Palau</option>
-									<option value="PS ">Palestinian Territory, Occupied</option>
-									<option value="PA ">Panama</option>
-									<option value="PG ">Papua New Guinea</option>
-									<option value="PY ">Paraguay</option>
-									<option value="PE ">Peru</option>
-									<option value="PH ">Philippines</option>
-									<option value="PN ">Pitcairn</option>
-									<option value="PL ">Poland</option>
-									<option value="PT ">Portugal</option>
-									<option value="PR ">Puerto Rico</option>
-									<option value="QA ">Qatar</option>
-									<option value="RE ">Réunion</option>
-									<option value="RO ">Romania</option>
-									<option value="RU ">Russian Federation</option>
-									<option value="RW ">Rwanda</option>
-									<option value="BL ">Saint Barthélemy</option>
-									<option value="SH ">Saint Helena, Ascension and Tristan da Cunha</option>
-									<option value="KN ">Saint Kitts and Nevis</option>
-									<option value="LC ">Saint Lucia</option>
-									<option value="MF ">Saint Martin (French part)</option>
-									<option value="PM ">Saint Pierre and Miquelon</option>
-									<option value="VC ">Saint Vincent and the Grenadines</option>
-									<option value="WS ">Samoa</option>
-									<option value="SM ">San Marino</option>
-									<option value="ST ">Sao Tome and Principe</option>
-									<option value="SA ">Saudi Arabia</option>
-									<option value="SN ">Senegal</option>
-									<option value="RS ">Serbia</option>
-									<option value="SC ">Seychelles</option>
-									<option value="SL ">Sierra Leone</option>
-									<option value="SG ">Singapore</option>
-									<option value="SX ">Sint Maarten (Dutch part)</option>
-									<option value="SK ">Slovakia</option>
-									<option value="SI ">Slovenia</option>
-									<option value="SB ">Solomon Islands</option>
-									<option value="SO ">Somalia</option>
-									<option value="ZA ">South Africa</option>
-									<option value="GS ">South Georgia and the South Sandwich Islands</option>
-									<option value="SS ">South Sudan</option>
-									<option value="ES ">Spain</option>
-									<option value="LK ">Sri Lanka</option>
-									<option value="SD ">Sudan</option>
-									<option value="SR ">Suriname</option>
-									<option value="SJ ">Svalbard and Jan Mayen</option>
-									<option value="SZ ">Swaziland</option>
-									<option value="SE ">Sweden</option>
-									<option value="CH ">Switzerland</option>
-									<option value="SY ">Syrian Arab Republic</option>
-									<option value="TW ">Taiwan, Province of China</option>
-									<option value="TJ ">Tajikistan</option>
-									<option value="TZ ">Tanzania, United Republic of</option>
-									<option value="TH ">Thailand</option>
-									<option value="TL ">Timor-Leste</option>
-									<option value="TG ">Togo</option>
-									<option value="TK ">Tokelau</option>
-									<option value="TO ">Tonga</option>
-									<option value="TT ">Trinidad and Tobago</option>
-									<option value="TN ">Tunisia</option>
-									<option value="TR ">Turkey</option>
-									<option value="TM ">Turkmenistan</option>
-									<option value="TC ">Turks and Caicos Islands</option>
-									<option value="TV ">Tuvalu</option>
-									<option value="UG ">Uganda</option>
-									<option value="UA ">Ukraine</option>
-									<option value="AE ">United Arab Emirates</option>
-									<option value="GB ">United Kingdom</option>
-									<option value="US ">United States</option>
-									<option value="UM ">United States Minor Outlying Islands</option>
-									<option value="UY ">Uruguay</option>
-									<option value="UZ ">Uzbekistan</option>
-									<option value="VU ">Vanuatu</option>
-									<option value="VE ">Venezuela, Bolivarian Republic of</option>
-									<option value="VN ">Viet Nam</option>
-									<option value="VG ">Virgin Islands, British</option>
-									<option value="VI ">Virgin Islands, U.S.</option>
-									<option value="WF ">Wallis and Futuna</option>
-									<option value="EH ">Western Sahara</option>
-									<option value="YE ">Yemen</option>
-									<option value="ZM ">Zambia</option>
-									<option value="ZW ">Zimbabwe</option>
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="">Country</label>
+								<select placeholder="Select input" class="c-input c-input--square c-input--select ">
+									<option value="AF">Afghanistan</option>
+									<option value="AX">Åland Islands</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua and Barbuda</option>
+									<option value="AR">Argentina</option>
+									<option value="AM">Armenia</option>
+									<option value="AW">Aruba</option>
+									<option value="AU">Australia</option>
+									<option value="AT">Austria</option>
+									<option value="AZ">Azerbaijan</option>
+									<option value="BS">Bahamas</option>
+									<option value="BH">Bahrain</option>
+									<option value="BD">Bangladesh</option>
+									<option value="BB">Barbados</option>
+									<option value="BY">Belarus</option>
+									<option value="BE">Belgium</option>
+									<option value="BZ">Belize</option>
+									<option value="BJ">Benin</option>
+									<option value="BM">Bermuda</option>
+									<option value="BT">Bhutan</option>
+									<option value="BO">Bolivia, Plurinational State of</option>
+									<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+									<option value="BA">Bosnia and Herzegovina</option>
+									<option value="BW">Botswana</option>
+									<option value="BV">Bouvet Island</option>
+									<option value="BR">Brazil</option>
+									<option value="IO">British Indian Ocean Territory</option>
+									<option value="BN">Brunei Darussalam</option>
+									<option value="BG">Bulgaria</option>
+									<option value="BF">Burkina Faso</option>
+									<option value="BI">Burundi</option>
+									<option value="KH">Cambodia</option>
+									<option value="CM">Cameroon</option>
+									<option value="CA">Canada</option>
+									<option value="CV">Cape Verde</option>
+									<option value="KY">Cayman Islands</option>
+									<option value="CF">Central African Republic</option>
+									<option value="TD">Chad</option>
+									<option value="CL">Chile</option>
+									<option value="CN">China</option>
+									<option value="CX">Christmas Island</option>
+									<option value="CC">Cocos (Keeling) Islands</option>
+									<option value="CO">Colombia</option>
+									<option value="KM">Comoros</option>
+									<option value="CG">Congo</option>
+									<option value="CD">Congo, the Democratic Republic of the</option>
+									<option value="CK">Cook Islands</option>
+									<option value="CR">Costa Rica</option>
+									<option value="CI">Côte d'Ivoire</option>
+									<option value="HR">Croatia</option>
+									<option value="CU">Cuba</option>
+									<option value="CW">Curaçao</option>
+									<option value="CY">Cyprus</option>
+									<option value="CZ">Czech Republic</option>
+									<option value="DK">Denmark</option>
+									<option value="DJ">Djibouti</option>
+									<option value="DM">Dominica</option>
+									<option value="DO">Dominican Republic</option>
+									<option value="EC">Ecuador</option>
+									<option value="EG">Egypt</option>
+									<option value="SV">El Salvador</option>
+									<option value="GQ">Equatorial Guinea</option>
+									<option value="ER">Eritrea</option>
+									<option value="EE">Estonia</option>
+									<option value="ET">Ethiopia</option>
+									<option value="FK">Falkland Islands (Malvinas)</option>
+									<option value="FO">Faroe Islands</option>
+									<option value="FJ">Fiji</option>
+									<option value="FI">Finland</option>
+									<option value="FR">France</option>
+									<option value="GF">French Guiana</option>
+									<option value="PF">French Polynesia</option>
+									<option value="TF">French Southern Territories</option>
+									<option value="GA">Gabon</option>
+									<option value="GM">Gambia</option>
+									<option value="GE">Georgia</option>
+									<option value="DE">Germany</option>
+									<option value="GH">Ghana</option>
+									<option value="GI">Gibraltar</option>
+									<option value="GR">Greece</option>
+									<option value="GL">Greenland</option>
+									<option value="GD">Grenada</option>
+									<option value="GP">Guadeloupe</option>
+									<option value="GU">Guam</option>
+									<option value="GT">Guatemala</option>
+									<option value="GG">Guernsey</option>
+									<option value="GN">Guinea</option>
+									<option value="GW">Guinea-Bissau</option>
+									<option value="GY">Guyana</option>
+									<option value="HT">Haiti</option>
+									<option value="HM">Heard Island and McDonald Islands</option>
+									<option value="VA">Holy See (Vatican City State)</option>
+									<option value="HN">Honduras</option>
+									<option value="HK">Hong Kong</option>
+									<option value="HU">Hungary</option>
+									<option value="IS">Iceland</option>
+									<option value="IN">India</option>
+									<option value="ID">Indonesia</option>
+									<option value="IR">Iran, Islamic Republic of</option>
+									<option value="IQ">Iraq</option>
+									<option value="IE">Ireland</option>
+									<option value="IM">Isle of Man</option>
+									<option value="IL">Israel</option>
+									<option value="IT">Italy</option>
+									<option value="JM">Jamaica</option>
+									<option value="JP">Japan</option>
+									<option value="JE">Jersey</option>
+									<option value="JO">Jordan</option>
+									<option value="KZ">Kazakhstan</option>
+									<option value="KE">Kenya</option>
+									<option value="KI">Kiribati</option>
+									<option value="KP">Korea, Democratic People's Republic of</option>
+									<option value="KR">Korea, Republic of</option>
+									<option value="KW">Kuwait</option>
+									<option value="KG">Kyrgyzstan</option>
+									<option value="LA">Lao People's Democratic Republic</option>
+									<option value="LV">Latvia</option>
+									<option value="LB">Lebanon</option>
+									<option value="LS">Lesotho</option>
+									<option value="LR">Liberia</option>
+									<option value="LY">Libya</option>
+									<option value="LI">Liechtenstein</option>
+									<option value="LT">Lithuania</option>
+									<option value="LU">Luxembourg</option>
+									<option value="MO">Macao</option>
+									<option value="MK">Macedonia, the former Yugoslav Republic of</option>
+									<option value="MG">Madagascar</option>
+									<option value="MW">Malawi</option>
+									<option value="MY">Malaysia</option>
+									<option value="MV">Maldives</option>
+									<option value="ML">Mali</option>
+									<option value="MT">Malta</option>
+									<option value="MH">Marshall Islands</option>
+									<option value="MQ">Martinique</option>
+									<option value="MR">Mauritania</option>
+									<option value="MU">Mauritius</option>
+									<option value="YT">Mayotte</option>
+									<option value="MX">Mexico</option>
+									<option value="FM">Micronesia, Federated States of</option>
+									<option value="MD">Moldova, Republic of</option>
+									<option value="MC">Monaco</option>
+									<option value="MN">Mongolia</option>
+									<option value="ME">Montenegro</option>
+									<option value="MS">Montserrat</option>
+									<option value="MA">Morocco</option>
+									<option value="MZ">Mozambique</option>
+									<option value="MM">Myanmar</option>
+									<option value="NA">Namibia</option>
+									<option value="NR">Nauru</option>
+									<option value="NP">Nepal</option>
+									<option value="NL">Netherlands</option>
+									<option value="NC">New Caledonia</option>
+									<option value="NZ">New Zealand</option>
+									<option value="NI">Nicaragua</option>
+									<option value="NE">Niger</option>
+									<option value="NG">Nigeria</option>
+									<option value="NU">Niue</option>
+									<option value="NF">Norfolk Island</option>
+									<option value="MP">Northern Mariana Islands</option>
+									<option value="NO">Norway</option>
+									<option value="OM">Oman</option>
+									<option value="PK">Pakistan</option>
+									<option value="PW">Palau</option>
+									<option value="PS">Palestinian Territory, Occupied</option>
+									<option value="PA">Panama</option>
+									<option value="PG">Papua New Guinea</option>
+									<option value="PY">Paraguay</option>
+									<option value="PE">Peru</option>
+									<option value="PH">Philippines</option>
+									<option value="PN">Pitcairn</option>
+									<option value="PL">Poland</option>
+									<option value="PT">Portugal</option>
+									<option value="PR">Puerto Rico</option>
+									<option value="QA">Qatar</option>
+									<option value="RE">Réunion</option>
+									<option value="RO">Romania</option>
+									<option value="RU">Russian Federation</option>
+									<option value="RW">Rwanda</option>
+									<option value="BL">Saint Barthélemy</option>
+									<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+									<option value="KN">Saint Kitts and Nevis</option>
+									<option value="LC">Saint Lucia</option>
+									<option value="MF">Saint Martin (French part)</option>
+									<option value="PM">Saint Pierre and Miquelon</option>
+									<option value="VC">Saint Vincent and the Grenadines</option>
+									<option value="WS">Samoa</option>
+									<option value="SM">San Marino</option>
+									<option value="ST">Sao Tome and Principe</option>
+									<option value="SA">Saudi Arabia</option>
+									<option value="SN">Senegal</option>
+									<option value="RS">Serbia</option>
+									<option value="SC">Seychelles</option>
+									<option value="SL">Sierra Leone</option>
+									<option value="SG">Singapore</option>
+									<option value="SX">Sint Maarten (Dutch part)</option>
+									<option value="SK">Slovakia</option>
+									<option value="SI">Slovenia</option>
+									<option value="SB">Solomon Islands</option>
+									<option value="SO">Somalia</option>
+									<option value="ZA">South Africa</option>
+									<option value="GS">South Georgia and the South Sandwich Islands</option>
+									<option value="SS">South Sudan</option>
+									<option value="ES">Spain</option>
+									<option value="LK">Sri Lanka</option>
+									<option value="SD">Sudan</option>
+									<option value="SR">Suriname</option>
+									<option value="SJ">Svalbard and Jan Mayen</option>
+									<option value="SZ">Swaziland</option>
+									<option value="SE">Sweden</option>
+									<option value="CH">Switzerland</option>
+									<option value="SY">Syrian Arab Republic</option>
+									<option value="TW">Taiwan, Province of China</option>
+									<option value="TJ">Tajikistan</option>
+									<option value="TZ">Tanzania, United Republic of</option>
+									<option value="TH">Thailand</option>
+									<option value="TL">Timor-Leste</option>
+									<option value="TG">Togo</option>
+									<option value="TK">Tokelau</option>
+									<option value="TO">Tonga</option>
+									<option value="TT">Trinidad and Tobago</option>
+									<option value="TN">Tunisia</option>
+									<option value="TR">Turkey</option>
+									<option value="TM">Turkmenistan</option>
+									<option value="TC">Turks and Caicos Islands</option>
+									<option value="TV">Tuvalu</option>
+									<option value="UG">Uganda</option>
+									<option value="UA">Ukraine</option>
+									<option value="AE">United Arab Emirates</option>
+									<option value="GB">United Kingdom</option>
+									<option value="US">United States</option>
+									<option value="UM">United States Minor Outlying Islands</option>
+									<option value="UY">Uruguay</option>
+									<option value="UZ">Uzbekistan</option>
+									<option value="VU">Vanuatu</option>
+									<option value="VE">Venezuela, Bolivarian Republic of</option>
+									<option value="VN">Viet Nam</option>
+									<option value="VG">Virgin Islands, British</option>
+									<option value="VI">Virgin Islands, U.S.</option>
+									<option value="WF">Wallis and Futuna</option>
+									<option value="EH">Western Sahara</option>
+									<option value="YE">Yemen</option>
+									<option value="ZM">Zambia</option>
+									<option value="ZW">Zimbabwe</option>
 								</select>
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="dept ">Department</label>
-								<input placeholder="class " id="dept " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Department</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="county ">County</label>
-								<input placeholder="class " id="county " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">County</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="city ">City / Town / Hamlet</label>
-								<input placeholder="class " id="city " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">City / Town / Hamlet</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="specific-locale ">Specific Locale</label>
-								<input placeholder="class " id="specific-locale " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Specific Locale</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 						</div>
-						<div class="l-two-col__block ">
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="ocean ">Ocean</label>
-								<select placeholder="Select input " id="ocean " class="c-input c-input--square c-input--select ">
-									<option selected=" ">option-1</option>
+						<div class="l-two-col__block">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="">Country</label>
+								<select placeholder="Select input" class="c-input c-input--square c-input--select ">
+									<option selected="">option-1</option>
 									<option>option-2</option>
 									<option>option-3</option>
 								</select>
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="sea ">Sea / Gulf / Strait</label>
-								<input placeholder="class " id="sea " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Sea / Gulf / Strait</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="lake ">Lake / Pond / Reservoir</label>
-								<input placeholder="class " id="lake " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Lake / Pond / Reservoir</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="bay ">Bay / Harbor</label>
-								<input placeholder="class " id="bay " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Bay / Harbor</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="river ">River / Creek</label>
-								<input placeholder="class " id="river " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">River / Creek</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="stream ">Stream</label>
-								<input placeholder="class " id="stream " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Stream</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="island-group ">Island Group</label>
-								<input placeholder="class " id="island-group " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Island Group</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="island ">Island</label>
-								<input placeholder="class " id="island " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Island</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="mtn-range ">Mountain Range</label>
-								<input placeholder="class " id="mtn-range " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Mountain Range</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="mtn ">Mountain</label>
-								<input placeholder="class " id="mtn " class="c-input " type="text ">
-							</fieldset>
-						</div>
-					</div>
-
-					<hr>
-
-					<div class="l-two-col ">
-						<div class="l-two-col__block ">
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="lat-from ">Latitude From</label>
-								<input placeholder="class " id="lat-from " class="c-input " type="text ">
-							</fieldset>
-
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="lon-from ">Longitude From</label>
-								<input placeholder="class " id="lon-from " class="c-input " type="text ">
-							</fieldset>
-						</div>
-						<div class="l-two-col__block ">
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="lat-to ">Latitude To</label>
-								<input placeholder="class " id="lat-to " class="c-input " type="text ">
-							</fieldset>
-
-							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="lon-to ">Longitude To</label>
-								<input placeholder="class " id="lon-to " class="c-input " type="text ">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Mountain</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 						</div>
 					</div>
 
 					<hr>
 
-					<div class="l-two-col u-separator-lg ">
-						<div class="l-two-col__block ">
-							<fieldset class="c-input-group ">
-								<label class="c-label " for="lat-input-grp ">Input Group</label>
+					<div class="l-two-col">
+						<div class="l-two-col__block">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Latitude From</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Longitude From</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
+							</fieldset>
+						</div>
+						<div class="l-two-col__block">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Latitude To</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label " for="bar-number">Longitude To</label>
+								<input placeholder="class" id="bar-number" class="c-input" type="text">
+							</fieldset>
+						</div>
+					</div>
+
+					<hr>
+
+					<div class="l-two-col u-separator-lg">
+						<div class="l-two-col__block">
+							<fieldset class="c-input-group">
+								<label class="c-label" for="">Input Group</label>
 								<div>
-									<input type="search " id="lat-input-grp " placeholder="°F " class="c-input c-input--square ">
-									<span class="c-input-group__sidekick ">°F</span>
+									<input type="search" placeholder="°F" class="c-input c-input--square">
+									<span class="c-input-group__sidekick">°F</span>
 								</div>
 							</fieldset>
 						</div>
-						<div class="l-two-col__block ">
-							<fieldset class="c-input-group ">
-								<label class="c-label " for="an-input-grp ">Input Group</label>
+						<div class="l-two-col__block">
+							<fieldset class="c-input-group">
+								<label class="c-label" for="">Input Group</label>
 								<div>
-									<input type="search " id="an-input-grp " placeholder="°C " class="c-input c-input--square ">
-									<span class="c-input-group__sidekick ">°C</span>
+									<input type="search" placeholder="°C" class="c-input c-input--square">
+									<span class="c-input-group__sidekick">°C</span>
 								</div>
 							</fieldset>
 						</div>
 					</div>
 
-					<fieldset class="c-form__fieldset ">
-						<label class="c-label " for="track-notes-loc ">Notes</label>
-						<textarea cols="30 " rows="6 " placeholder="Enter notes " id="track-notes-loc " class="c-input "></textarea>
+					<fieldset class="c-form__fieldset">
+						<label class="c-label " for="track-notes">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes" class="c-input"></textarea>
 					</fieldset>
 				</div>
 			</section>
 			<!-- End of location section -->
-			<section class="u-bkg9 ">
-				<div class="l-wrapper ">
-					<h2 class="c-title c-title--light c-title--lg u-separator-lg ">Location</h2>
-					<p class="u-separator-md ">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
+			<section class="u-bkg9">
+				<div class="l-wrapper">
+					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Location</h2>
+					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
 						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
 						esse modi quisquam?</p>
 
-					<fieldset class="c-form__fieldset c-datepicker u-separator-sm ">
+					<fieldset class="c-form__fieldset c-datepicker u-separator-sm">
 
-						<label class="c-label " for="donated ">Donated on</label>
+						<label class="c-label" for="datePicker">Donated on</label>
 						<div>
-							<input id="donated " name="datePicker " type="text " class="c-input datePicker hasDatepicker ">
-							<span class="c-datepicker__icon ">
+							<input id="datePicker" name="datePicker" type="text" class="c-input datePicker hasDatepicker">
+							<span class="c-datepicker__icon">
 
-								<i class="fas fa-calendar-alt "></i>
+								<i class="fas fa-calendar-alt"></i>
 							</span>
 						</div>
 					</fieldset>
 
-					<fieldset class="c-form__fieldset u-separator-xs ">
-						<label class="c-label " for="day-donated ">Day</label>
-						<input type="number " id="day-donated " placeholder="# of specimens " class="c-input ">
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label " for="number">Day</label>
+						<input type="number" id="number" placeholder="# of specimens" class="c-input">
 					</fieldset>
-					<fieldset class="c-form__fieldset u-separator-xs ">
-						<label class="c-label " for="month-donated ">Month</label>
-						<input type="number " id="month-donated " placeholder="# of specimens " class="c-input ">
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label " for="number">Month</label>
+						<input type="number" id="number" placeholder="# of specimens" class="c-input">
 					</fieldset>
-					<fieldset class="c-form__fieldset u-separator-lg ">
-						<label class="c-label " for="year-donated ">Year</label>
-						<input type="number " id="year-donated " placeholder="# of specimens " class="c-input ">
+					<fieldset class="c-form__fieldset u-separator-lg">
+						<label class="c-label " for="number">Year</label>
+						<input type="number" id="number" placeholder="# of specimens" class="c-input">
 					</fieldset>
 
 
-					<div class="c-people-list u-separator-md ">
-						<label class="c-label " for=" ">Donors Added</label>
-						<ul>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Cookie Monster</li>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Lord Baron the 20th</li>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Agatha Christie</li>
-						</ul>
-					</div>
+                    <div class="c-people-list u-separator-md">
+                        <label class="c-label" for="">Donors Added</label>
+                        <ul>
+                            <li><span><i class="fas fa-user"></i></span>Cookie Monster</li>
+                            <li><span><i class="fas fa-user"></i></span>Lord Baron the 20th</li>
+                            <li><span><i class="fas fa-user"></i></span>Agatha Christie</li>
+                        </ul>
+                    </div>
 
-					<div class="l-person ">
+					<div class="l-person">
 
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="an-verb ">Verbatim Name</label>
-							<input placeholder="collector Name (as written on label) " id="an-verb " class="c-input " type="text ">
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Verbatim Name</label>
+							<input placeholder="collector Name (as written on label)" id="bar-number" class="c-input" type="text">
 						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="an-first ">First Name</label>
-							<input placeholder="enter the Genus " id="an-first " class="c-input " type="text ">
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">First Name</label>
+							<input placeholder="enter the Genus" id="bar-number" class="c-input" type="text">
 						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="an-middle-1 ">Middle Name 1</label>
-							<input placeholder="enter the Family " id="an-middle-1 " class="c-input " type="text ">
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Middle Name 1</label>
+							<input placeholder="enter the Family" id="bar-number" class="c-input" type="text">
 						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="an-middle-2 ">Middle Name 2</label>
-							<input placeholder="enter the Order " id="an-middle-2 " class="c-input " type="text ">
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Middle Name 2</label>
+							<input placeholder="enter the Order" id="bar-number" class="c-input" type="text">
 						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="an-last-1 ">Last Name 1</label>
-							<input placeholder="enter the Suborder " id="an-last-1 " class="c-input " type="text ">
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Last Name 1</label>
+							<input placeholder="enter the Suborder" id="bar-number" class="c-input" type="text">
 						</fieldset>
-						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="an-last-2 ">Last Name 2</label>
-							<input placeholder="class " id="an-last-2 " class="c-input " type="text ">
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label " for="bar-number">Last Name 2</label>
+							<input placeholder="class" id="bar-number" class="c-input" type="text">
 						</fieldset>
 					</div>
-					<button class="c-button c-button--uppercase c-button--centered u-separator-lg ">
-						<i class="fas fa-user "></i> Add donor</button>
+					<button class="c-button c-button--uppercase c-button--centered u-separator-lg">
+						<i class="fas fa-user"></i> Add donor</button>
 
 
-					<fieldset class="c-form__fieldset ">
-						<label class="c-label " for="track-notes-donor ">Notes</label>
-						<textarea cols="30 " rows="6 " placeholder="Enter notes " id="track-notes-donor " class="c-input "></textarea>
+					<fieldset class="c-form__fieldset">
+						<label class="c-label " for="track-notes">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes" class="c-input"></textarea>
 					</fieldset>
 				</div>
 			</section>
 			<!-- end of donnor data -->
 
-			<section class="u-bkg10 ">
-				<div class="l-wrapper ">
-					<div class="l-two-col ">
-						<div class="l-two-col__block ">
+			<section class="u-bkg10">
+				<div class="l-wrapper">
+					<div class="l-two-col">
+						<div class="l-two-col__block">
 							<button class="c-button c-button--uppercase c-button--centered ">
-								<i class="fas fa-plus "></i> Add another</button>
+								<i class="fas fa-plus"></i> Add another</button>
 						</div>
-						<div class="l-two-col__block ">
+						<div class="l-two-col__block">
 							<button class="c-button c-button--uppercase c-button--centered ">
-								<i class="fas fa-download "></i>download CSV</button>
+								<i class="fas fa-download"></i>download CSV</button>
 						</div>
 					</div>
 				</div>
 			</section>
 			<!-- end finishing buttons -->
-			<footer class="u-bkg12 c-footer ">
+			<footer class="u-bkg12 c-footer">
 
 				<p>Made with
-					<span class="u-text-red ">
-						<i class="fas fa-heart "></i>
+					<span class="u-text-red">
+						<i class="fas fa-heart"></i>
 					</span> at the
-					<a target="_blank " href="https://recurse.com ">Recurse Center</a>
+					<a target="_blank" href="https://recurse.com">Recurse Center</a>
 				</p>
 			</footer>
 		</div>
 		<!--  end of form -->
 	</main>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+	 crossorigin="anonymous"></script>
+	<script>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js " integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	 crossorigin=" anonymous "></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js " integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-	 crossorigin=" anonymous "></script>
-
-	<script src="./static/js/add_person.js" type="text/javascript"></script>
-	<script src="./static/js/worms.js "></script>
-	<script src="./static/js/triggers.js "></script>
-	<script src="./static/js/calendars.js "></script>
+		const datepicker = document.querySelector('datePicker');
+		$("#datePicker").datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+	</script>
+	<script src='https://unpkg.com/mapbox@1.0.0-beta9/dist/mapbox-sdk.min.js'></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyAWWaaJ2atEq-dBAFaX0iNwKdeWDPASF8A"></script>
+	<script src="./static/js/location.js"></script>
 </body>
 
 </html>
