@@ -178,7 +178,7 @@
 						</fieldset>
 					</div>
 
-					<button id="determined-person-bttn" class="c-button c-button--uppercase c-button--centered">
+					<button id="determined-by-button" class="c-button c-button--uppercase c-button--centered">
 						<i class="fas fa-user"></i> Add person</button>
 
 					<fieldset class="c-form__fieldset">
@@ -394,23 +394,11 @@
 					<!-- end from to sub-section -->
 					<div class="c-people-list u-separator-md ">
 						<label class="c-label " for=" ">Collected By Added</label>
-						<ul>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Cookie Monster</li>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Lord Baron the 20th</li>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Agatha Christie</li>
+						<ul id='collected-by-list'>
 						</ul>
 					</div>
 
-					<div class="l-person u-separator-lg ">
+					<div id="collected-by-form" class="l-person u-separator-lg ">
 
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="collected-verbatim">Verbatim Name</label>
@@ -437,7 +425,7 @@
 							<input placeholder="enter last name 2" id="collected-last-name2" class="c-input " type="text ">
 						</fieldset>
 					</div>
-					<button class="c-button c-button--uppercase c-button--centered ">
+					<button id="collected-by-button" class="c-button c-button--uppercase c-button--centered ">
 						<i class="fas fa-user "></i> Add person</button>
 
 					<fieldset class="c-form__fieldset ">
@@ -911,23 +899,11 @@
 
 					<div class="c-people-list u-separator-md ">
 						<label class="c-label " for=" ">Donors Added</label>
-						<ul>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Cookie Monster</li>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Lord Baron the 20th</li>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Agatha Christie</li>
+						<ul id="donor-list">
 						</ul>
 					</div>
 
-					<div class="l-person ">
+					<div id="donor-form" class="l-person ">
 
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="donated-verbatim">Verbatim Name</label>
@@ -954,7 +930,7 @@
 							<input placeholder="enter last name 2" id="donated-last-name2" class="c-input " type="text ">
 						</fieldset>
 					</div>
-					<button class="c-button c-button--uppercase c-button--centered u-separator-lg ">
+					<button id="donor-button" class="c-button c-button--uppercase c-button--centered u-separator-lg ">
 						<i class="fas fa-user "></i> Add donor</button>
 
 

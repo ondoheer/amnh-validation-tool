@@ -1,42 +1,39 @@
-let determinedByList = document.getElementById('determined-by-list');
-let determinedPersonBttn = document.getElementById('determined-person-bttn');
-let determinedByForm = document.querySelectorAll('#determined-by-form input');
-
-let determinedByPeople = [];
-
-function addDeterminedByPerson() {
+function createPersonList(formId, listId, fieldId) {
     let person = {};
 
-    determinedByForm.forEach((element) => {
+    form = document.querySelectorAll('#' + formId + ' input');
+    console.log
+
+    list = document.getElementById(listId);
+
+    form.forEach((element) => {
         person[element.id] = element.value;
         element.value = '';
     })
 
-    determinedByPeople.push(person);
+    console.log(person);
+
     let listItem = document.createElement('li');
     let span = document.createElement('span');
     let i = document.createElement('i');
     i.classList.add("fas", "fa-user");
     span.appendChild(i);
     listItem.appendChild(span);
-    determinedByList.appendChild(listItem);
-    listItem.innerHTML += person['determined-verbatim'];
+    list.appendChild(listItem);
+    listItem.innerHTML += person[fieldId];
 }
 
-determinedPersonBttn.addEventListener('click', addDeterminedByPerson);
+let determinedByButton = document.getElementById('determined-by-button');
+determinedByButton.addEventListener('click', () => {
+    createPersonList('determined-by-form', 'determined-by-list', 'determined-verbatim');
+});
 
+let collectedByButton = document.getElementById('collected-by-button');
+collectedByButton.addEventListener('click', () => {
+    createPersonList('collected-by-form', 'collected-by-list', 'collected-verbatim');
+});
 
-let collectedByList = document.getElementById('collected-by-list');
-let collecetedByButton = document.getElementById('collected-by-button');
-let collectedByForm = document.querySelectorAll('#collected-by-form input');
-
-let collectedByPeople = [];
-
-function addCollectedByPerson() {
-    let person = {};
-
-    collectedByForm.forEach((element) => {
-        person[element.id] = element.value;
-        element.value = '';
-    })
-}
+let donorButton = document.getElementById('donor-button');
+donorButton.addEventListener('click', () => {
+    createPersonList('donor-form', 'donor-list', 'donated-verbatim');
+});
