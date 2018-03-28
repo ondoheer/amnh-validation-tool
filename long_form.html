@@ -348,7 +348,7 @@
 
 								<label class="c-label " for="collected-from ">Collected from</label>
 								<div>
-									<input id="collected-from " name="datePicker " type="text " class="c-input datePicker hasDatepicker ">
+									<input id="collected-from" name="datePicker " type="text " class="c-input  ">
 									<span class="c-datepicker__icon ">
 
 										<i class="fas fa-calendar-alt "></i>
@@ -357,16 +357,16 @@
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="number-day ">Day</label>
-								<input type="number " id="number-day " placeholder="# of specimens " class="c-input ">
+								<label class="c-label " for="from-day ">Day</label>
+								<input type="number " id="from-day" placeholder=" " class="c-input ">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="number-month ">Month</label>
-								<input type="number " id="number-month " placeholder="# of specimens " class="c-input ">
+								<label class="c-label " for="from-month ">Month</label>
+								<input type="number " id="from-month" placeholder="" class="c-input ">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label " for="number-year ">Year</label>
-								<input type="number " id="number-year " placeholder="# of specimens " class="c-input ">
+								<label class="c-label " for="from-year ">Year</label>
+								<input type="number " id="from-year" placeholder=" " class="c-input ">
 							</fieldset>
 
 
@@ -441,8 +441,8 @@
 							<input placeholder="enter middle name 2 " id="verbatim-middle-2 " class="c-input " type="text ">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-last-1 ">Last Name 1</Dabel>
-								<input placeholder="enter last name 1 " id="verbatim-last-1 " class="c-input " type="text ">
+							<label class="c-label " for="verbatim-last-1 ">Last Name 1</label>
+							<input placeholder="enter last name 1 " id="verbatim-last-1 " class="c-input " type="text ">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="verbatim-last-2 ">Last Name 2</label>
@@ -1009,18 +1009,10 @@
 	 crossorigin=" anonymous "></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js " integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
 	 crossorigin=" anonymous "></script>
-	<script>
 
-		const datepicker = document.querySelector('datePicker');
-		$("#datePicker ").datepicker({
-			changeMonth: true,
-			changeYear: true
-		});
-
-
-	</script>
 	<script src="./static/js/worms.js "></script>
 	<script src="./static/js/triggers.js "></script>
+	<script src="./static/js/calendars.js "></script>
 </body>
 
 </html>
