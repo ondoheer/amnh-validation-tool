@@ -8,9 +8,11 @@ function addDeterminedByPerson() {
     let person = {};
 
     determinedByForm.forEach((element) => {
-        person[element.placeholder] = element.value;
+        person[element.id] = element.value;
         element.value = '';
     })
+
+    console.log(person);
 
     determinedByPeople.push(person);
     let listItem = document.createElement('li');
@@ -20,7 +22,7 @@ function addDeterminedByPerson() {
     span.appendChild(i);
     listItem.appendChild(span);
     determinedByList.appendChild(listItem);
-    listItem.innerHTML += person['Verbatim Name'];
+    listItem.innerHTML += person['collector-name'];
 }
 
 determinedPersonBttn.addEventListener('click', addDeterminedByPerson);
