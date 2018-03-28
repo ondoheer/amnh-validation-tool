@@ -1,119 +1,140 @@
-.c-input {
-  padding: 0.5rem 1rem;
+.c-form__fieldset {
+  .c-input {
+    padding: 0.5rem 1rem;
 
-  color: $dark-text;
-  font-size: $body-size;
-  font-family: $body;
-  background-color: $light-text;
-  border: 1px solid $border-color;
-  border-radius: 1rem;
-
-  &--select {
-    display: block;
-  }
-
-  &--square {
-    border-radius: 0;
-  }
-}
-
-.c-radio {
-  /* radio button */
-  color: $dark-text;
-
-  /* label */
-  font-size: $body-size;
-}
-
-.c-label {
-  font-family: $titles;
-  font-size: $body-size;
-  color: $light-text;
-  line-height: 1.6;
-}
-
-.c-input-group {
-  label {
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-
-  &__sidekick {
-    text-align: center;
-    display: inline-block;
-    line-height: 46px;
-    min-width: 46px;
-    margin-left: -3px;
-
+    color: $dark-text;
     font-size: $body-size;
     font-family: $body;
-    color: $light-text;
-    background-color: $bkg12;
-    border-color: $border-color;
-    border-top: 1px;
-    border-right: 1px;
-    border-bottom: 1px;
-    border-style: solid;
-  }
-}
+    background-color: $light-text;
+    border: 1px solid $border-color;
+    border-radius: 1rem;
+    width: 350px;
+    line-height: 1.3;
 
-.c-datepicker {
-  &__icon {
+    &--select {
+      display: block;
+    }
+
+    &--square {
+      border-radius: 0;
+    }
+
+    &--centered {
+      margin: 0 auto;
+      display: block;
+    }
+
+    &--large {
+      width: 700px;
+      line-height: 2;
+    }
+  }
+
+  textarea {
+    width: 100% !important;
+  }
+
+  .c-radio {
+    /* radio button */
+    color: $dark-text;
+
+    /* label */
     font-size: $body-size;
-    font-family: $body;
+  }
+
+  .c-label {
+    font-family: $titles;
+    font-size: $body-size;
     color: $light-text;
-    line-height: 48px;
-    padding-left: 10px;
+    line-height: 1.6;
   }
 
-  label {
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-}
+  .c-input-group {
+    label {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
 
-.c-info {
+    &__sidekick {
+      text-align: center;
+      display: inline-block;
+      line-height: 46px;
+      min-width: 46px;
+      margin-left: -3px;
+
+      font-size: $body-size;
+      font-family: $body;
+      color: $light-text;
+      background-color: $bkg12;
+      border-color: $border-color;
+      border-top: 1px;
+      border-right: 1px;
+      border-bottom: 1px;
+      border-style: solid;
+    }
+  }
+
+  .c-datepicker {
+    &__icon {
+      font-size: $body-size;
+      font-family: $body;
+      color: $light-text;
+      line-height: 48px;
+      padding-left: 10px;
+    }
+
+    label {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+
+  .c-info {
     font-size: $body-size;
     color: $light-text;
     margin-left: 10px;
 
     &[tooltip] {
-        position:relative;
+      position: relative;
     }
 
     &[tooltip]::before {
-        content: "";
-        position: absolute;
-        top:-6px;
-        left:50%;
-        transform: translateX(-50%);
-        border-width: 4px 6px 0 6px;
-        border-style: solid;
-        border-color: rgba(0,0,0,0.7) transparent transparent transparent;
-        z-index: 99;
-        opacity:0;
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 4px 6px 0 6px;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent;
+      z-index: 99;
+      opacity: 0;
     }
 
     &[tooltip]::after {
-        content: attr(tooltip);
-        font-size: $body-size;
-        position: absolute;
-        left:50%;
-        top:-6px;
-        transform: translateX(-50%)   translateY(-100%);
-        background: rgba(0,0,0,0.7);
-        text-align: center;
-        color: #fff;
-        padding: 4px 2px;
-        min-width: 200px;
-        border-radius: 5px;
-        pointer-events: none;
-        padding: 4px 4px;
-        z-index:99;
-        opacity:0;
+      content: attr(tooltip);
+      font-size: $body-size;
+      position: absolute;
+      left: 50%;
+      top: -6px;
+      transform: translateX(-50%) translateY(-100%);
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      color: #fff;
+      padding: 4px 2px;
+      min-width: 200px;
+      border-radius: 5px;
+      pointer-events: none;
+      padding: 4px 4px;
+      z-index: 99;
+      opacity: 0;
     }
     &[tooltip]:hover::after,
     &[tooltip]:hover::before {
-       opacity:1
+      opacity: 1;
     }
+  }
+
+  .c-checkbox {
+  }
 }
