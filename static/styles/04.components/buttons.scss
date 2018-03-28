@@ -1,45 +1,49 @@
 .c-button {
-	padding: 10px 30px;
+  padding: 10px 30px;
 
-	font-size: $md;
-	font-family: $body;
-	color: $light-text;
-	border: none;
-	border-radius: 4px;
-	text-align: center;
-	background-color: $dark-btn;
-	cursor: pointer;
+  font-size: $md;
+  font-family: $body;
+  color: $light-text;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  background-color: $dark-btn;
+  cursor: pointer;
 
-	&:hover {
-		background-color: rgba($dark-btn , .7);
-	}
+  &:hover {
+    background-color: rgba($dark-btn, 0.7);
+  }
 
-	&--light {
-		background-color: $light-btn;
+  &--light {
+    background-color: $light-btn;
 
-		&:hover {
-			background-color: rgba($light-btn , .7);
-		}
-	}
+    &:hover {
+      background-color: rgba($light-btn, 0.7);
+    }
+  }
 
-	&--uppercase {
-		text-transform: uppercase;
-	}
+  &--uppercase {
+    text-transform: uppercase;
+  }
 
-	&--capitalize {
-		text-transform: capitalize;
-	}
+  &--capitalize {
+    text-transform: capitalize;
+  }
 
-	&--large {
-		font-size: $xl;
-	}
+  &--large {
+    font-size: $xl;
+  }
 
-	&--body-size {
-		font-size: $body-size;
-	}
+  &--body-size {
+    font-size: $body-size;
+  }
 
-	&--centered{
-		display: block;
-		margin: 0 auto;
-	}
+  &--small {
+    font-size: $sm;
+  }
+
+  &--centered {
+    display: block;
+    margin: 0 auto;
+  }
 }
