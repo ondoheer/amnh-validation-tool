@@ -12,8 +12,6 @@ function addDeterminedByPerson() {
         element.value = '';
     })
 
-    console.log(person);
-
     determinedByPeople.push(person);
     let listItem = document.createElement('li');
     let span = document.createElement('span');
@@ -22,7 +20,23 @@ function addDeterminedByPerson() {
     span.appendChild(i);
     listItem.appendChild(span);
     determinedByList.appendChild(listItem);
-    listItem.innerHTML += person['collector-name'];
+    listItem.innerHTML += person['determined-verbatim'];
 }
 
 determinedPersonBttn.addEventListener('click', addDeterminedByPerson);
+
+
+let collectedByList = document.getElementById('collected-by-list');
+let collecetedByButton = document.getElementById('collected-by-button');
+let collectedByForm = document.querySelectorAll('#collected-by-form input');
+
+let collectedByPeople = [];
+
+function addCollectedByPerson() {
+    let person = {};
+
+    collectedByForm.forEach((element) => {
+        person[element.id] = element.value;
+        element.value = '';
+    })
+}
