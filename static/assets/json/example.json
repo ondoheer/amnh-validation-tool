@@ -1,0 +1,112 @@
+{
+    "id": 1,
+    "recordData": {
+        "trackingNumber": "MD123456",
+        "catalogNumber": "1234567",
+        "barcodeNumber": "12345678",
+        "collectionSubset": "Some Collection",
+        "notes": "Very nice record"
+    },
+    "taxonomy": {
+        "verbatim": "Great sea snail",
+        "class": "Slugs",
+        "subclass": "Slugs with shells",
+        "order": "Larger slugs",
+        "suborder": "Even larger slugs",
+        "family": "",
+        "genus": "",
+        "species": "",
+        "notes": "Its a very nice snail"
+    },
+    "determinedBy": {
+        "verbatim": "Jane Doe",
+        "year": "1992",
+        "people": [
+            {
+                "prefix": "Ms",
+                "firstName": "Jane",
+                "middleName1": "Mary",
+                "middleName2": "Whitney",
+                "lastName1": "Doe",
+                "lastName2": "Monroe",
+                "suffix": "PhD"
+            }
+        ],
+        "notes": "Very smart person"
+    },
+    "specimenData": {
+        "numberOfSpecimens": 1,
+        "storageMedium": "eth0",
+        "typeOfType": "some type",
+        "sex": "male",
+        "developmentStage": "Adult",
+        "bodyPartLocation": "Shell",
+        "hasHost": false,
+        "notes": "Very nice specimen"
+    },
+    "collectionData": {
+        "method": "Fingers",
+        "relationship": "Strong",
+        "verbatiamDate": "MXXVIII",
+        "fromDate": "1992-09-10-10-10",
+        "toDate": "1992-09-10-10-10",
+        "expeditionName": "Epic Snail Trek",
+        "notes": "Tricky to catch",
+        "verbatimCollectors": "Jane Doe",
+        "collectors": [
+            {
+                "prefix": "Ms",
+                "firstName": "Jane",
+                "middleName1": "Mary",
+                "middleName2": "Whitney",
+                "lastName1": "Doe",
+                "lastName2": "Monroe",
+                "suffix": "PhD"
+            }
+        ]
+    },
+    "locationData": {
+        "verbatim": "Next to a pond",
+        "continent": "",
+        "ocean": "",
+        "seaGulfStrait": "",
+        "lakePondReservoir": "",
+        "bayHarbor": "",
+        "riverCreek": "",
+        "stream": "",
+        "mountainRange": "",
+        "mountain": "",
+        "islandGroup": "",
+        "island": "",
+        "country": "",
+        "department": "",
+        "county": "",
+        "cityTownHamlet": "",
+        "specificLocale": "",
+        "temperature": {
+            "celsius": 10.6,
+            "fahrenheit": 40.8
+        },
+        "fromLat": "10.290.90",
+        "fromLon": "30.918.23",
+        "toLat": "98324.234.2",
+        "toLon": "13123.123.23",
+        "notes": "Beautiful Location"
+    },
+    "donationData": {
+        "verbatim": "Jane Doe",
+        "donors": [
+            {
+                "prefix": "Ms",
+                "firstName": "Jane",
+                "middleName1": "Mary",
+                "middleName2": "Whitney",
+                "lastName1": "Doe",
+                "lastName2": "Monroe",
+                "suffix": "PhD"
+            }
+        ],
+        "date": "1923-12-3-12-32",
+        "notes": "Jane does everything"
+    }
+}

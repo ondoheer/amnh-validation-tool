@@ -2,6 +2,7 @@ import Ajv from 'ajv'
 import idb from 'idb'
 import jsonSchema from '../assets/json/schema.json'
 import csvHeaders from '../assets/json/headers.json'
+import example from '../assets/json/example.json'
 
 // const jsonSchema = require('../assets/json/header.json')
 // const csvHeaders = require('../assets/json/schema.json')
@@ -34,6 +35,16 @@ function putRecord (record) {
 function getRecord (recordId) {
     return dbPromise.then(db => {
         return db.transaction('records').objectStore('records').get(recordId)
+    })
+}
+
+function getAllRecords () {
+    return new Promise((resolve, reject) => {
+        dbPromise.then(db => {
+            return db.transaction('records').objectStore('records').getAll()
+        }).then((data) => {
+            resolve(data)
+        })
     })
 }
 
@@ -87,16 +98,12 @@ function clearRecords () {
 //     }
 // }
 
-function recordsToCSV () {
-    let records
+function writeCSV (records) {
     let columnDelimiter = ','
     let lineDelimiter = '\n'
     let result = ''
     let firstElement = true
-
-    dbPromise.then(db => {
-        return db.transaction('records').objectStore('records').getAll()
-    }).then(items => records = items)
+    var attribute
 
     if (records == null || !records.length) {
         return null;
@@ -108,7 +115,12 @@ function recordsToCSV () {
     records.forEach(record => {
         headers.forEach(header => {
             if (!firstElement) result += columnDelimiter
-            result += record[eval("csvHeaders." + header)]
+            try {
+                attribute = eval("record." + csvHeaders[header])
+            } catch (e) {
+                attribute = ''
+            }
+            result +=  attribute
             firstElement = false
         })
         result += lineDelimiter
@@ -119,25 +131,32 @@ function recordsToCSV () {
 }
 
 function exportCSV () {
-    var data, filename, link;
-    var csvString = recordsToCSV()
-    if (csvString == null) return
+    getAllRecords().then(
+        records => {
+            var data, filename, link
+            var csvString = writeCSV(records)
 
-    filename = 'export.csv'
+            if (csvString == null) alert("Nothing to Export")
 
-    if (!csv.match(/^data:text\/csv/i)) {
-        csv = 'data:text/csv;charset=utf-8,' + csvString
-    }
-    data = encodeURI(csvString)
-
-    link = document.createElement('a')
-    link.setAttribute('href', data)
-    link.setAttribute('download', filename)
-    link.click()
+            filename = 'export.csv'
+        
+            if (!csvString.match(/^data:text\/csv/i)) {
+                csvString = 'data:text/csv;charset=utf-8,' + csvString
+            }
+            data = encodeURI(csvString)
+        
+            link = document.createElement('a')
+            link.setAttribute('href', data)
+            link.setAttribute('download', filename)
+            link.click()
+        }
+    )
 }
 
 let addRecordButton = document.getElementById('add-record-button')
 let exportCSVButton = document.getElementById('export-csv-button')
+
+putRecord(example)
 
 addRecordButton.addEventListener('click', putRecord)
 exportCSVButton.addEventListener('click', exportCSV)
