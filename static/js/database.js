@@ -1,7 +1,10 @@
 import Ajv from 'ajv'
 import idb from 'idb'
-const jsonSchema = require('./schema.json')
-const csvHeaders = require('./headers.json')
+import jsonSchema from '../assets/json/schema.json'
+import csvHeaders from '../assets/json/headers.json'
+
+// const jsonSchema = require('../assets/json/header.json')
+// const csvHeaders = require('../assets/json/schema.json')
 
 
 function upgradeCallback (upgradeDb) {
@@ -11,7 +14,7 @@ function upgradeCallback (upgradeDb) {
     }
 }
 
-let db = idb.open('AMNHMarineDatabase', 1, upgradeCallback)
+let dbPromise = idb.open('AMNHMarineDatabase', 1, upgradeCallback)
 let ajv = new Ajv()
 let jsonValidator = ajv.compile(jsonSchema)
 
@@ -115,7 +118,7 @@ function recordsToCSV () {
     return result
 }
 
-function exportCVS () {
+function exportCSV () {
     var data, filename, link;
     var csvString = recordsToCSV()
     if (csvString == null) return
@@ -132,3 +135,9 @@ function exportCVS () {
     link.setAttribute('download', filename)
     link.click()
 }
+
+let addRecordButton = document.getElementById('add-record-button')
+let exportCSVButton = document.getElementById('export-csv-button')
+
+addRecordButton.addEventListener('click', putRecord)
+exportCSVButton.addEventListener('click', exportCSV)
