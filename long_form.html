@@ -144,53 +144,41 @@
 						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
 						esse modi quisquam?</p>
 
-					<div class="c-people-list u-separator-md">
-						<label class="c-label" for="">Determined By Added</label>
-						<ul>
-							<li>
-								<span>
-									<i class="fas fa-user"></i>
-								</span>Cookie Monster</li>
-							<li>
-								<span>
-									<i class="fas fa-user"></i>
-								</span>Lord Baron the 20th</li>
-							<li>
-								<span>
-									<i class="fas fa-user"></i>
-								</span>Agatha Christie</li>
-						</ul>
-					</div>
+                    <div class="c-people-list u-separator-md">
+                        <label class="c-label" for="">Determined By Added</label>
+                        <ul id="determined-by-list">
+                        </ul>
+                    </div>
 
-					<div class="l-person">
+					<div id="determined-by-form" class="l-person">
 
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="collector-name">Verbatim Name</label>
-							<input placeholder="collector Name (as written on label)" id="collector-name" class="c-input" type="text">
+							<input placeholder="Verbatim Name" id="collector-name" class="c-input" type="text">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="first-name">First Name</label>
-							<input placeholder="enter the Genus" id="first-name" class="c-input" type="text">
+							<input placeholder="First Name" id="first-name" class="c-input" type="text">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="middle-name-1">Middle Name 1</label>
-							<input placeholder="enter the Family" id="middle-name-1" class="c-input" type="text">
+							<input placeholder="Middle Name 1" id="middle-name-1" class="c-input" type="text">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="middle-name-2">Middle Name 2</label>
-							<input placeholder="enter the Order" id="middle-name-2" class="c-input" type="text">
+							<input placeholder="Middle Name 2" id="middle-name-2" class="c-input" type="text">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="last-name-1">Last Name 1</label>
-							<input placeholder="enter the Suborder" id="last-name-1" class="c-input" type="text">
+							<input placeholder="Last Name 1" id="last-name-1" class="c-input" type="text">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="last-name-2">Last Name 2</label>
-							<input placeholder="class" id="last-name-2" class="c-input" type="text">
+							<input placeholder="Last Name 2" id="last-name-2" class="c-input" type="text">
 						</fieldset>
 					</div>
 
-					<button class="c-button c-button--uppercase c-button--centered">
+					<button id="determined-person-bttn" class="c-button c-button--uppercase c-button--centered">
 						<i class="fas fa-user"></i> Add person</button>
 
 					<fieldset class="c-form__fieldset">
@@ -1005,10 +993,11 @@
 		</div>
 		<!--  end of form -->
 	</main>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js " integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	 crossorigin=" anonymous "></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js " integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-	 crossorigin=" anonymous "></script>
+    <script src="./static/js/add_person.js" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+	 crossorigin="anonymous"></script>
 	<script>
 
 		const datepicker = document.querySelector('datePicker');
