@@ -1,9 +1,32 @@
 .c-header {
-	background-color: $bkg13;
-	padding: 2rem;
+  background-color: $bkg13;
+  padding: 2rem;
 
-	&--dark {
-		background-color: $bkg1;
-	}
+  &--fixed {
+    position: fixed;
+    width: 100%;
+
+    -webkit-box-shadow: -1px 7px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 7px 12px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 7px 12px -3px rgba(0, 0, 0, 0.75);
+
+    img {
+      width: 180px;
+    }
+
+    ul {
+      float: right;
+      line-height: 45px;
+      li {
+        font-size: $sm;
+        color: $light-text;
+        display: inline-block;
+        float: left;
+        margin-left: 20px;
+      }
+    }
+  }
+  &--dark {
+    background-color: $bkg1;
+  }
 }
-
