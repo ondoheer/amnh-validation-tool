@@ -79,42 +79,47 @@
 						<label class="c-label " for="taxonomy-search">Search Taxonomy</label>
 						<div>
 							<input placeholder="Enter species" id="taxonomy-search" class="c-input c-input--square" type="search">
-							<button class="c-button c-button--captalize c-button--body-size">Go!</button>
+							<button id="worms" class="c-button c-button--captalize c-button--body-size">Go!</button>
 						</div>
 					</fieldset>
-					<div class="l-two-col">
+
+					<div id="spinner">
+						<img id="whales-spinner" class="u-hidden" src="./static/assets/img/giphy.gif" alt="">
+					</div>
+					<div class="l-two-col u-hidden" id="taxForm">
 						<div class="l-two-col__block">
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="tax-species">Species</label>
-								<input placeholder="enter the Species" id="tax-species" class="c-input" type="text">
+								<label class="c-label " for="scientificname">Species</label>
+								<input placeholder="enter the Species" id="scientificname" class="c-input" type="text">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="tax-genus">Genus</label>
-								<input placeholder="enter the Genus" id="tax-genus" class="c-input" type="text">
+								<label class="c-label " for="genus">Genus</label>
+								<input placeholder="enter the Genus" id="genus" class="c-input" type="text">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="tax-family">Family</label>
-								<input placeholder="enter the Family" id="tax-family" class="c-input" type="text">
+								<label class="c-label " for="family">Family</label>
+								<input placeholder="enter the Family" id="family" class="c-input" type="text">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="tax-order">Order</label>
-								<input placeholder="enter the Order" id="tax-order" class="c-input" type="text">
+								<label class="c-label " for="order">Order</label>
+								<input placeholder="enter the Order" id="order" class="c-input" type="text">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="tax-suborder">Suborder</label>
-								<input placeholder="enter the Suborder" id="tax-suborder" class="c-input" type="text">
+								<label class="c-label " for="suborder">Suborder</label>
+								<input placeholder="enter the Suborder" id="suborder" class="c-input" type="text">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="tax-class">Class</label>
-								<input placeholder="class" id="tax-class" class="c-input" type="text">
+								<label class="c-label " for="class">Class</label>
+								<input placeholder="class" id="class" class="c-input" type="text">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="tax-subclass">Subclass</label>
-								<input placeholder="enter the Subclass" id="tax-subclass" class="c-input" type="text">
+								<label class="c-label " for="subclass">Subclass</label>
+								<input placeholder="enter the Subclass" id="subclass" class="c-input" type="text">
 							</fieldset>
 						</div>
 						<div class="l-two-col__block">
-							<iframe class="c-iframe--full-height" src="http://www.marinespecies.org/aphia.php?p=taxdetails&id=1837" frameborder="0"></iframe>
+							<iframe id="worms-iframe" class="c-iframe--full-height" src="http://www.marinespecies.org/aphia.php?p=taxdetails&id=1837"
+							 frameborder="0"></iframe>
 						</div>
 					</div>
 
@@ -433,7 +438,7 @@
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="verbatim-last-1">Last Name 1</Dabel>
-							<input placeholder="enter last name 1" id="verbatim-last-1" class="c-input" type="text">
+								<input placeholder="enter last name 1" id="verbatim-last-1" class="c-input" type="text">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="verbatim-last-2">Last Name 2</label>
@@ -767,8 +772,8 @@
 						</div>
 						<div class="l-two-col__block">
 							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label " for="another-country">Country</label>
-								<select placeholder="Select input" id="another-country" class="c-input c-input--square c-input--select ">
+								<label class="c-label " for="ocean">Ocean</label>
+								<select placeholder="Select input" id="ocean" class="c-input c-input--square c-input--select ">
 									<option selected="">option-1</option>
 									<option>option-2</option>
 									<option>option-3</option>
@@ -856,7 +861,7 @@
 							<fieldset class="c-input-group">
 								<label class="c-label" for="lat-input-grp">Input Group</label>
 								<div>
-									<input type="search" id="lat-input-grp"  placeholder="°F" class="c-input c-input--square">
+									<input type="search" id="lat-input-grp" placeholder="°F" class="c-input c-input--square">
 									<span class="c-input-group__sidekick">°F</span>
 								</div>
 							</fieldset>
