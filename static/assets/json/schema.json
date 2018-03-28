@@ -87,7 +87,7 @@
         "collectionData": {
             "type": "object",
             "properties": {
-                "method": { "type": "integer" },
+                "method": { "type": "string" },
                 "relationship": { "type": "string" },
                 "verbatiamDate": { "type": "string" },
                 "fromDate": { "type": "string" },
