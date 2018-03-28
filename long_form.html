@@ -80,17 +80,13 @@
 						esse modi quisquam?</p>
 
 					<fieldset class="c-searchbox c-form__fieldset u-separator-md">
-						<label class="c-label " for="taxonomy-search">Search Taxonomy</label>
+						<label class="c-label " for="">Search Tanonomy</label>
 						<div>
-							<input placeholder="Enter species" id="taxonomy-search" class="c-input c-input--square" type="search">
-							<button id="worms" class="c-button c-button--captalize c-button--body-size">Go!</button>
+							<input placeholder="Enter species" class="c-input c-input--square" type="search">
+							<button class="c-button c-button--captalize c-button--body-size">Go!</button>
 						</div>
 					</fieldset>
-
-					<div id="spinner">
-						<img id="whales-spinner" class="u-hidden" src="./static/assets/img/giphy.gif" alt="">
-					</div>
-					<div class="l-two-col u-hidden" id="taxForm">
+					<div class="l-two-col">
 						<div class="l-two-col__block">
 							<fieldset class="c-form__fieldset u-separator-xs">
 								<label class="c-label " for="scientificname">Species</label>
@@ -122,8 +118,7 @@
 							</fieldset>
 						</div>
 						<div class="l-two-col__block">
-							<iframe id="worms-iframe" class="c-iframe--full-height" src="http://www.marinespecies.org/aphia.php?p=taxdetails&id=1837"
-							 frameborder="0"></iframe>
+							<iframe class="c-iframe--full-height" src="http://www.marinespecies.org/aphia.php?p=taxdetails&id=1837" frameborder="0"></iframe>
 						</div>
 					</div>
 
@@ -148,13 +143,16 @@
 						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
 						esse modi quisquam?</p>
 
-					<div class="c-people-list u-separator-md">
-						<label class="c-label" for="">Determined By Added</label>
-						<ul id="determined-by-list">
-						</ul>
-					</div>
+                    <div class="c-people-list u-separator-md">
+                        <label class="c-label" for="">Determined By Added</label>
+                        <ul>
+                            <li><span><i class="fas fa-user"></i></span>Cookie Monster</li>
+                            <li><span><i class="fas fa-user"></i></span>Lord Baron the 20th</li>
+                            <li><span><i class="fas fa-user"></i></span>Agatha Christie</li>
+                        </ul>
+                    </div>
 
-					<div id="determined-by-form" class="l-person">
+					<div class="l-person">
 
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="determined-verbatim">Verbatim Name</label>
@@ -405,17 +403,17 @@
 						<input placeholder="enter the verbatim date " id="verbatim-date " class="c-input " type="text" data-key="verbatim-date">
 					</fieldset>
 
-					<div class="l-two-col ">
-						<div class="l-two-col__block ">
+					<div class="l-two-col">
+						<div class="l-two-col__block">
 
-							<fieldset class="c-form__fieldset c-datepicker u-separator-sm ">
+							<fieldset class="c-form__fieldset c-datepicker u-separator-sm">
 
-								<label class="c-label " for="collected-from ">Collected from</label>
+								<label class="c-label" for="datePicker">Collected from</label>
 								<div>
 									<input id="collected-from" name="datePicker" placeholder="enter collected from date" type="text " class="c-input">
 									<span class="c-datepicker__icon ">
 
-										<i class="fas fa-calendar-alt "></i>
+										<i class="fas fa-calendar-alt"></i>
 									</span>
 								</div>
 							</fieldset>
@@ -435,16 +433,16 @@
 
 
 						</div>
-						<div class="l-two-col__block ">
+						<div class="l-two-col__block">
 
-							<fieldset class="c-form__fieldset c-datepicker u-separator-sm ">
+							<fieldset class="c-form__fieldset c-datepicker u-separator-sm">
 
 								<label class="c-label" for="collected-to">Collected to</label>
 								<div>
 									<input id="collected-to" name="datePicker" placeholder="enter collected to date" type="text " class="c-input">
 									<span class="c-datepicker__icon ">
 
-										<i class="fas fa-calendar-alt "></i>
+										<i class="fas fa-calendar-alt"></i>
 									</span>
 								</div>
 							</fieldset>
@@ -520,16 +518,17 @@
 						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
 						esse modi quisquam?</p>
 
-					<fieldset class="c-searchbox c-form__fieldset u-separator-md ">
-						<label class="c-label " for="search-location ">Search location</label>
+					<fieldset class="c-searchbox c-form__fieldset u-separator-md">
+						<label class="c-label" for="">Search location</label>
 						<div>
-							<input type="search " id="search-location " placeholder="This is a search box " class="c-input c-input--square ">
-							<button class="c-button c-button--captalize c-button--body-size ">Find!</button>
+							<input id="location-autocomplete" placeholder="Enter a location" class="c-input c-input--square">
+							<button class="c-button c-button--captalize c-button--body-size">Go!</button>
 						</div>
 					</fieldset>
 
-					<iframe class="u-separator-xl " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.53283805215!2d-73.97838308426104!3d40.6842611472484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bade200a8e1%3A0x14c9c73a950be88b!2sTarget!5e0!3m2!1sen!2sus!4v1522177582629 "
-					 width="600 " height="450 " frameborder="0 " style="border:0 " allowfullscreen></iframe>
+					<!-- <iframe class="u-separator-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.53283805215!2d-73.97838308426104!3d40.6842611472484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bade200a8e1%3A0x14c9c73a950be88b!2sTarget!5e0!3m2!1sen!2sus!4v1522177582629"
+					 width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+           <div id="location-map" style="width:600px;height:400px;" class="u-separator-md"></div>
 
 					<fieldset class="c-form__fieldset u-separator-md ">
 						<label class="c-label " for="verbatim-address ">Verbatim Location / Address</label>
@@ -947,14 +946,14 @@
 						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
 						esse modi quisquam?</p>
 
-					<fieldset class="c-form__fieldset c-datepicker u-separator-sm ">
+					<fieldset class="c-form__fieldset c-datepicker u-separator-sm">
 
 						<label class="c-label" for="donated-on">Donated on</label>
 						<div>
 							<input id="donated-on" name="datePicker" placeholder="enter donated on date" type="text " class="c-input">
 							<span class="c-datepicker__icon ">
 
-								<i class="fas fa-calendar-alt "></i>
+								<i class="fas fa-calendar-alt"></i>
 							</span>
 						</div>
 					</fieldset>
@@ -1033,18 +1032,20 @@
 				</div>
 			</section>
 			<!-- end finishing buttons -->
-			<footer class="u-bkg12 c-footer ">
+			<footer class="u-bkg12 c-footer">
 
 				<p>Made with
-					<span class="u-text-red ">
-						<i class="fas fa-heart "></i>
+					<span class="u-text-red">
+						<i class="fas fa-heart"></i>
 					</span> at the
-					<a target="_blank " href="https://recurse.com ">Recurse Center</a>
+					<a target="_blank" href="https://recurse.com">Recurse Center</a>
 				</p>
 			</footer>
 		</div>
 		<!--  end of form -->
 	</main>
+  <script src='https://unpkg.com/mapbox@1.0.0-beta9/dist/mapbox-sdk.min.js'></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyAWWaaJ2atEq-dBAFaX0iNwKdeWDPASF8A"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js " integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	 crossorigin=" anonymous "></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js " integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
@@ -1053,7 +1054,8 @@
 	<script src="./static/js/worms.js "></script>
 	<script src="./static/js/triggers.js "></script>
 	<script src="./static/js/calendars.js "></script>
-    <script src="./static/js/temperature.js "></script>
+  <script src="./static/js/temperature.js "></script>
+  <script src="./static/js/location.js"></script>
 </body>
 
 </html>
