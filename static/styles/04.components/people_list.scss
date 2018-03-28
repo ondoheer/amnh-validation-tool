@@ -1,9 +1,13 @@
 .c-people-list {
-    background-color: #FFF;
+
     color: $dark-text;
     font-family: $body;
     font-size: $body-size;
     line-height: 2;
+
+    ul {
+        background-color: $light-text;
+    }
 
     span {
         padding: 10px;
