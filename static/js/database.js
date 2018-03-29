@@ -134,16 +134,16 @@ function getSection (sectionId) {
 
 function collectFormData () {
     let record = {
-        "trackingData": getSection('tracking-data'),
-        "taxonomyData": getSection('taxonomy-data'),
-        "determinedByData": getSection('determined-by-data'),
+        "recordData": getSection('tracking-data'),
+        "taxonomy": getSection('taxonomy-data'),
+        "determinedBy": getSection('determined-by-data'),
         "specimenData": getSection('specimen-data'),
         "hostData": getSection('host-data'),
         "collectionData": getSection('collection-data'),
         "locationData": getSection('location-data'),
         "donationData": getSection('donation-data'),
     }
-    record.determinedByData.people = getDeterminedByPeople()
+    record.determinedBy.people = getDeterminedByPeople()
     record.collectionData.collectors = getCollectors()
     record.donationData.donors  = getDonors()
     console.log(record)
@@ -159,5 +159,5 @@ let exportCSVButton = document.getElementById('export-csv-button')
 
 putRecord(example)
 
-addRecordButton.addEventListener('click', collectFormData)
+addRecordButton.addEventListener('click', saveForm)
 exportCSVButton.addEventListener('click', exportCSV)
