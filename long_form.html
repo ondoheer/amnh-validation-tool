@@ -445,16 +445,29 @@
 						<label class="c-label" for="">Search location</label>
 						<div>
 							<input id="location-autocomplete" placeholder="Enter a location" class="c-input c-input--square">
-							<button class="c-button c-button--captalize c-button--body-size">Go!</button>
+							<button id="location-go" class="c-button c-button--captalize c-button--body-size">Go!</button>
 						</div>
 					</fieldset>
 
-					<!-- <iframe class="u-separator-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.53283805215!2d-73.97838308426104!3d40.6842611472484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bade200a8e1%3A0x14c9c73a950be88b!2sTarget!5e0!3m2!1sen!2sus!4v1522177582629"
-					 width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+					<div id="location_autocomplete_dialog" style="z-index:1;margin:25px;padding:25px;width:80%;background-color:navy;position:absolute;" title="Verify Autocomplete Fields">
+						<h1>Autocomplete</h1>
+						<p><br>These are the places that came back from the Location search. Which column is which?<br></p>
+						<div id="autocomplete_list"></div>
+						<!-- <button id="autopopulate_cancel">CANCEL</button>
+						<button id="autopopulate_ok">USE</button> -->
+						<div class="l-two-col">
+							<div class="l-two-col__block">
+								<button id="autopopulate_cancel" class="c-button c-button--uppercase c-button--centered ">
+									<i class="fas fa-thumbs-down"></i> Cancel</button>
+							</div>
+							<div class="l-two-col__block">
+								<button id="autopopulate_ok" class="c-button c-button--uppercase c-button--centered ">
+									<i class="fas fa-thumbs-up"></i> Use</button>
+							</div>
+						</div>
+					</div>
 
-
-				<div id="location-map" style="width:600px;height:400px;" class="u-separator-md"></div>
-
+					<div id="location-map" style="width:100%;height:400px;" class="u-separator-md"></div>
 
 					<fieldset class="c-form__fieldset u-separator-md">
 						<label class="c-label " for="bar-number">Verbatim Location / Address</label>
@@ -471,7 +484,7 @@
 									<option value="Africa">Africa</option>
 									<option value="Europe">Europe</option>
 									<option value="Asia">Asia</option>
-									<option value="oceania">Oceania</option>
+									<option value="Oceania">Oceania</option>
 									<option value="Antartica">Antartica</option>
 								</select>
 							</fieldset>
@@ -740,7 +753,6 @@
 								<input placeholder="class" id="bar-number" class="c-input" type="text">
 							</fieldset>
 
-
 							<fieldset class="c-form__fieldset u-separator-xs">
 								<label class="c-label " for="bar-number">City / Town / Hamlet</label>
 								<input placeholder="class" id="bar-number" class="c-input" type="text">
@@ -865,6 +877,9 @@
 				</div>
 			</section>
 			<!-- End of location section -->
+
+			<div id="location-section"></div>
+
 			<section class="u-bkg9">
 				<div class="l-wrapper">
 					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Location</h2>
