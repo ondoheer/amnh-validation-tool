@@ -3,10 +3,8 @@ import idb from 'idb'
 import jsonSchema from '../assets/json/schema.json'
 import csvHeaders from '../assets/json/headers.json'
 import example from '../assets/json/example.json'
-import getDeterminedByPeople from './add_person.js'
-import getCollectors from './add_person.js'
-import getDonors from './add_person.js'
-
+import {kebabToCamel} from './helpers.js'
+import {getDeterminedByPeople, getCollectors, getDonors} from './add_person.js'
 
 // const jsonSchema = require('../assets/json/header.json')
 // const csvHeaders = require('../assets/json/schema.json')
@@ -68,40 +66,6 @@ function clearRecords () {
     })
 }
 
-// function flatternObject (nestedObj, baseObj, prefix) {
-//     for (var key in nestedObj){
-//         var type = typeof nestedObj[key]
-//         var flatKey = prefix + key
-
-//         if (type === 'object'){
-//             flatternObject(nestedObj[key], baseObj, flatKey)
-//         } else if (type === 'array') {
-//             flatternArray(nestedObj[key], baseObj, flatKey)
-//         } else if ( type === 'undefined') {
-//             continue
-//         } else {
-//             baseObj[flatKey] = nestedObj[key]
-//         }
-
-//     }
-// }
-
-// function flatternArray (nestedArray, baseObj, prefix) {
-//     for (var i = 0; i < nestedArray.length; i++){
-//         var type = typeof nestedObj[key]
-//         var flatKey = prefix + i
-//         if (type === 'object'){
-//             flatternObject(nestedObj[key], baseObj, flatKey)
-//         } else if (type === 'array') {
-//             flatternArray(nestedObj[key], baseObj, flatKey)
-//         } else if ( type === 'undefined') {
-//             continue
-//         } else {
-//             baseObj[flatKey] = nestedArray[i]
-//         }
-//     }
-// }
-
 function writeCSV (records) {
     let columnDelimiter = ','
     let lineDelimiter = '\n'
@@ -157,12 +121,6 @@ function exportCSV () {
     )
 }
 
-function kebabToCamel(str) {
-    return str.replace(/(\-[A-Za-z])/g, function (m) {
-      return m.toUpperCase().replace('-','');
-    });
-  };
-
 function getSection (sectionId) {
     let sectionData = {}
     let inputs = document.querySelectorAll(`#${sectionId} [data-key]`)
@@ -171,7 +129,6 @@ function getSection (sectionId) {
             sectionData[kebabToCamel(input.dataset.key)] = input.value
         }
     })
-    console.log(inputs)
     return sectionData
 }
 
@@ -189,6 +146,7 @@ function collectFormData () {
     record.determinedByData.people = getDeterminedByPeople()
     record.collectionData.collectors = getCollectors()
     record.donationData.donors  = getDonors()
+    console.log(record)
     return record
 }
 
@@ -201,7 +159,5 @@ let exportCSVButton = document.getElementById('export-csv-button')
 
 putRecord(example)
 
-addRecordButton.addEventListener('click', saveForm)
+addRecordButton.addEventListener('click', collectFormData)
 exportCSVButton.addEventListener('click', exportCSV)
-
-console.log(determinedByPeople)
