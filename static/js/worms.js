@@ -22,6 +22,7 @@ function getSearchInfo() {
 }
 
 function getWorms(genus, species) {
+  console.log(genus, species);
   const url = `http://www.marinespecies.org/rest/AphiaRecordsByMatchNames?scientificnames%5B%5D=${genus}%20${species}&marine_only=true`;
   fetch(url)
     .then(response => {
@@ -30,15 +31,30 @@ function getWorms(genus, species) {
       return response.json();
     })
     .then(json => {
-      displayResponse(json);
+      filterAccepted(json);
     })
     .catch(error => console.log(error));
 }
 
+function isAccepted(obj) {
+  return obj !== "unaccepted"
+}
+
+function filterByAccepted(item) {
+  if (isAccepted(item.status)) {
+    return true
+  }
+}
+
+function filterAccepted(response) {
+  // only return results that are accepted
+  const filteredArr = response[0].filter(filterByAccepted)
+  displayResponse(filteredArr);
+}
+
 function displayResponse(response) {
-  response[0].map(item => {
+  response.map(item => {
     for (const prop in item) {
-      console.log(prop);
       // if form field exists, fill in with data from API
       const field = document.getElementById(prop);
       if (field) {
