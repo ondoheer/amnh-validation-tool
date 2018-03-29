@@ -2,7 +2,6 @@ function createPersonList(formId, listId, fieldId) {
     let person = {};
 
     form = document.querySelectorAll('#' + formId + ' input');
-    console.log
 
     list = document.getElementById(listId);
 
@@ -10,8 +9,6 @@ function createPersonList(formId, listId, fieldId) {
         person[element.id] = element.value;
         element.value = '';
     })
-
-    console.log(person);
 
     let listItem = document.createElement('li');
     let span = document.createElement('span');
