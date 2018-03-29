@@ -1,7 +1,7 @@
 {
     "Tracking Number": "recordData.trackingNumber",
     "Collection Subset": "recordData.collectionSubset",
-    "USI Barcode Number": "recordData.barcodeNumber",
+    "Barcode Number": "recordData.barcodeNumber",
     "Catalog Number": "recordData.catalogNumber",
     "ID Notes": "recordData.notes",
     "Taxonomy Verbatim": "taxonomy.verbatim",
@@ -81,7 +81,7 @@
     "Country": "locationData.country",
     "Department / Province / State": "locationData.department",
     "County": "locationData.county",
-    "City/Town/Hamlet": "locationData.cityTownHamlet",
+    "City / Town / Hamlet": "locationData.cityTownHamlet",
     "Specific Locale": "locationData.specificLocale",
     "Temperature C": "locationData.",
     "Temperature F": "locationData.",
