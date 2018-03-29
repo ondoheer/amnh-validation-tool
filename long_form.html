@@ -153,32 +153,32 @@
 					<div id="determined-by-form" class="l-person">
 
 						<fieldset class="c-form__fieldset u-separator-xs">
-							<label class="c-label " for="collector-name">Verbatim Name</label>
-							<input placeholder="Verbatim Name" id="collector-name" class="c-input" type="text">
+							<label class="c-label " for="determined-verbatim">Verbatim Name</label>
+							<input placeholder="enter verbatim name" id="determined-verbatim" class="c-input" type="text">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
-							<label class="c-label " for="first-name">First Name</label>
-							<input placeholder="First Name" id="first-name" class="c-input" type="text">
+							<label class="c-label " for="determined-first-name">First Name</label>
+							<input placeholder="enter first name" id="determined-first-name" class="c-input" type="text">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
-							<label class="c-label " for="middle-name-1">Middle Name 1</label>
-							<input placeholder="Middle Name 1" id="middle-name-1" class="c-input" type="text">
+							<label class="c-label " for="determined-middle-name1">Middle Name 1</label>
+							<input placeholder="enter middle name 1" id="determined-middle-name1" class="c-input" type="text">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
-							<label class="c-label " for="middle-name-2">Middle Name 2</label>
-							<input placeholder="Middle Name 2" id="middle-name-2" class="c-input" type="text">
+							<label class="c-label " for="determined-middle-name2">Middle Name 2</label>
+							<input placeholder="enter middle name 2" id="determined-middle-name2" class="c-input" type="text">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
-							<label class="c-label " for="last-name-1">Last Name 1</label>
-							<input placeholder="Last Name 1" id="last-name-1" class="c-input" type="text">
+							<label class="c-label " for="determined-last-name1">Last Name 1</label>
+							<input placeholder="enter last name 1" id="determined-last-name1" class="c-input" type="text">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
-							<label class="c-label " for="last-name-2">Last Name 2</label>
-							<input placeholder="Last Name 2" id="last-name-2" class="c-input" type="text">
+							<label class="c-label " for="determined-last-name2">Last Name 2</label>
+							<input placeholder="enter last name 2" id="determined-last-name2" class="c-input" type="text">
 						</fieldset>
 					</div>
 
-					<button id="determined-person-bttn" class="c-button c-button--uppercase c-button--centered">
+					<button id="determined-by-button" class="c-button c-button--uppercase c-button--centered">
 						<i class="fas fa-user"></i> Add person</button>
 
 					<fieldset class="c-form__fieldset">
@@ -394,50 +394,38 @@
 					<!-- end from to sub-section -->
 					<div class="c-people-list u-separator-md ">
 						<label class="c-label " for=" ">Collected By Added</label>
-						<ul>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Cookie Monster</li>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Lord Baron the 20th</li>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Agatha Christie</li>
+						<ul id='collected-by-list'>
 						</ul>
 					</div>
 
-					<div class="l-person u-separator-lg ">
+					<div id="collected-by-form" class="l-person u-separator-lg ">
 
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-name ">Verbatim Name</label>
-							<input placeholder="Verbatim Name " id="verbatim-name " class="c-input " type="text ">
+							<label class="c-label " for="collected-verbatim">Verbatim Name</label>
+							<input placeholder="enter verbatim name" id="collected-verbatim" class="c-input " type="text ">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-first ">First Name</label>
-							<input placeholder="enter the first name " id="verbatim-first " class="c-input " type="text ">
+							<label class="c-label " for="collected-first-name">First Name</label>
+							<input placeholder="enter first name" id="collected-first-name" class="c-input " type="text ">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-middle-1 ">Middle Name 1</label>
-							<input placeholder="enter middle name 1 " id="verbatim-middle-1 " class="c-input " type="text ">
+							<label class="c-label " for="collected-middle-name1 ">Middle Name 1</label>
+							<input placeholder="enter middle name 1" id="collected-middle-name1" class="c-input " type="text ">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-middle-2 ">Middle Name 2</label>
-							<input placeholder="enter middle name 2 " id="verbatim-middle-2 " class="c-input " type="text ">
+							<label class="c-label " for="collected-middle-name2 ">Middle Name 2</label>
+							<input placeholder="enter middle name 2" id="collected-middle-name2" class="c-input " type="text ">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-last-1 ">Last Name 1</label>
-							<input placeholder="enter last name 1 " id="verbatim-last-1 " class="c-input " type="text ">
+							<label class="c-label " for="collected-last-name1">Last Name 1</label>
+							<input placeholder="enter last name 1" id="collected-last-name1" class="c-input " type="text ">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="verbatim-last-2 ">Last Name 2</label>
-							<input placeholder="enter last name 2 " id="verbatim-last-2 " class="c-input " type="text ">
+							<label class="c-label " for="collected-last-name2">Last Name 2</label>
+							<input placeholder="enter last name 2" id="collected-last-name2" class="c-input " type="text ">
 						</fieldset>
 					</div>
-					<button class="c-button c-button--uppercase c-button--centered ">
+					<button id="collected-by-button" class="c-button c-button--uppercase c-button--centered ">
 						<i class="fas fa-user "></i> Add person</button>
 
 					<fieldset class="c-form__fieldset ">
@@ -911,50 +899,38 @@
 
 					<div class="c-people-list u-separator-md ">
 						<label class="c-label " for=" ">Donors Added</label>
-						<ul>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Cookie Monster</li>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Lord Baron the 20th</li>
-							<li>
-								<span>
-									<i class="fas fa-user "></i>
-								</span>Agatha Christie</li>
+						<ul id="donor-list">
 						</ul>
 					</div>
 
-					<div class="l-person ">
+					<div id="donor-form" class="l-person ">
 
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="an-verb ">Verbatim Name</label>
-							<input placeholder="collector Name (as written on label) " id="an-verb " class="c-input " type="text ">
+							<label class="c-label " for="donated-verbatim">Verbatim Name</label>
+							<input placeholder="enter verbatim name" id="donated-verbatim" class="c-input " type="text ">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="an-first ">First Name</label>
-							<input placeholder="enter the Genus " id="an-first " class="c-input " type="text ">
+							<label class="c-label " for="donated-first-name">First Name</label>
+							<input placeholder="enter first name" id="donated-first-name" class="c-input " type="text ">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="an-middle-1 ">Middle Name 1</label>
-							<input placeholder="enter the Family " id="an-middle-1 " class="c-input " type="text ">
+							<label class="c-label " for="donated-middle-name1">Middle Name 1</label>
+							<input placeholder="enter middle name 1" id="donated-middle-name1" class="c-input " type="text ">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="an-middle-2 ">Middle Name 2</label>
-							<input placeholder="enter the Order " id="an-middle-2 " class="c-input " type="text ">
+							<label class="c-label " for="donated-middle-name2">Middle Name 2</label>
+							<input placeholder="enter middle name 2" id="donated-middle-name2" class="c-input " type="text ">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="an-last-1 ">Last Name 1</label>
-							<input placeholder="enter the Suborder " id="an-last-1 " class="c-input " type="text ">
+							<label class="c-label " for="donated-last-name1">Last Name 1</label>
+							<input placeholder="enter last name 1" id="donated-last-name1" class="c-input " type="text ">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
-							<label class="c-label " for="an-last-2 ">Last Name 2</label>
-							<input placeholder="class " id="an-last-2 " class="c-input " type="text ">
+							<label class="c-label " for="donated-last-name2">Last Name 2</label>
+							<input placeholder="enter last name 2" id="donated-last-name2" class="c-input " type="text ">
 						</fieldset>
 					</div>
-					<button class="c-button c-button--uppercase c-button--centered u-separator-lg ">
+					<button id="donor-button" class="c-button c-button--uppercase c-button--centered u-separator-lg ">
 						<i class="fas fa-user "></i> Add donor</button>
 
 
