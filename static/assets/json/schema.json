@@ -6,6 +6,7 @@
         "person": {
             "type": "object",
             "properties": {
+                "verbatim": { "type": "string" },
                 "prefix": { "type": "string" },
                 "firstName": { "type": "string" },
                 "middleName1": { "type": "string" },
@@ -25,7 +26,6 @@
                 "trackingNumber": { "type": "string"},
                 "catalogNumber": { "type": "string" },
                 "barcodeNumber": { "type": "string" },
-                "collectionSubset": { "type": "string" },
                 "notes": { "type": "string" }
             },
             "additionalProperties": false
@@ -48,7 +48,6 @@
         "determinedBy":{
             "type":"object",
             "properties": {
-                "verbatim": { "type": "string" },
                 "year": { "type": "string" },
                 "people": {            
                     "type": "array",
@@ -67,22 +66,21 @@
                 "sex": { "enum": ["male", "female"] },
                 "developmentStage": { "type": "string" },
                 "bodyPartLocation": { "type": "string" },
-                "hasHost": {"type": "boolean"},
-                "hostData": {
-                    "type": "object",
-                    "properties": {
-                        "catalogNumber": { "type": "integer" },
-                        "relationship": { "type": "string" },
-                        "species": { "type": "string" },
-                        "genus": { "type": "string" },
-                        "sex": { "enum": ["male", "female"] },
-                        "condition": { "type": "string" },
-                        "notes": { "type": "string" }
-                    }
-                },
                 "notes": { "type": "string" }
             },
             "additionalProperties": false
+        },
+        "hostData": {
+            "type": "object",
+            "properties": {
+                "catalogNumber": { "type": "integer" },
+                "relationship": { "type": "string" },
+                "species": { "type": "string" },
+                "genus": { "type": "string" },
+                "sex": { "enum": ["male", "female"] },
+                "condition": { "type": "string" },
+                "notes": { "type": "string" }
+            }
         },
         "collectionData": {
             "type": "object",
@@ -94,7 +92,6 @@
                 "toDate": { "type": "string" },
                 "expeditionName": { "type": "string" },
                 "notes": { "type": "string" },
-                "verbatimCollectors": { "type": "string" },
                 "collectors": {
                     "type":"array",
                     "items": { "$ref": "#/definitions/person" }
@@ -122,13 +119,8 @@
                 "county": {"type": "string"},
                 "cityTownHamlet": {"type": "string"},
                 "specificLocale": {"type": "string"},
-                "temperature": {
-                    "type": "object",
-                    "properties": {
-                        "celsius": {"type": "number"},
-                        "fahrenheit": {"type": "number"}
-                    }
-                },
+                "temperatureF": {"type": "number"},
+                "temperatureC": {"type": "number"},
                 "fromLat": {"type": "string"},
                 "fromLon": {"type": "string"},
                 "toLat": {"type": "string"},
@@ -140,7 +132,6 @@
         "donationData":{
             "type": "object",
             "properties": {
-                "verbatim": { "type": "string" },
                 "donors": {
                     "type": "array",
                     "items": { "$ref": "#/definitions/person" }

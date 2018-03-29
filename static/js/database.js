@@ -3,6 +3,10 @@ import idb from 'idb'
 import jsonSchema from '../assets/json/schema.json'
 import csvHeaders from '../assets/json/headers.json'
 import example from '../assets/json/example.json'
+import getDeterminedByPeople from './add_person.js'
+import getCollectors from './add_person.js'
+import getDonors from './add_person.js'
+
 
 // const jsonSchema = require('../assets/json/header.json')
 // const csvHeaders = require('../assets/json/schema.json')
@@ -153,10 +157,51 @@ function exportCSV () {
     )
 }
 
+function kebabToCamel(str) {
+    return str.replace(/(\-[A-Za-z])/g, function (m) {
+      return m.toUpperCase().replace('-','');
+    });
+  };
+
+function getSection (sectionId) {
+    let sectionData = {}
+    let inputs = document.querySelectorAll(`#${sectionId} [data-key]`)
+    inputs.forEach((input) => {
+        if (input.value !== '') {
+            sectionData[kebabToCamel(input.dataset.key)] = input.value
+        }
+    })
+    console.log(inputs)
+    return sectionData
+}
+
+function collectFormData () {
+    let record = {
+        "trackingData": getSection('tracking-data'),
+        "taxonomyData": getSection('taxonomy-data'),
+        "determinedByData": getSection('determined-by-data'),
+        "specimenData": getSection('specimen-data'),
+        "hostData": getSection('host-data'),
+        "collectionData": getSection('collection-data'),
+        "locationData": getSection('location-data'),
+        "donationData": getSection('donation-data'),
+    }
+    record.determinedByData.people = getDeterminedByPeople()
+    record.collectionData.collectors = getCollectors()
+    record.donationData.donors  = getDonors()
+    return record
+}
+
+function saveForm () {
+    putRecord(collectFormData())
+}
+
 let addRecordButton = document.getElementById('add-record-button')
 let exportCSVButton = document.getElementById('export-csv-button')
 
 putRecord(example)
 
-addRecordButton.addEventListener('click', putRecord)
+addRecordButton.addEventListener('click', saveForm)
 exportCSVButton.addEventListener('click', exportCSV)
+
+console.log(determinedByPeople)
