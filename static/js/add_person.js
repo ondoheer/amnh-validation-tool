@@ -1,28 +1,36 @@
-let determinedByList = document.getElementById('determined-by-list');
-let determinedPersonBttn = document.getElementById('determined-person-bttn');
-let determinedByForm = document.querySelectorAll('#determined-by-form input');
-
-let determinedByPeople = [];
-
-function addDeterminedByPerson() {
+function createPersonList(formId, listId, fieldId) {
     let person = {};
 
-    determinedByForm.forEach((element) => {
+    form = document.querySelectorAll('#' + formId + ' input');
+
+    list = document.getElementById(listId);
+
+    form.forEach((element) => {
         person[element.id] = element.value;
         element.value = '';
     })
 
-    console.log(person);
-
-    determinedByPeople.push(person);
     let listItem = document.createElement('li');
     let span = document.createElement('span');
     let i = document.createElement('i');
     i.classList.add("fas", "fa-user");
     span.appendChild(i);
     listItem.appendChild(span);
-    determinedByList.appendChild(listItem);
-    listItem.innerHTML += person['collector-name'];
+    list.appendChild(listItem);
+    listItem.innerHTML += person[fieldId];
 }
 
-determinedPersonBttn.addEventListener('click', addDeterminedByPerson);
+let determinedByButton = document.getElementById('determined-by-button');
+determinedByButton.addEventListener('click', () => {
+    createPersonList('determined-by-form', 'determined-by-list', 'determined-verbatim');
+});
+
+let collectedByButton = document.getElementById('collected-by-button');
+collectedByButton.addEventListener('click', () => {
+    createPersonList('collected-by-form', 'collected-by-list', 'collected-verbatim');
+});
+
+let donorButton = document.getElementById('donor-button');
+donorButton.addEventListener('click', () => {
+    createPersonList('donor-form', 'donor-list', 'donated-verbatim');
+});
