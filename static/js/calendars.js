@@ -31,6 +31,6 @@ $(document).ready(function() {
     document.date = date;
     toYear.value = date.getFullYear();
     toMonth.value = parseInt(date.getMonth()) + 1;
-    toYear.value = date.getDate();
+    toDay.value = date.getDate();
   });
 });
