@@ -28,6 +28,7 @@ $(document).ready(function() {
     const toMonth = document.getElementById("to-month");
     const toDay = document.getElementById("to-day");
 
+    document.date = date;
     toYear.value = date.getFullYear();
     toMonth.value = parseInt(date.getMonth()) + 1;
     toYear.value = date.getDate();
