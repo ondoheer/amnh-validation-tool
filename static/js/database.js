@@ -88,7 +88,7 @@ function writeCSV (records) {
             } catch (e) {
                 attribute = ''
             }
-            result +=  attribute
+            result +=  attribute === 'undefined' || attribute == null ? '' : attribute
             firstElement = false
         })
         result += lineDelimiter
@@ -156,8 +156,6 @@ function saveForm () {
 
 let addRecordButton = document.getElementById('add-record-button')
 let exportCSVButton = document.getElementById('export-csv-button')
-
-putRecord(example)
 
 addRecordButton.addEventListener('click', saveForm)
 exportCSVButton.addEventListener('click', exportCSV)
