@@ -98,6 +98,16 @@ function writeCSV (records) {
     return result
 }
 
+function countRecords () {
+    getAllRecords().then(
+        records => {
+            let recordTally = document.getElementById('num_records')
+            recordTally.innerHTML = records.length
+
+        }
+    )
+}
+
 function exportCSV () {
     getAllRecords().then(
         records => {
@@ -152,6 +162,7 @@ function collectFormData () {
 
 function saveForm () {
     putRecord(collectFormData())
+    countRecords()
 }
 
 let addRecordButton = document.getElementById('add-record-button')
