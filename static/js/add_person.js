@@ -16,11 +16,22 @@ export function getDonors () {
     return donors
 }
 
+export function clearDeterminedByPeople () {
+    determinedByPeople = []
+}
+
+export function clearCollectors () {
+    collectors = []
+}
+
+export function clearDonors () {
+    donors = []
+}
+
 function createPersonList(formId, listId, fieldId) {
     let person = {};
 
     let form = document.querySelectorAll('#' + formId + ' input');
-
     let list = document.getElementById(listId);
 
     form.forEach((element) => {

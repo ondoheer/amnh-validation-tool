@@ -9,6 +9,7 @@ import {getDeterminedByPeople, getCollectors, getDonors} from './add_person.js'
 // const jsonSchema = require('../assets/json/header.json')
 // const csvHeaders = require('../assets/json/schema.json')
 
+let currentRecord = null
 
 function upgradeCallback (upgradeDb) {
     console.log('Upgrading IndexedDB')
@@ -29,7 +30,13 @@ function putRecord (record) {
 
     return dbPromise.then(db => {
         const tx = db.transaction('records', 'readwrite')
-        tx.objectStore('records').put(record)
+        let objectStore = tx.objectStore('records')
+        if (currentRecord) {
+            objectStore.put(record, currentRecord)
+        }
+        objectStore.put(record).then(result => {
+            currentRecord = result
+        })
         return tx.complete
     })
 }
@@ -160,9 +167,21 @@ function collectFormData () {
     return record
 }
 
+function clearForm () {
+    let inputs = document.querySelectorAll(`#${sectionId} [data-key]`)
+    inputs.forEach((input) => {input.value = ''})
+}
+
 function saveForm () {
-    putRecord(collectFormData())
+    let record = collectFormData()
+    putRecord(record)
     countRecords()
+}
+
+function newRecord () {
+    saveForm()
+    currentRecord = null
+    clearForm()
 }
 
 let addRecordButton = document.getElementById('add-record-button')
