@@ -23,16 +23,16 @@ let ajv = new Ajv()
 let jsonValidator = ajv.compile(jsonSchema)
 
 function putRecord (record) {
-    if (!jsonValidator(record)){
-        console.error(jsonValidator.errors)
-        return
-    }
+    // if (!jsonValidator(record)){
+    //     console.error(jsonValidator.errors)
+    //     return
+    // }
 
     return dbPromise.then(db => {
         const tx = db.transaction('records', 'readwrite')
         let objectStore = tx.objectStore('records')
         if (currentRecord) {
-            objectStore.put(record, currentRecord)
+            record.id = currentRecord
         }
         objectStore.put(record).then(result => {
             currentRecord = result
@@ -163,8 +163,13 @@ function collectFormData () {
     record.determinedBy.people = getDeterminedByPeople()
     record.collectionData.collectors = getCollectors()
     record.donationData.donors  = getDonors()
-    console.log(record)
     return record
+}
+
+function clearDatabase () {
+    clearRecords().then(() => {
+        countRecords()
+    })
 }
 
 function clearForm () {
@@ -181,11 +186,17 @@ function saveForm () {
 function newRecord () {
     saveForm()
     currentRecord = null
-    clearForm()
+    location.reload()
 }
 
 let addRecordButton = document.getElementById('add-record-button')
 let exportCSVButton = document.getElementById('export-csv-button')
+let clearRecordsButton = document.getElementById('clear-records-button')
+let saveButton = document.getElementById('save-button')
 
-addRecordButton.addEventListener('click', saveForm)
+addRecordButton.addEventListener('click', newRecord)
 exportCSVButton.addEventListener('click', exportCSV)
+clearRecordsButton.addEventListener('click', clearDatabase)
+saveButton.addEventListener('click', saveForm)
+
+countRecords()
