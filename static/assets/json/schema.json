@@ -63,7 +63,7 @@
                 "numberOfSpecimens": { "type": "integer" },
                 "storageMedium": { "type": "string" },
                 "typeOfType": { "type": "string" },
-                "sex": { "enum": ["male", "female"] },
+                "sex": { "type": "string" },
                 "developmentStage": { "type": "string" },
                 "bodyPartLocation": { "type": "string" },
                 "notes": { "type": "string" }
@@ -77,7 +77,7 @@
                 "relationship": { "type": "string" },
                 "species": { "type": "string" },
                 "genus": { "type": "string" },
-                "sex": { "enum": ["male", "female"] },
+                "sex": { "type": "string" },
                 "condition": { "type": "string" },
                 "notes": { "type": "string" }
             }
@@ -140,7 +140,9 @@
                     "type": "array",
                     "items": { "$ref": "#/definitions/person" }
                 },
-                "date": {"type":"string"},
+                "day": {"type":"string"},
+                "month": {"type":"string"},
+                "year": {"type":"string"},
                 "notes": {"type": "string"}
             },
             "additionalProperties": false
