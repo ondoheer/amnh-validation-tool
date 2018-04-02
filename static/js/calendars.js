@@ -1,12 +1,17 @@
 $(document).ready(function() {
   const collectedFromCal = $("#collected-from");
   const collectedToCal = $("#collected-to");
+  const donatedOnCal = $("#donated-on");
 
   collectedFromCal.datepicker({
     changeMonth: true,
     changeYear: true
   });
   collectedToCal.datepicker({
+    changeMonth: true,
+    changeYear: true
+  });
+  donatedOnCal.datepicker({
     changeMonth: true,
     changeYear: true
   });
@@ -17,7 +22,6 @@ $(document).ready(function() {
     const fromMonth = document.getElementById("from-month");
     const fromDay = document.getElementById("from-day");
 
-    document.date = date;
     fromYear.value = date.getFullYear();
     fromMonth.value = parseInt(date.getMonth()) + 1;
     fromDay.value = date.getDate();
@@ -30,6 +34,16 @@ $(document).ready(function() {
 
     toYear.value = date.getFullYear();
     toMonth.value = parseInt(date.getMonth()) + 1;
-    toYear.value = date.getDate();
+    toDay.value = date.getDate();
+  });
+  donatedOnCal.on("change", function(e) {
+    date = new Date(e.target.value);
+    const toYear = document.getElementById("donated-year");
+    const toMonth = document.getElementById("donated-month");
+    const toDay = document.getElementById("donated-day");
+
+    toYear.value = date.getFullYear();
+    toMonth.value = parseInt(date.getMonth()) + 1;
+    toDay.value = date.getDate();
   });
 });
