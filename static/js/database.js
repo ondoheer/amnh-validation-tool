@@ -23,10 +23,10 @@ let ajv = new Ajv()
 let jsonValidator = ajv.compile(jsonSchema)
 
 function putRecord (record) {
-    // if (!jsonValidator(record)){
-    //     console.error(jsonValidator.errors)
-    //     return
-    // }
+    if (!jsonValidator(record)){
+        console.error(jsonValidator.errors)
+        return
+    }
 
     return dbPromise.then(db => {
         const tx = db.transaction('records', 'readwrite')
