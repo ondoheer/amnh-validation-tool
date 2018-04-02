@@ -24,6 +24,10 @@
 		<img src="./static/assets/img/logo_header.png" alt="" class="c-header__logo">
 		<ul>
 			<li>
+				<button class="c-button c-button--light c-button--small">
+				<i class="fas fa-trash"></i> Clear Records</button>
+			</li>
+			<li>
 				<span id="num_records">0</span> records added</li>
 			<li>
 				<span id="username">
@@ -205,36 +209,99 @@
 					<fieldset class="c-form__fieldset u-separator-xs">
 						<label class="c-label " for="storage-medium">Storage Medium</label>
 						<select placeholder="Select input" id="storage-medium" class="c-input c-input--square c-input--select" data-key="storage-medium">
-							<option selected="">option-1</option>
-							<option>option-2</option>
-							<option>option-3</option>
+							<option selected="">Dry</option>
+							<option>Dry | Slide:</option>
+							<option>Epoxy</option>
+                            <option>EtOH:</option>
+                            <option>EtOH: | Slide:</option>
+                            <option>EtOH: 100%</option>
+                            <option>EtOH: 100% molecular</option>
+                            <option>EtOH: 70%</option>
+                            <option>EtOH: 75%</option>
+                            <option>EtOH: 95%</option>
+                            <option>EtOH: 96%</option>
+                            <option>EtOH: 98%</option>
+                            <option>EtOH: 99%</option>
+                            <option>Formaldehyde</option>
+                            <option>Formalin:</option>
+                            <option>Formalin: 10%</option>
+                            <option>Formalin: 4%</option>
+                            <option>Formalin: 8%</option>
+                            <option>Gluteraldehyde: 2% | OsO4: 1%</option>
+                            <option>Glycerol</option>
+                            <option>Glycerol | EtOH</option>
+                            <option>HemoD</option>
+                            <option>Model</option>
+                            <option>Paraffin Wax Block</option>
+                            <option>Pinned</option>
+                            <option>Pinned | Slide:</option>
+                            <option>Plastic</option>
+                            <option>Plastic mount</option>
+                            <option>RNAlater</option>
+                            <option>SEM Stub</option>
+                            <option>Slide:</option>
+                            <option>Slide: Balsam mounted</option>
+                            <option>Slide: Glycerine</option>
 						</select>
 					</fieldset>
 
 					<fieldset class="c-form__fieldset u-separator-xs">
 						<label class="c-label " for="type-type">Type of Type</label>
 						<select placeholder="Select input" id="type-type" class="c-input c-input--square c-input--select" data-key="type-of-type">
-							<option selected="">option-1</option>
-							<option>option-2</option>
-							<option>option-3</option>
+							<option selected="">Allotype</option>
+							<option>Allotype (part)</option>
+							<option>Cotype(s)</option>
+                            <option>Epitype</option>
+                            <option>Holotype</option>
+                            <option>Holotype (part)</option>
+                            <option>Holotype | Allotype</option>
+                            <option>Holotype | Cotype(s)</option>
+                            <option>Holotype | Paratype(s)</option>
+                            <option>Lectotype</option>
+                            <option>Lectotype | Allotype</option>
+                            <option>Neotype</option>
+                            <option>Paralectotype(s)</option>
+                            <option>Paratype(s)</option>
+                            <option>Paratype(s) (part)</option>
+                            <option>Plesiotype</option>
+                            <option>Syntype(s)</option>
+                            <option>Syntype(s) (part)</option>
+                            <option>Topotype(s)</option>
 						</select>
 					</fieldset>
 
 					<fieldset class="c-form__fieldset u-separator-xs">
 						<label class="c-label " for="sex">Sex</label>
 						<select placeholder="Select input" id="sex" class="c-input c-input--square c-input--select" data-key="sex">
-							<option selected="">male</option>
-							<option>option-2</option>
-							<option>option-3</option>
+							<option selected="">Ambisexual</option>
+							<option>Female</option>
+							<option>Female | Female</option>
+                            <option>Female | Male</option>
+                            <option>Female | Unknown</option>
+                            <option>Gynandromorph</option>
+                            <option>Hermaphrodite</option>
+                            <option>Intersex</option>
+                            <option>Male | Unknown</option>
+                            <option>Male | Male</option>
+                            <option>Mixed</option>
+                            <option>Unknown</option>
 						</select>
 					</fieldset>
 
 					<fieldset class="c-form__fieldset u-separator-xs">
 						<label class="c-label " for="dev-stage">Development Stage</label>
 						<select placeholder="Select input" id="dev-stage" class="c-input c-input--square c-input--select" data-key="development-stage">
-							<option selected="">option-1</option>
-							<option>option-2</option>
-							<option>option-3</option>
+							<option selected="">Adult</option>
+							<option>Adult | Cocoon</option>
+							<option>Adult | Juvenile</option>
+                            <option>Adult | Larva</option>
+                            <option>Adult | Ovigerous</option>
+                            <option>Juvenile</option>
+                            <option>Larva</option>
+                            <option>Natant</option>
+                            <option>Nymph</option>
+                            <option>Ovigerous</option>
+                            <option>Ovigerous | Juvenile</option>
 						</select>
 					</fieldset>
 					<fieldset class="c-form__fieldset u-separator-xs">
@@ -309,7 +376,7 @@
 			</section>
 			<!-- End Host section -->
 
-			<section class="u-bkg7 u-padder-top--lg" id="collection-data">
+			<section id="collectingSection " class="u-bkg10 u-padder-top--lg ">
 				<div class="l-wrapper ">
 					<h2 class="c-title c-title--light c-title--lg u-separator-lg ">Collecting Data</h2>
 					<p class="u-separator-md ">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
@@ -336,7 +403,7 @@
 
 								<label class="c-label " for="collected-from ">Collected from</label>
 								<div>
-									<input id="collected-from" name="datePicker" type="text " class="c-input">
+									<input id="collected-from" name="datePicker" placeholder="enter collected from date" type="text " class="c-input">
 									<span class="c-datepicker__icon ">
 
 										<i class="fas fa-calendar-alt "></i>
@@ -346,15 +413,15 @@
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label" for="from-day ">Day</label>
-								<input type="number" id="from-day" placeholder=" " class="c-input" data-key="from-day">
+								<input type="number" id="from-day" placeholder="enter collected from day" class="c-input" data-key="from-day">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label" for="from-month ">Month</label>
-								<input type="number" id="from-month" placeholder="" class="c-input" data-key="from-month">
+								<input type="number" id="from-month" placeholder="enter collected from month" class="c-input" data-key="from-month">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label" for="from-year ">Year</label>
-								<input type="number" id="from-year" placeholder=" " class="c-input" data-key="from-year">
+								<input type="number" id="from-year" placeholder="enter collected from year" class="c-input" data-key="from-year">
 							</fieldset>
 
 
@@ -363,9 +430,9 @@
 
 							<fieldset class="c-form__fieldset c-datepicker u-separator-sm ">
 
-								<label class="c-label" for="collected-to ">Collected to</label>
+								<label class="c-label" for="collected-to">Collected to</label>
 								<div>
-									<input id="collected-to" name="datePicker" type="text " class="c-input">
+									<input id="collected-to" name="datePicker" placeholder="enter collected to date" type="text " class="c-input">
 									<span class="c-datepicker__icon ">
 
 										<i class="fas fa-calendar-alt "></i>
@@ -374,16 +441,16 @@
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label" for="to-day ">Day</label>
-								<input type="number" id="to-day" placeholder="# of specimens " class="c-input" data-key="to-day">
+								<label class="c-label" for="to-day">Day</label>
+								<input type="number" id="to-day" placeholder="enter collected to day" class="c-input" data-key="to-day">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label" for="to-month ">Month</label>
-								<input type="number " id="to-month" placeholder="# of specimens " class="c-input" data-key="to-month">
+								<label class="c-label" for="to-month">Month</label>
+								<input type="number " id="to-month" placeholder="enter collected to month" class="c-input" data-key="to-month">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs ">
-								<label class="c-label" for="to-year ">Year</label>
-								<input type="number " id="to-year" placeholder="# of specimens " class="c-input" data-key="to-year">
+								<label class="c-label" for="to-year">Year</label>
+								<input type="number " id="to-year" placeholder="enter collected to year" class="c-input" data-key="to-year">
 							</fieldset>
 
 
@@ -838,19 +905,19 @@
 
 					<div class="l-two-col u-separator-lg ">
 						<div class="l-two-col__block ">
-							<fieldset class="c-input-group ">
-								<label class="c-label " for="lat-input-grp ">Input Group</label>
+							<fieldset class="c-input-group c-form__fieldset">
+								<label class="c-label " for="lat-input-grp ">Temperature (°F)</label>
 								<div>
-									<input type="search " id="lat-input-grp " placeholder="°F " class="c-input c-input--square" data-key="temperature-f">
+									<input type="search " id="fahrenheit-input" placeholder="°F " class="c-input c-input--square" data-key="temperature-f">
 									<span class="c-input-group__sidekick ">°F</span>
 								</div>
 							</fieldset>
 						</div>
 						<div class="l-two-col__block ">
-							<fieldset class="c-input-group ">
-								<label class="c-label " for="an-input-grp ">Input Group</label>
+							<fieldset class="c-input-group c-form__fieldset">
+								<label class="c-label " for="an-input-grp ">Temperature (°C)</label>
 								<div>
-									<input type="search " id="an-input-grp " placeholder="°C " class="c-input c-input--square" data-key="temperature-c">
+									<input type="search " id="celsius-input" placeholder="°C " class="c-input c-input--square" data-key="temperature-c">
 									<span class="c-input-group__sidekick ">°C</span>
 								</div>
 							</fieldset>
@@ -866,16 +933,16 @@
 			<!-- End of location section -->
 			<section class="u-bkg9" id="donation-data">
 				<div class="l-wrapper ">
-					<h2 class="c-title c-title--light c-title--lg u-separator-lg ">Location</h2>
+					<h2 class="c-title c-title--light c-title--lg u-separator-lg ">Donors</h2>
 					<p class="u-separator-md ">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
 						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
 						esse modi quisquam?</p>
 
 					<fieldset class="c-form__fieldset c-datepicker u-separator-sm ">
 
-						<label class="c-label " for="donated ">Donated on</label>
+						<label class="c-label" for="donated-on">Donated on</label>
 						<div>
-							<input id="donated " name="datePicker " type="text " class="c-input datePicker hasDatepicker" data-key="date">
+							<input id="donated-on" name="datePicker" placeholder="enter donated on date" type="text " class="c-input">
 							<span class="c-datepicker__icon ">
 
 								<i class="fas fa-calendar-alt "></i>
@@ -884,16 +951,16 @@
 					</fieldset>
 
 					<fieldset class="c-form__fieldset u-separator-xs ">
-						<label class="c-label " for="day-donated ">Day</label>
-						<input type="number " id="day-donated " placeholder="# of specimens " class="c-input ">
+						<label class="c-label " for="donated-day">Day</label>
+						<input type="number " id="donated-day" placeholder="enter donated on day" class="c-input" data-key="day">
 					</fieldset>
 					<fieldset class="c-form__fieldset u-separator-xs ">
-						<label class="c-label " for="month-donated ">Month</label>
-						<input type="number " id="month-donated " placeholder="# of specimens " class="c-input ">
+						<label class="c-label " for="donated-month">Month</label>
+						<input type="number " id="donated-month" placeholder="enter donated on month" class="c-input" data-key="month">
 					</fieldset>
 					<fieldset class="c-form__fieldset u-separator-lg ">
-						<label class="c-label " for="year-donated ">Year</label>
-						<input type="number " id="year-donated " placeholder="# of specimens " class="c-input ">
+						<label class="c-label " for="donated-year">Year</label>
+						<input type="number " id="donated-year" placeholder="enter donated on year" class="c-input" data-key="year">
 					</fieldset>
 
 
@@ -979,6 +1046,7 @@
 	<script src="./static/js/worms.js "></script>
 	<script src="./static/js/triggers.js "></script>
 	<script src="./static/js/calendars.js "></script>
+    <script src="./static/js/temperature.js "></script>
 </body>
 
 </html>
