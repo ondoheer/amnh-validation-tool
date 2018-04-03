@@ -314,24 +314,33 @@
 			<!-- End Specimen section -->
 			<section class="u-bkg6">
 				<div class="l-wrapper ">
-					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Found in host?</h2>
+					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Host Information</h2>
 
 
 
 					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
 						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
 						esse modi quisquam?</p>
-					<div class="l-btn-container u-separator-md">
-						<button id="hostFound" class="c-button c-button--uppercase">
-							Yes</button>
 
-						<a class="c-button c-button--uppercase" href="#collectingSection">
-							No
-						</a>
-					</div>
+            <fieldset class="c-form__fieldset u-separator-md">
+              <div>
+                <label class="c-label c-label--medium" for="">Was this Specimen Found In a Host?</label>
+              </div>
+              <div class='c-radio c-radio--medium'>
+                <label for="host-yes">
+                  <input id="host-yes" name="host" type="radio" value="yes">
+                  Yes
+                </label>
+              </div>
+              <div class='c-radio c-radio--medium'>
+                <label for="host-no">
+                  <input id="host-no" name="host" type="radio" value="no">
+                  No
+                </label>
+              </div>
+            </fieldset>
+
 					<div id="optionalHostInfo" class="u-hidden">
-
-
 						<fieldset class=" c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="host-catalog ">Host Catalog Number</label>
 							<input placeholder="enter the host catalog number " id="host-catalog " class="c-input " type="text ">
