@@ -5,11 +5,7 @@ import {getAllRecords, clearDatabase, putRecord} from './database.js'
 const recordTally = document.getElementById('num_records')
 
 function countRecords () {
-    getAllRecords().then(
-        records => {
-            recordTally.innerHTML = records.length
-        }
-    )
+    getAllRecords().then(records => { recordTally.innerHTML = records.length })
 }
 
 function generateTrackingNumber () {
@@ -47,7 +43,6 @@ function collectFormData () {
     record.determinedBy.people = determinedByPeople.getPeople()
     record.collectionData.collectors = collectors.getPeople()
     record.donationData.donors  = donors.getPeople()
-    console.log(record)
     return record
 }
 
