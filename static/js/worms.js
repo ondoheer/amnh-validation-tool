@@ -38,7 +38,6 @@ function getWorms(genus, species) {
 function displayResponse(response) {
   response[0].map(item => {
     for (const prop in item) {
-      console.log(prop);
       // if form field exists, fill in with data from API
       const field = document.getElementById(prop);
       if (field) {
