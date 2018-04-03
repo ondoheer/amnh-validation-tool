@@ -1,54 +1,46 @@
 import {kebabToCamel} from './helpers.js'
 
-let determinedByPeople = [];
-let collectors = [];
-let donors = [];
+class PeopleList {
+    constructor(idPrefix) {
+        this.people = []
+        this.button = document.getElementById(`${idPrefix}-button`)
+        this.form = document.querySelectorAll(`#${idPrefix}-form input`)
+        this.list = document.getElementById(`${idPrefix}-list`)
+        this.button.addEventListener('click', this.addToList.bind(this))
+        this.createPerson = this.createPerson.bind(this)
+        this.getPeople = this.getPeople.bind(this)
+    }
 
-export function getDeterminedByPeople () {
-    return determinedByPeople
+    createPerson() {
+        let person = {};
+        
+        this.form.forEach((element) => {
+            person[kebabToCamel(element.dataset.key)] = element.value
+            element.value = ''
+        })
+    
+        let listItem = document.createElement('li')
+        let span = document.createElement('span')
+        let i = document.createElement('i')
+
+        i.classList.add("fas", "fa-user")
+        span.appendChild(i)
+        listItem.appendChild(span)
+        this.list.appendChild(listItem)
+
+        listItem.innerHTML += person['verbatim']
+        return person
+    }
+
+    addToList() {
+        this.people.push(this.createPerson())
+    }
+
+    getPeople() {
+        return this.people
+    }
 }
 
-export function getCollectors () {
-    return collectors
-}
-
-export function getDonors () {
-    return donors
-}
-
-function createPersonList(formId, listId) {
-    let person = {};
-
-    let form = document.querySelectorAll('#' + formId + ' input');
-    let list = document.getElementById(listId);
-
-    form.forEach((element) => {
-        person[kebabToCamel(element.dataset.key)] = element.value;
-        element.value = '';
-    })
-
-    let listItem = document.createElement('li');
-    let span = document.createElement('span');
-    let i = document.createElement('i');
-    i.classList.add("fas", "fa-user");
-    span.appendChild(i);
-    listItem.appendChild(span);
-    list.appendChild(listItem);
-    listItem.innerHTML += person['verbatim'];
-    return person
-}
-
-let determinedByButton = document.getElementById('determined-by-button');
-determinedByButton.addEventListener('click', () => {
-    determinedByPeople.push(createPersonList('determined-by-form', 'determined-by-list'));
-});
-
-let collectedByButton = document.getElementById('collected-by-button');
-collectedByButton.addEventListener('click', () => {
-    collectors.push(createPersonList('collected-by-form', 'collected-by-list'));
-});
-
-let donorButton = document.getElementById('donor-button');
-donorButton.addEventListener('click', () => {
-    donors.push(createPersonList('donor-form', 'donor-list'));
-});
+export const determinedByPeople = new PeopleList('determined-by')
+export const collectors = new PeopleList('collected-by')
+export const donors = new PeopleList('donated-by')
