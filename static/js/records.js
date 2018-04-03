@@ -22,8 +22,8 @@ function getSection (sectionId) {
     let sectionData = {}
     let inputs = document.querySelectorAll(`#${sectionId} [data-key]`)
     inputs.forEach((input) => {
-        if (input.type === 'radio' && input.checked){
-            sectionData[kebabToCamel(input.dataset.key)] = input.value
+        if (input.type === 'radio'){
+            if (input.checked) sectionData[kebabToCamel(input.dataset.key)] = input.value;
         } else if (input.value !== '') {
             sectionData[kebabToCamel(input.dataset.key)] = input.value
         }
@@ -42,10 +42,12 @@ function collectFormData () {
         "locationData": getSection('location-data'),
         "donationData": getSection('donation-data'),
     }
+    if (record.hostData.hasHost === 'no') record.hostData = {'hasHost': 'no'};
     record.recordData.trackingNumber = generateTrackingNumber()
     record.determinedBy.people = determinedByPeople.getPeople()
     record.collectionData.collectors = collectors.getPeople()
     record.donationData.donors  = donors.getPeople()
+    console.log(record)
     return record
 }
 
