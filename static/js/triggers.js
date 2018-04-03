@@ -1,6 +1,12 @@
-const hostFoundButton = document.getElementById("hostFound");
+const hostYesRadio = document.getElementById("host-yes");
+const hostNoRadio = document.getElementById("host-no");
 
-hostFoundButton.addEventListener("click", function() {
+hostYesRadio.addEventListener("click", function() {
   const hostSection = document.getElementById("optionalHostInfo");
   hostSection.classList.remove("u-hidden");
+});
+
+hostNoRadio.addEventListener("click", function() {
+  const hostSection = document.getElementById("optionalHostInfo");
+  hostSection.classList.add("u-hidden");
 });
