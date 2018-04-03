@@ -1,5 +1,5 @@
 {
-    "Tracking Number": "recordData.trackingNumber",
+    "Tracking Number": "record.recordData.trackingNumber",
     "Barcode Number": "recordData.barcodeNumber",
     "Catalog Number": "recordData.catalogNumber",
     "ID Notes": "recordData.notes",

@@ -73,6 +73,7 @@
         "hostData": {
             "type": "object",
             "properties": {
+                "hasHost": {"type": "string"},
                 "catalogNumber": { "type": "integer" },
                 "relationship": { "type": "string" },
                 "species": { "type": "string" },
