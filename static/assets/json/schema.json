@@ -60,7 +60,7 @@
         "specimenData": {
             "type": "object",
             "properties": {
-                "numberOfSpecimens": { "type": "integer" },
+                "numberOfSpecimens": { "type": "string" },
                 "storageMedium": { "type": "string" },
                 "typeOfType": { "type": "string" },
                 "sex": { "type": "string" },
