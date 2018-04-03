@@ -1,5 +1,5 @@
 import {kebabToCamel} from './helpers.js'
-import {getDeterminedByPeople, getCollectors, getDonors} from './add_person.js'
+import {determinedByPeople, collectors, donors} from './add_person.js'
 import {getAllRecords, clearDatabase, putRecord} from './database.js'
 
 const recordTally = document.getElementById('num_records')
@@ -10,6 +10,12 @@ function countRecords () {
             recordTally.innerHTML = records.length
         }
     )
+}
+
+function generateTrackingNumber () {
+    var date = new Date(Date.now())
+    var name = 'Eric'
+    return `${date.getFullYear()}-${(date.getMonth()+1)}-${date.getDate()}-${date.getHours()}-${date.getMinutes()}-${name}`
 }
 
 function getSection (sectionId) {
@@ -36,9 +42,10 @@ function collectFormData () {
         "locationData": getSection('location-data'),
         "donationData": getSection('donation-data'),
     }
-    record.determinedBy.people = getDeterminedByPeople()
-    record.collectionData.collectors = getCollectors()
-    record.donationData.donors  = getDonors()
+    record.recordData.trackingNumber = generateTrackingNumber()
+    record.determinedBy.people = determinedByPeople.getPeople()
+    record.collectionData.collectors = collectors.getPeople()
+    record.donationData.donors  = donors.getPeople()
     return record
 }
 

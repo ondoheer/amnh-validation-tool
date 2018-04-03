@@ -7,16 +7,15 @@ const newRecordButton = document.getElementById('add-record-button')
 const saveButton = document.getElementById('save-button')
 const exportCSVButton = document.getElementById('export-csv-button')
 const clearRecordsButton = document.getElementById('clear-records-button')
+const hostSection = document.getElementById("optionalHostInfo")
 
-hostYesRadio.addEventListener("click", function() {
-  const hostSection = document.getElementById("optionalHostInfo");
-  hostSection.classList.remove("u-hidden");
-});
+hostYesRadio.addEventListener("click", () => {
+  hostSection.classList.remove("u-hidden")
+})
 
-hostNoRadio.addEventListener("click", function() {
-  const hostSection = document.getElementById("optionalHostInfo");
-  hostSection.classList.add("u-hidden");
-});
+hostNoRadio.addEventListener("click", () => {
+  hostSection.classList.add("u-hidden")
+})
 
 newRecordButton.addEventListener('click', newRecord)
 saveButton.addEventListener('click', saveRecord)
