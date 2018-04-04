@@ -88,7 +88,7 @@
             "properties": {
                 "method": { "type": "string" },
                 "relationship": { "type": "string" },
-                "verbatiamDate": { "type": "string" },
+                "verbatimDate": { "type": "string" },
                 "fromDay": { "type": "string" },
                 "fromMonth": { "type": "string" },
                 "fromYear": { "type": "string" },
