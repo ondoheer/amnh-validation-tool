@@ -24,20 +24,24 @@
 		<img src="./static/assets/img/logo_header.png" alt="" class="c-header__logo">
 		<ul>
 			<li>
+				<button id="clear-records-button" class="c-button c-button--light c-button--small">
+				<i class="fas fa-trash"></i> Clear Records</button>
+			</li>
+			<li>
 				<span id="num_records">0</span> records added</li>
 			<li>
 				<span id="username">
 					<i class="fas fa-user"></i> Eric Not Perrotta</span>
 			</li>
 			<li>
-				<button class="c-button c-button--light c-button--small">
+				<button id="save-button" class="c-button c-button--light c-button--small">
 					<i class="fas fa-save"></i> Save </button>
 			</li>
 		</ul>
 	</header>
 	<main>
 		<div class="c-form">
-			<section class="u-bkg2">
+			<section class="u-bkg2" id="tracking-data">
 				<div class="l-wrapper ">
 
 					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Tracking data</h2>
@@ -49,25 +53,25 @@
 
 					<fieldset class="c-form__fieldset u-separator-md">
 						<label class="c-label " for="cat-number">Catalog Number</label>
-						<input placeholder="enter the catalog number" id="cat-number" class="c-input" type="text">
+						<input placeholder="enter the catalog number" id="cat-number" class="c-input" type="text" data-key="catalog-number">
 					</fieldset>
 
 
 					<fieldset class="c-form__fieldset u-separator-md">
 						<label class="c-label " for="bar-number">Barcode Number</label>
-						<input placeholder="enter the barcode number" id="bar-number" class="c-input" type="text">
+						<input placeholder="enter the barcode number" id="bar-number" class="c-input" type="text" data-key="barcode-number">
 					</fieldset>
 
 					<fieldset class="c-form__fieldset">
 						<label class="c-label " for="track-notes-track">Notes</label>
-						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-track" class="c-input"></textarea>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-track" class="c-input" data-key="notes"></textarea>
 					</fieldset>
 
 				</div>
 			</section>
 			<!-- End tracking section -->
 
-			<section class="u-bkg3">
+			<section class="u-bkg3" id="taxonomy-data">
 				<div class="l-wrapper">
 					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Taxonomy</h2>
 
@@ -90,31 +94,31 @@
 						<div class="l-two-col__block">
 							<fieldset class="c-form__fieldset u-separator-xs">
 								<label class="c-label " for="scientificname">Species</label>
-								<input placeholder="enter the Species" id="scientificname" class="c-input" type="text">
+								<input placeholder="enter the Species" id="scientificname" class="c-input" type="text" data-key="species">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
 								<label class="c-label " for="genus">Genus</label>
-								<input placeholder="enter the Genus" id="genus" class="c-input" type="text">
+								<input placeholder="enter the Genus" id="genus" class="c-input" type="text" data-key="genus">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
 								<label class="c-label " for="family">Family</label>
-								<input placeholder="enter the Family" id="family" class="c-input" type="text">
+								<input placeholder="enter the Family" id="family" class="c-input" type="text" data-key="family">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
 								<label class="c-label " for="order">Order</label>
-								<input placeholder="enter the Order" id="order" class="c-input" type="text">
+								<input placeholder="enter the Order" id="order" class="c-input" type="text" data-key="order">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
 								<label class="c-label " for="suborder">Suborder</label>
-								<input placeholder="enter the Suborder" id="suborder" class="c-input" type="text">
+								<input placeholder="enter the Suborder" id="suborder" class="c-input" type="text" data-key="suborder">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
 								<label class="c-label " for="class">Class</label>
-								<input placeholder="class" id="class" class="c-input" type="text">
+								<input placeholder="class" id="class" class="c-input" type="text" data-key="class">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs">
 								<label class="c-label " for="subclass">Subclass</label>
-								<input placeholder="enter the Subclass" id="subclass" class="c-input" type="text">
+								<input placeholder="enter the Subclass" id="subclass" class="c-input" type="text" data-key="subclass">
 							</fieldset>
 						</div>
 						<div class="l-two-col__block">
@@ -130,13 +134,13 @@
 
 					<fieldset class="c-form__fieldset">
 						<label class="c-label " for="track-notes-tax">Notes</label>
-						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-tax" class="c-input"></textarea>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-tax" class="c-input" data-key="notes"></textarea>
 					</fieldset>
 				</div>
 			</section>
 			<!-- End taxonomy section -->
 
-			<section class="u-bkg4">
+			<section class="u-bkg4" id="determined-by-data">
 				<div class="l-wrapper">
 					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Determined By</h2>
 
@@ -154,27 +158,27 @@
 
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="determined-verbatim">Verbatim Name</label>
-							<input placeholder="enter verbatim name" id="determined-verbatim" class="c-input" type="text">
+							<input placeholder="enter verbatim name" id="determined-verbatim" class="c-input" type="text" data-key="verbatim">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="determined-first-name">First Name</label>
-							<input placeholder="enter first name" id="determined-first-name" class="c-input" type="text">
+							<input placeholder="enter first name" id="determined-first-name" class="c-input" type="text" data-key="first-name">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="determined-middle-name1">Middle Name 1</label>
-							<input placeholder="enter middle name 1" id="determined-middle-name1" class="c-input" type="text">
+							<input placeholder="enter middle name 1" id="determined-middle-name1" class="c-input" type="text" data-key="middle-name1">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="determined-middle-name2">Middle Name 2</label>
-							<input placeholder="enter middle name 2" id="determined-middle-name2" class="c-input" type="text">
+							<input placeholder="enter middle name 2" id="determined-middle-name2" class="c-input" type="text" data-key="middle-name2">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="determined-last-name1">Last Name 1</label>
-							<input placeholder="enter last name 1" id="determined-last-name1" class="c-input" type="text">
+							<input placeholder="enter last name 1" id="determined-last-name1" class="c-input" type="text" data-key="last-name1">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs">
 							<label class="c-label " for="determined-last-name2">Last Name 2</label>
-							<input placeholder="enter last name 2" id="determined-last-name2" class="c-input" type="text">
+							<input placeholder="enter last name 2" id="determined-last-name2" class="c-input" type="text" data-key="last-name2">
 						</fieldset>
 					</div>
 
@@ -183,13 +187,13 @@
 
 					<fieldset class="c-form__fieldset">
 						<label class="c-label " for="track-notes-det">Notes</label>
-						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-det" class="c-input"></textarea>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-det" class="c-input" data-key="notes"></textarea>
 					</fieldset>
 				</div>
 			</section>
 			<!-- End Determined section -->
 
-			<section class="u-bkg5">
+			<section class="u-bkg5" id="specimen-data">
 				<div class="l-wrapper">
 					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Specimen Data</h2>
 
@@ -199,12 +203,12 @@
 
 					<fieldset class="c-form__fieldset u-separator-xs">
 						<label class="c-label " for="spec-number">Number of Specimens</label>
-						<input type="number" id="spec-number" placeholder="# of specimens" class="c-input">
+						<input type="number" id="spec-number" placeholder="# of specimens" class="c-input" data-key="number-of-specimens">
 					</fieldset>
 
 					<fieldset class="c-form__fieldset u-separator-xs">
 						<label class="c-label " for="storage-medium">Storage Medium</label>
-						<select placeholder="Select input" id="storage-medium" class="c-input c-input--square c-input--select ">
+						<select placeholder="Select input" id="storage-medium" class="c-input c-input--square c-input--select" data-key="storage-medium">
 							<option selected="">Dry</option>
 							<option>Dry | Slide:</option>
 							<option>Epoxy</option>
@@ -243,7 +247,7 @@
 
 					<fieldset class="c-form__fieldset u-separator-xs">
 						<label class="c-label " for="type-type">Type of Type</label>
-						<select placeholder="Select input" id="type-type" class="c-input c-input--square c-input--select ">
+						<select placeholder="Select input" id="type-type" class="c-input c-input--square c-input--select" data-key="type-of-type">
 							<option selected="">Allotype</option>
 							<option>Allotype (part)</option>
 							<option>Cotype(s)</option>
@@ -268,7 +272,7 @@
 
 					<fieldset class="c-form__fieldset u-separator-xs">
 						<label class="c-label " for="sex">Sex</label>
-						<select placeholder="Select input" id="sex" class="c-input c-input--square c-input--select ">
+						<select placeholder="Select input" id="sex" class="c-input c-input--square c-input--select" data-key="sex">
 							<option selected="">Ambisexual</option>
 							<option>Female</option>
 							<option>Female | Female</option>
@@ -286,7 +290,7 @@
 
 					<fieldset class="c-form__fieldset u-separator-xs">
 						<label class="c-label " for="dev-stage">Development Stage</label>
-						<select placeholder="Select input" id="dev-stage" class="c-input c-input--square c-input--select ">
+						<select placeholder="Select input" id="dev-stage" class="c-input c-input--square c-input--select" data-key="development-stage">
 							<option selected="">Adult</option>
 							<option>Adult | Cocoon</option>
 							<option>Adult | Juvenile</option>
@@ -302,17 +306,17 @@
 					</fieldset>
 					<fieldset class="c-form__fieldset u-separator-xs">
 						<label class="c-label " for="body-part-location">Body part location</label>
-						<input placeholder="enter the body part" id="body-part-location" class="c-input" type="text">
+						<input placeholder="enter the body part" id="body-part-location" class="c-input" type="text" data-key="body-part-location">
 					</fieldset>
 
 					<fieldset class="c-form__fieldset">
 						<label class="c-label " for="track-notes-spec">Notes</label>
-						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-spec" class="c-input"></textarea>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-spec" class="c-input" data-key="notes"></textarea>
 					</fieldset>
 				</div>
 			</section>
 			<!-- End Specimen section -->
-			<section class="u-bkg6">
+			<section class="u-bkg6"  id="host-data">
 				<div class="l-wrapper ">
 					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Host Information</h2>
 
@@ -328,13 +332,13 @@
               </div>
               <div class='c-radio c-radio--medium'>
                 <label for="host-yes">
-                  <input id="host-yes" name="host" type="radio" value="yes">
+                  <input id="host-yes" name="host" type="radio" value="yes" data-key="has-host">
                   Yes
                 </label>
               </div>
               <div class='c-radio c-radio--medium'>
                 <label for="host-no">
-                  <input id="host-no" name="host" type="radio" value="no">
+                  <input id="host-no" name="host" type="radio" value="no" data-key="has-host" checked>
                   No
                 </label>
               </div>
@@ -343,25 +347,25 @@
 					<div id="optionalHostInfo" class="u-hidden">
 						<fieldset class=" c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="host-catalog ">Host Catalog Number</label>
-							<input placeholder="enter the host catalog number " id="host-catalog " class="c-input " type="text ">
+							<input placeholder="enter the host catalog number " id="host-catalog " class="c-input " type="text" data-key="catalog-number">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="host-relationship ">Host Relationship</label>
-							<input placeholder="enter the host-relationship " id="host-relationship " class="c-input " type="text ">
+							<input placeholder="enter the host-relationship " id="host-relationship " class="c-input " type="text" data-key="relationship">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="host-species ">Host Species</label>
-							<input placeholder="enter the host species " id="host-pecies " class="c-input " type="text ">
+							<input placeholder="enter the host species " id="host-pecies " class="c-input " type="text" data-key="species">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="host-genus ">Host Genus Name</label>
-							<input placeholder="enter the host genus " id="host-genus " class="c-input " type="text ">
+							<input placeholder="enter the host genus " id="host-genus " class="c-input " type="text" data-key="genus">
 						</fieldset>
 
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="host-sex ">Sex</label>
-							<select placeholder="Select input " id="host-sex " class="c-input c-input--square c-input--select ">
-								<option selected=" ">option-1</option>
+							<select placeholder="Select input " id="host-sex " class="c-input c-input--square c-input--select" data-key="sex">
+								<option selected=" ">male</option>
 								<option>option-2</option>
 								<option>option-3</option>
 							</select>
@@ -369,19 +373,19 @@
 
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="host-condition ">Host Condition</label>
-							<input placeholder="enter the host condition " id="host-condition " class="c-input " type="text ">
+							<input placeholder="enter the host condition " id="host-condition " class="c-input " type="text" data-key="condition">
 						</fieldset>
 
 						<fieldset class="c-form__fieldset ">
 							<label class="c-label " for="track-notes-host ">Notes</label>
-							<textarea cols="30 " rows="6 " placeholder="Enter notes " id="track-notes-host " class="c-input "></textarea>
+							<textarea cols="30 " rows="6 " placeholder="Enter notes " id="track-notes-host " class="c-input" data-key="notes"></textarea>
 						</fieldset>
 					</div>
 				</div>
 			</section>
 			<!-- End Host section -->
 
-			<section id="collectingSection " class="u-bkg10 u-padder-top--lg ">
+			<section id="collection-data" class="u-bkg10 u-padder-top--lg ">
 				<div class="l-wrapper ">
 					<h2 class="c-title c-title--light c-title--lg u-separator-lg ">Collecting Data</h2>
 					<p class="u-separator-md ">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
@@ -390,15 +394,15 @@
 
 					<fieldset class="c-form__fieldset u-separator-xs ">
 						<label class="c-label " for="collection-method ">Collecting Method</label>
-						<input placeholder="enter the method " id="collection-method " class="c-input " type="text ">
+						<input placeholder="enter the method " id="collection-method " class="c-input " type="text" data-key="method">
 					</fieldset>
 					<fieldset class="c-form__fieldset u-separator-xs ">
 						<label class="c-label " for="expedition-name ">Expedition name</label>
-						<input placeholder="enter the expedition name " id="expedition-name " class="c-input " type="text ">
+						<input placeholder="enter the expedition name " id="expedition-name " class="c-input " type="text" data-key="expedition-name">
 					</fieldset>
 					<fieldset class="c-form__fieldset u-separator-xs ">
 						<label class="c-label " for="verbatim-date ">Verbatim date</label>
-						<input placeholder="enter the verbatim date " id="verbatim-date " class="c-input " type="text ">
+						<input placeholder="enter the verbatim date " id="verbatim-date " class="c-input " type="text" data-key="verbatim-date">
 					</fieldset>
 
 					<div class="l-two-col ">
@@ -418,15 +422,15 @@
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label" for="from-day ">Day</label>
-								<input type="number" id="from-day" placeholder="enter collected from day" class="c-input ">
+								<input type="number" id="from-day" placeholder="enter collected from day" class="c-input" data-key="from-day">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label" for="from-month ">Month</label>
-								<input type="number" id="from-month" placeholder="enter collected from month" class="c-input ">
+								<input type="number" id="from-month" placeholder="enter collected from month" class="c-input" data-key="from-month">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label" for="from-year ">Year</label>
-								<input type="number" id="from-year" placeholder="enter collected from year" class="c-input ">
+								<input type="number" id="from-year" placeholder="enter collected from year" class="c-input" data-key="from-year">
 							</fieldset>
 
 
@@ -447,15 +451,15 @@
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label" for="to-day">Day</label>
-								<input type="number" id="to-day" placeholder="enter collected to day" class="c-input ">
+								<input type="number" id="to-day" placeholder="enter collected to day" class="c-input" data-key="to-day">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label" for="to-month">Month</label>
-								<input type="number " id="to-month" placeholder="enter collected to month" class="c-input ">
+								<input type="number " id="to-month" placeholder="enter collected to month" class="c-input" data-key="to-month">
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label" for="to-year">Year</label>
-								<input type="number " id="to-year" placeholder="enter collected to year" class="c-input ">
+								<input type="number " id="to-year" placeholder="enter collected to year" class="c-input" data-key="to-year">
 							</fieldset>
 
 
@@ -474,27 +478,27 @@
 
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="collected-verbatim">Verbatim Name</label>
-							<input placeholder="enter verbatim name" id="collected-verbatim" class="c-input " type="text ">
+							<input placeholder="enter verbatim name" id="collected-verbatim" class="c-input " type="text" data-key="verbatim">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="collected-first-name">First Name</label>
-							<input placeholder="enter first name" id="collected-first-name" class="c-input " type="text ">
+							<input placeholder="enter first name" id="collected-first-name" class="c-input " type="text" data-key="first-name">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="collected-middle-name1 ">Middle Name 1</label>
-							<input placeholder="enter middle name 1" id="collected-middle-name1" class="c-input " type="text ">
+							<input placeholder="enter middle name 1" id="collected-middle-name1" class="c-input " type="text" data-key="middle-name1">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="collected-middle-name2 ">Middle Name 2</label>
-							<input placeholder="enter middle name 2" id="collected-middle-name2" class="c-input " type="text ">
+							<input placeholder="enter middle name 2" id="collected-middle-name2" class="c-input " type="text" data-key="middle-name2">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="collected-last-name1">Last Name 1</label>
-							<input placeholder="enter last name 1" id="collected-last-name1" class="c-input " type="text ">
+							<input placeholder="enter last name 1" id="collected-last-name1" class="c-input " type="text" data-key="last-name1">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="collected-last-name2">Last Name 2</label>
-							<input placeholder="enter last name 2" id="collected-last-name2" class="c-input " type="text ">
+							<input placeholder="enter last name 2" id="collected-last-name2" class="c-input " type="text" data-key="last-name2">
 						</fieldset>
 					</div>
 					<button id="collected-by-button" class="c-button c-button--uppercase c-button--centered ">
@@ -502,14 +506,14 @@
 
 					<fieldset class="c-form__fieldset ">
 						<label class="c-label " for="track-notes-coll ">Notes</label>
-						<textarea cols="30 " rows="6 " placeholder="Enter notes " id="track-notes-coll " class="c-input "></textarea>
+						<textarea cols="30 " rows="6 " placeholder="Enter notes " id="track-notes-coll " class="c-input " data-key="notes"></textarea>
 					</fieldset>
 
 				</div>
 			</section>
 			<!-- End collecting data -->
 
-			<section class="u-bkg8 ">
+			<section class="u-bkg8" id="location-data">
 				<div class="l-wrapper ">
 					<h2 class="c-title c-title--light c-title--lg u-separator-lg ">Location</h2>
 					<p class="u-separator-md ">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
@@ -529,14 +533,14 @@
 
 					<fieldset class="c-form__fieldset u-separator-md ">
 						<label class="c-label " for="verbatim-address ">Verbatim Location / Address</label>
-						<input placeholder="class " id="verbatim-address " class="c-input " type="text ">
+						<input placeholder="class " id="verbatim-address " class="c-input " type="text " data-key="verbatim">
 					</fieldset>
 
 					<div class="l-two-col u-separator-lg ">
 						<div class="l-two-col__block ">
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="continent ">Continent</label>
-								<select placeholder="Select input " id="continent " class="c-input c-input--square c-input--select ">
+								<select placeholder="Select input " id="continent " class="c-input c-input--square c-input--select" data-key="continent">
 									<option value="North America ">North America</option>
 									<option value="South America ">South America</option>
 									<option value="Africa ">Africa</option>
@@ -548,7 +552,7 @@
 							</fieldset>
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="country ">Country</label>
-								<select placeholder="Select input " id="country " class="c-input c-input--square c-input--select ">
+								<select placeholder="Select input " id="country " class="c-input c-input--square c-input--select" data-key="country">
 									<option value="AF ">Afghanistan</option>
 									<option value="AX ">Åland Islands</option>
 									<option value="AL ">Albania</option>
@@ -803,29 +807,29 @@
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="dept ">Department</label>
-								<input placeholder="class " id="dept " class="c-input " type="text ">
+								<input placeholder="class " id="dept " class="c-input " type="text" data-key="department">
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="county ">County</label>
-								<input placeholder="class " id="county " class="c-input " type="text ">
+								<input placeholder="class " id="county " class="c-input " type="text" data-key="county">
 							</fieldset>
 
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="city ">City / Town / Hamlet</label>
-								<input placeholder="class " id="city " class="c-input " type="text ">
+								<input placeholder="class " id="city " class="c-input " type="text" data-key="city-town-hamlet">
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="specific-locale ">Specific Locale</label>
-								<input placeholder="class " id="specific-locale " class="c-input " type="text ">
+								<input placeholder="class " id="specific-locale " class="c-input " type="text" data-key="specific-locale">
 							</fieldset>
 						</div>
 						<div class="l-two-col__block ">
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="ocean ">Ocean</label>
-								<select placeholder="Select input " id="ocean " class="c-input c-input--square c-input--select ">
+								<select placeholder="Select input " id="ocean " class="c-input c-input--square c-input--select" data-key="ocean">
 									<option selected=" ">option-1</option>
 									<option>option-2</option>
 									<option>option-3</option>
@@ -834,74 +838,74 @@
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="sea ">Sea / Gulf / Strait</label>
-								<input placeholder="class " id="sea " class="c-input " type="text ">
+								<input placeholder="class " id="sea " class="c-input " type="text" data-key="sea-gulf-strait">
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="lake ">Lake / Pond / Reservoir</label>
-								<input placeholder="class " id="lake " class="c-input " type="text ">
+								<input placeholder="class " id="lake " class="c-input " type="text" data-key="lake-pond-reservoir">
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="bay ">Bay / Harbor</label>
-								<input placeholder="class " id="bay " class="c-input " type="text ">
+								<input placeholder="class " id="bay " class="c-input " type="text" data-key="bay-harbor">
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="river ">River / Creek</label>
-								<input placeholder="class " id="river " class="c-input " type="text ">
+								<input placeholder="class " id="river " class="c-input " type="text" data-key="river-creek">
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="stream ">Stream</label>
-								<input placeholder="class " id="stream " class="c-input " type="text ">
+								<input placeholder="class " id="stream " class="c-input " type="text" data-key="stream">
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="island-group ">Island Group</label>
-								<input placeholder="class " id="island-group " class="c-input " type="text ">
+								<input placeholder="class " id="island-group " class="c-input " type="text" data-key="island-group">
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="island ">Island</label>
-								<input placeholder="class " id="island " class="c-input " type="text ">
+								<input placeholder="class " id="island " class="c-input " type="text" data-key="island">
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="mtn-range ">Mountain Range</label>
-								<input placeholder="class " id="mtn-range " class="c-input " type="text ">
+								<input placeholder="class " id="mtn-range " class="c-input " type="text" data-key="mountain-range">
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="mtn ">Mountain</label>
-								<input placeholder="class " id="mtn " class="c-input " type="text ">
+								<input placeholder="class " id="mtn " class="c-input " type="text" data-key="mountain">
 							</fieldset>
 						</div>
 					</div>
 
 					<hr>
 
-					<div class="l-two-col ">
+					<div class="l-two-col">
 						<div class="l-two-col__block ">
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="lat-from ">Latitude From</label>
-								<input placeholder="class " id="lat-from " class="c-input " type="text ">
+								<input placeholder="class " id="lat-from " class="c-input " type="text" data-key="fromLat">
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="lon-from ">Longitude From</label>
-								<input placeholder="class " id="lon-from " class="c-input " type="text ">
+								<input placeholder="class " id="lon-from " class="c-input " type="text" data-key="fromLon">
 							</fieldset>
 						</div>
 						<div class="l-two-col__block ">
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="lat-to ">Latitude To</label>
-								<input placeholder="class " id="lat-to " class="c-input " type="text ">
+								<input placeholder="class " id="lat-to " class="c-input " type="text" data-key="toLat">
 							</fieldset>
 
 							<fieldset class="c-form__fieldset u-separator-xs ">
 								<label class="c-label " for="lon-to ">Longitude To</label>
-								<input placeholder="class " id="lon-to " class="c-input " type="text ">
+								<input placeholder="class " id="lon-to " class="c-input " type="text" data-key="toLon">
 							</fieldset>
 						</div>
 					</div>
@@ -913,7 +917,7 @@
 							<fieldset class="c-input-group c-form__fieldset">
 								<label class="c-label " for="lat-input-grp ">Temperature (°F)</label>
 								<div>
-									<input type="search " id="fahrenheit-input" placeholder="°F " class="c-input c-input--square ">
+									<input type="search " id="fahrenheit-input" placeholder="°F " class="c-input c-input--square" data-key="temperature-f">
 									<span class="c-input-group__sidekick ">°F</span>
 								</div>
 							</fieldset>
@@ -922,7 +926,7 @@
 							<fieldset class="c-input-group c-form__fieldset">
 								<label class="c-label " for="an-input-grp ">Temperature (°C)</label>
 								<div>
-									<input type="search " id="celsius-input" placeholder="°C " class="c-input c-input--square ">
+									<input type="search " id="celsius-input" placeholder="°C " class="c-input c-input--square" data-key="temperature-c">
 									<span class="c-input-group__sidekick ">°C</span>
 								</div>
 							</fieldset>
@@ -931,12 +935,12 @@
 
 					<fieldset class="c-form__fieldset ">
 						<label class="c-label " for="track-notes-loc ">Notes</label>
-						<textarea cols="30 " rows="6 " placeholder="Enter notes " id="track-notes-loc " class="c-input "></textarea>
+						<textarea cols="30 " rows="6 " placeholder="Enter notes " id="track-notes-loc " class="c-input" data-key="notes"></textarea>
 					</fieldset>
 				</div>
 			</section>
 			<!-- End of location section -->
-			<section class="u-bkg9 ">
+			<section class="u-bkg9" id="donation-data">
 				<div class="l-wrapper ">
 					<h2 class="c-title c-title--light c-title--lg u-separator-lg ">Donors</h2>
 					<p class="u-separator-md ">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
@@ -957,58 +961,58 @@
 
 					<fieldset class="c-form__fieldset u-separator-xs ">
 						<label class="c-label " for="donated-day">Day</label>
-						<input type="number " id="donated-day" placeholder="enter donated on day" class="c-input ">
+						<input type="number " id="donated-day" placeholder="enter donated on day" class="c-input" data-key="day">
 					</fieldset>
 					<fieldset class="c-form__fieldset u-separator-xs ">
 						<label class="c-label " for="donated-month">Month</label>
-						<input type="number " id="donated-month" placeholder="enter donated on month" class="c-input ">
+						<input type="number " id="donated-month" placeholder="enter donated on month" class="c-input" data-key="month">
 					</fieldset>
 					<fieldset class="c-form__fieldset u-separator-lg ">
 						<label class="c-label " for="donated-year">Year</label>
-						<input type="number " id="donated-year" placeholder="enter donated on year" class="c-input ">
+						<input type="number " id="donated-year" placeholder="enter donated on year" class="c-input" data-key="year">
 					</fieldset>
 
 
 					<div class="c-people-list u-separator-md ">
 						<label class="c-label " for=" ">Donors Added</label>
-						<ul id="donor-list">
+						<ul id="donated-by-list">
 						</ul>
 					</div>
 
-					<div id="donor-form" class="l-person ">
+					<div id="donated-by-form" class="l-person ">
 
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="donated-verbatim">Verbatim Name</label>
-							<input placeholder="enter verbatim name" id="donated-verbatim" class="c-input " type="text ">
+							<input placeholder="enter verbatim name" id="donated-verbatim" class="c-input " type="text" data-key="verbatim">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="donated-first-name">First Name</label>
-							<input placeholder="enter first name" id="donated-first-name" class="c-input " type="text ">
+							<input placeholder="enter first name" id="donated-first-name" class="c-input " type="text" data-key="first-name">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="donated-middle-name1">Middle Name 1</label>
-							<input placeholder="enter middle name 1" id="donated-middle-name1" class="c-input " type="text ">
+							<input placeholder="enter middle name 1" id="donated-middle-name1" class="c-input " type="text" data-key="middle-name1">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="donated-middle-name2">Middle Name 2</label>
-							<input placeholder="enter middle name 2" id="donated-middle-name2" class="c-input " type="text ">
+							<input placeholder="enter middle name 2" id="donated-middle-name2" class="c-input " type="text" data-key="middle-name2">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="donated-last-name1">Last Name 1</label>
-							<input placeholder="enter last name 1" id="donated-last-name1" class="c-input " type="text ">
+							<input placeholder="enter last name 1" id="donated-last-name1" class="c-input " type="text" data-key="last-name1">
 						</fieldset>
 						<fieldset class="c-form__fieldset u-separator-xs ">
 							<label class="c-label " for="donated-last-name2">Last Name 2</label>
-							<input placeholder="enter last name 2" id="donated-last-name2" class="c-input " type="text ">
+							<input placeholder="enter last name 2" id="donated-last-name2" class="c-input " type="text" data-key="last-name2">
 						</fieldset>
 					</div>
-					<button id="donor-button" class="c-button c-button--uppercase c-button--centered u-separator-lg ">
+					<button id="donated-by-button" class="c-button c-button--uppercase c-button--centered u-separator-lg ">
 						<i class="fas fa-user "></i> Add donor</button>
 
 
 					<fieldset class="c-form__fieldset ">
 						<label class="c-label " for="track-notes-donor ">Notes</label>
-						<textarea cols="30 " rows="6 " placeholder="Enter notes " id="track-notes-donor " class="c-input "></textarea>
+						<textarea cols="30 " rows="6 " placeholder="Enter notes " id="track-notes-donor " class="c-input" data-key="notes"></textarea>
 					</fieldset>
 				</div>
 			</section>
@@ -1018,12 +1022,12 @@
 				<div class="l-wrapper ">
 					<div class="l-two-col ">
 						<div class="l-two-col__block ">
-							<button class="c-button c-button--uppercase c-button--centered ">
+							<button class="c-button c-button--uppercase c-button--centered" id="add-record-button">
 								<i class="fas fa-plus "></i> Add another</button>
 						</div>
 						<div class="l-two-col__block ">
-							<button class="c-button c-button--uppercase c-button--centered ">
-								<i class="fas fa-download "></i>download CSV</button>
+							<button class="c-button c-button--uppercase c-button--centered" id="export-csv-button">
+								<i class="fas fa-download "></i> Download CSV</button>
 						</div>
 					</div>
 				</div>
@@ -1041,13 +1045,11 @@
 		</div>
 		<!--  end of form -->
 	</main>
-
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js " integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	 crossorigin=" anonymous "></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js " integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
 	 crossorigin=" anonymous "></script>
 
-	<script src="./static/js/add_person.js" type="text/javascript"></script>
 	<script src="./static/js/worms.js "></script>
 	<script src="./static/js/triggers.js "></script>
 	<script src="./static/js/calendars.js "></script>
