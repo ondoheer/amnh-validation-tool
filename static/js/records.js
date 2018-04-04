@@ -17,7 +17,6 @@ function generateTrackingNumber () {
 function getSection (sectionId) {
     let sectionData = {}
     let inputs = document.querySelectorAll(`#${sectionId} [data-key]`)
-    console.log(inputs)
     inputs.forEach((input) => {
         if (input.type === 'radio'){
             if (input.checked) sectionData[kebabToCamel(input.dataset.key)] = input.value;
@@ -44,7 +43,6 @@ function collectFormData () {
     record.determinedBy.people = determinedByPeople.getPeople()
     record.collectionData.collectors = collectors.getPeople()
     record.donationData.donors  = donors.getPeople()
-    console.log(record)
     return record
 }
 
