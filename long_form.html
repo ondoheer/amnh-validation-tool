@@ -526,25 +526,25 @@
 						</div>
 					</fieldset>
 
-           <div id="location-map" style="width:600px;height:400px;" class="u-separator-md"></div>
+          <div id="location_autocomplete_dialog" class="c-dialog" title="Verify Autocomplete Fields">
+            <h1>Autocomplete</h1>
+            <p><br>These are the places that came back from the Location search. Which column is which?<br></p>
+            <div id="autocomplete_list"></div>
+            <!-- <button id="autopopulate_cancel">CANCEL</button>
+            <button id="autopopulate_ok">USE</button> -->
+            <div class="l-two-col">
+              <div class="l-two-col__block">
+                <button id="autopopulate_cancel" class="c-button c-button--uppercase c-button--centered ">
+                  <i class="fas fa-thumbs-down"></i> Cancel</button>
+              </div>
+              <div class="l-two-col__block">
+                <button id="autopopulate_ok" class="c-button c-button--uppercase c-button--centered ">
+                  <i class="fas fa-thumbs-up"></i> Use</button>
+              </div>
+            </div>
+          </div>
 
-           <div id="location_autocomplete_dialog" style="z-index:1;margin:25px;padding:25px;width:80%;background-color:navy;position:absolute;" title="Verify Autocomplete Fields">
-             <h1>Autocomplete</h1>
-             <p><br>These are the places that came back from the Location search. Which column is which?<br></p>
-             <div id="autocomplete_list"></div>
-             <!-- <button id="autopopulate_cancel">CANCEL</button>
-             <button id="autopopulate_ok">USE</button> -->
-             <div class="l-two-col">
-               <div class="l-two-col__block">
-                 <button id="autopopulate_cancel" class="c-button c-button--uppercase c-button--centered ">
-                   <i class="fas fa-thumbs-down"></i> Cancel</button>
-               </div>
-               <div class="l-two-col__block">
-                 <button id="autopopulate_ok" class="c-button c-button--uppercase c-button--centered ">
-                   <i class="fas fa-thumbs-up"></i> Use</button>
-               </div>
-             </div>
-           </div>
+          <div id="location-map" style="width:100%;height:400px;" class="u-separator-md"></div>
 
 					<fieldset class="c-form__fieldset u-separator-md ">
 						<label class="c-label " for="verbatim-address ">Verbatim Location / Address</label>
