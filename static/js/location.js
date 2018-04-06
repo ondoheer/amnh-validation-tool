@@ -33,14 +33,17 @@ const initListeners = () => {
     // for each dialog autoselect box
     var children = document.querySelectorAll('#autocomplete_list select');
     for (var i=0; i < children.length; i++) {
-      console.log(children[i].dataset);
-      // find types
-      // var value = selectBox.dataset;
-      // var selectedOption = selectBox.value;
-      // console.log(value, selectedOption);
-      //
+      var option = children[i].value;
+      if (option != ' ') {
+        if (option == 'country') {
+          $('#country').val(children[i].dataset.shortName);
+        }
+        else {
+          $(`#${option}`).val(children[i].dataset.longName)
+        }
+      }
     }
-    console.log(children);
+
     $('#location_autocomplete_dialog').addClass("u-hidden");
   });
 }
@@ -48,7 +51,6 @@ const initListeners = () => {
 const createLocationFinder = (finder) => {
   var autocomplete = new google.maps.places.Autocomplete(finder[0]);
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
-    console.log("From autocomplete: ", autocomplete.getPlace());
     addressComponents.types = autocomplete.getPlace().address_components;
     addressComponents.lat = autocomplete.getPlace().geometry.location.lat();
     addressComponents.lng = autocomplete.getPlace().geometry.location.lng();
@@ -58,7 +60,6 @@ const createLocationFinder = (finder) => {
 }
 
 const onLocationGo = () => {
-  console.log("onLocationGo!");
   if (jQuery.isEmptyObject(addressComponents)) {
     return
   }
@@ -82,7 +83,6 @@ const initMap = (lat, lng) => {
 }
 
 const initDialogFlow = (addressMap) => {
-  console.log("initDialogFlow!")
   // show dialog
   $('#location_autocomplete_dialog').removeClass("u-hidden");
 
@@ -101,13 +101,13 @@ const initDialogFlow = (addressMap) => {
 
 // create dropdowns for each entry in address map
 const createDropdowns = (dialog, addressMap) => {
-  console.log("creating dropdowns...");
   for (var i=0; i < addressMap.length; i++) {
     var item = addressMap[i];
     var type = item.types[0];
     var itemHtml = `<fieldset class="c-form__fieldset u-separator-xs">
       <label class="c-label " for="">${item.long_name} (${type}) is a</label>
-      <select data-google="${item.long_name}" placeholder="Select input" class="c-input c-input--square c-input--select "></select>
+      <select data-long-name="${item.long_name}" data-short-name="${item.short_name}"
+      placeholder="Select input" class="c-input c-input--square c-input--select "></select>
     </fieldset>`;
 
     var dropdown = $(itemHtml);
@@ -141,9 +141,6 @@ const selectOption = (dropdown, options, type) => {
     optionType.selected = true;
   }
 }
-
-const useButton = document.getElementById('autopopulate_ok');
-const cancelButton = document.getElementById('autopopulate_cancel');
 
 createLocationFinder($('#location-autocomplete'));
 initListeners();
