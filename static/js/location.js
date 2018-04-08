@@ -63,23 +63,57 @@ const onLocationGo = () => {
   if (jQuery.isEmptyObject(addressComponents)) {
     return
   }
-  // thing 1: recenter on map Marker
-  initMap(addressComponents.lat, addressComponents.lng)
   // initiate political and natural feature dialog flow
-  initDialogFlow(addressComponents.types)
+  // initDialogFlow(addressComponents.types)
 }
 
 //todo: fix map so it goes under header
-const initMap = (lat, lng) => {
-  var center = {lat: lat, lng: lng};
+const initMap = () => {
   var map = new google.maps.Map(document.getElementById('location-map'), {
-    zoom: 10,
-    center: center
+    zoom: 3,
+    center: {lat: .433014, lng: 0.752724 }
   });
   var marker = new google.maps.Marker({
     position: center,
     map: map
   });
+
+  autocomplete.addListener('place_changed', function() {
+    infowindow.close();
+    marker.setVisible(false);
+    var place = autocomplete.getPlace();
+    if (!place.geometry) {
+      // User entered the name of a Place that was not suggested and
+      // pressed the Enter key, or the Place Details request failed.
+      window.alert("No details available for input: '" + place.name + "'");
+      return;
+    }
+
+    // If the place has a geometry, then present it on a map.
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);  // Why 17? Because it looks good.
+    }
+    marker.setPosition(place.geometry.location);
+    marker.setVisible(true);
+
+    var address = '';
+    if (place.address_components) {
+      address = [
+        (place.address_components[0] && place.address_components[0].short_name || ''),
+        (place.address_components[1] && place.address_components[1].short_name || ''),
+        (place.address_components[2] && place.address_components[2].short_name || '')
+      ].join(' ');
+    }
+
+    infowindowContent.children['place-icon'].src = place.icon;
+    infowindowContent.children['place-name'].textContent = place.name;
+    infowindowContent.children['place-address'].textContent = address;
+    infowindow.open(map, marker);
+  });
+
 }
 
 const initDialogFlow = (addressMap) => {
@@ -144,3 +178,5 @@ const selectOption = (dropdown, options, type) => {
 
 createLocationFinder($('#location-autocomplete'));
 initListeners();
+// thing 1: recenter on map Marker
+initMap()
