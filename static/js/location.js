@@ -19,11 +19,6 @@ var naturalOptions = {" ":" ",
                       "mtn":"Mountain"};
 
 const initListeners = () => {
-  // on go, go
-  // $('#location-go').click(function() {
-  //   onLocationGo();
-  // });
-
   // on cancel, hide dialog
   $('#autopopulate_cancel').click(function() {
     $('#location_autocomplete_dialog').addClass("u-hidden");
@@ -48,24 +43,12 @@ const initListeners = () => {
   });
 }
 
-// const createLocationFinder = (finder) => {
-//   var autocomplete = new google.maps.places.Autocomplete(finder[0]);
-//   google.maps.event.addListener(autocomplete, 'place_changed', function() {
-//     addressComponents.types = autocomplete.getPlace().address_components;
-//     addressComponents.lat = autocomplete.getPlace().geometry.location.lat();
-//     addressComponents.lng = autocomplete.getPlace().geometry.location.lng();
-//
-//     onLocationGo()
-//   });
-// }
-
 const onLocationGo = (geoComponents) => {
   // console.log(addressComponents);
   // initiate political and natural feature dialog flow
   initDialogFlow(geoComponents.types)
 }
 
-//todo: fix map so it goes under header
 const initMap = () => {
   var map = new google.maps.Map(document.getElementById('location-map'), {
     zoom: 3,
@@ -127,60 +110,6 @@ const initMap = () => {
     var places = searchBox.getPlaces();
     updateMap(places);
   });
-
-  // autocomplete.addListener('place_changed', function() {
-  //   marker.setVisible(false);
-  //   var place = autocomplete.getPlaces();
-  //   console.log(place);
-  //   updateMap(place);
-  // });
-
-  // autocomplete.addListener('place_changed', function() {
-  //   // infowindow.close();
-  //   marker.setVisible(false);
-  //   var place = autocomplete.getPlace();
-  //   if (!place.geometry) {
-  //     // User entered the name of a Place that was not suggested and
-  //     // pressed the Enter key, or the Place Details request failed.
-  //     window.alert("No details available for input: '" + place.name + "'");
-  //     return;
-  //   }
-  //
-  //   // If the place has a geometry, then present it on a map.
-  //   if (place.geometry.viewport) {
-  //     map.fitBounds(place.geometry.viewport);
-  //   } else {
-  //     map.setCenter(place.geometry.location);
-  //     map.setZoom(17);  // Why 17? Because it looks good.
-  //   }
-  //   marker.setPosition(place.geometry.location);
-  //   marker.setVisible(true);
-  //
-  //   if (place.address_components) {
-  //     var addrComponents = {}
-  //     addrComponents.types = place.address_components;
-  //     addrComponents.lat = place.geometry.location.lat();
-  //     addrComponents.lng = place.geometry.location.lng();
-  //
-  //     // onLocationGo(addrComponents);
-  //   }
-  //
-  //   // var address = '';
-  //   // if (place.address_components) {
-  //   //   address = [
-  //   //     (place.address_components[0] && place.address_components[0].short_name || ''),
-  //   //     (place.address_components[1] && place.address_components[1].short_name || ''),
-  //   //     (place.address_components[2] && place.address_components[2].short_name || '')
-  //   //   ].join(' ');
-  //   //
-  //   //   console.log(address);
-  //   // }
-  //
-  //   // infowindowContent.children['place-icon'].src = place.icon;
-  //   // infowindowContent.children['place-name'].textContent = place.name;
-  //   // infowindowContent.children['place-address'].textContent = address;
-  //   // infowindow.open(map, marker);
-  // });
 }
 
 const initDialogFlow = (addressMap) => {
