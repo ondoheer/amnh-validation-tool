@@ -20,9 +20,9 @@ var naturalOptions = {" ":" ",
 
 const initListeners = () => {
   // on go, go
-  $('#location-go').click(function() {
-    onLocationGo();
-  });
+  // $('#location-go').click(function() {
+  //   onLocationGo();
+  // });
 
   // on cancel, hide dialog
   $('#autopopulate_cancel').click(function() {
@@ -48,23 +48,21 @@ const initListeners = () => {
   });
 }
 
-const createLocationFinder = (finder) => {
-  var autocomplete = new google.maps.places.Autocomplete(finder[0]);
-  google.maps.event.addListener(autocomplete, 'place_changed', function() {
-    addressComponents.types = autocomplete.getPlace().address_components;
-    addressComponents.lat = autocomplete.getPlace().geometry.location.lat();
-    addressComponents.lng = autocomplete.getPlace().geometry.location.lng();
+// const createLocationFinder = (finder) => {
+//   var autocomplete = new google.maps.places.Autocomplete(finder[0]);
+//   google.maps.event.addListener(autocomplete, 'place_changed', function() {
+//     addressComponents.types = autocomplete.getPlace().address_components;
+//     addressComponents.lat = autocomplete.getPlace().geometry.location.lat();
+//     addressComponents.lng = autocomplete.getPlace().geometry.location.lng();
+//
+//     onLocationGo()
+//   });
+// }
 
-    onLocationGo()
-  });
-}
-
-const onLocationGo = () => {
-  if (jQuery.isEmptyObject(addressComponents)) {
-    return
-  }
+const onLocationGo = (geoComponents) => {
+  // console.log(addressComponents);
   // initiate political and natural feature dialog flow
-  // initDialogFlow(addressComponents.types)
+  initDialogFlow(geoComponents.types)
 }
 
 //todo: fix map so it goes under header
@@ -73,15 +71,19 @@ const initMap = () => {
     zoom: 3,
     center: {lat: .433014, lng: 0.752724 }
   });
+
   var marker = new google.maps.Marker({
-    position: center,
-    map: map
+    map: map,
+    anchorPoint: new google.maps.Point(0, -29)
   });
 
-  autocomplete.addListener('place_changed', function() {
-    infowindow.close();
-    marker.setVisible(false);
-    var place = autocomplete.getPlace();
+  var input = document.getElementById('location-autocomplete');
+  // var autocomplete = new google.maps.places.Autocomplete(input);
+  var searchBox = new google.maps.places.SearchBox(input);
+  var textSearch = new google.maps.places.PlacesService(map);
+  var searchButton = document.getElementById('location-go');
+
+  function updateMap(place) {
     if (!place.geometry) {
       // User entered the name of a Place that was not suggested and
       // pressed the Enter key, or the Place Details request failed.
@@ -99,21 +101,80 @@ const initMap = () => {
     marker.setPosition(place.geometry.location);
     marker.setVisible(true);
 
-    var address = '';
     if (place.address_components) {
-      address = [
-        (place.address_components[0] && place.address_components[0].short_name || ''),
-        (place.address_components[1] && place.address_components[1].short_name || ''),
-        (place.address_components[2] && place.address_components[2].short_name || '')
-      ].join(' ');
+      var addrComponents = {}
+      addrComponents.types = place.address_components;
+      addrComponents.lat = place.geometry.location.lat();
+      addrComponents.lng = place.geometry.location.lng();
     }
+  }
 
-    infowindowContent.children['place-icon'].src = place.icon;
-    infowindowContent.children['place-name'].textContent = place.name;
-    infowindowContent.children['place-address'].textContent = address;
-    infowindow.open(map, marker);
+  // autocomplete.addListener('place_changed', function() {
+  //   marker.setVisible(false);
+  //   var place = autocomplete.getPlaces();
+  //   console.log(place);
+  //   updateMap(place);
+  // });
+
+  searchButton.addEventListener('click', function() {
+    marker.setVisible(false);
+    geocoder = new google.maps.Geocoder();
+
+
   });
 
+  searchBox.addListener('places_changed', function() {
+    marker.setVisible(false);
+    var places = searchBox.getPlaces();
+    updateMap(places[0]);
+  });
+
+  // autocomplete.addListener('place_changed', function() {
+  //   // infowindow.close();
+  //   marker.setVisible(false);
+  //   var place = autocomplete.getPlace();
+  //   if (!place.geometry) {
+  //     // User entered the name of a Place that was not suggested and
+  //     // pressed the Enter key, or the Place Details request failed.
+  //     window.alert("No details available for input: '" + place.name + "'");
+  //     return;
+  //   }
+  //
+  //   // If the place has a geometry, then present it on a map.
+  //   if (place.geometry.viewport) {
+  //     map.fitBounds(place.geometry.viewport);
+  //   } else {
+  //     map.setCenter(place.geometry.location);
+  //     map.setZoom(17);  // Why 17? Because it looks good.
+  //   }
+  //   marker.setPosition(place.geometry.location);
+  //   marker.setVisible(true);
+  //
+  //   if (place.address_components) {
+  //     var addrComponents = {}
+  //     addrComponents.types = place.address_components;
+  //     addrComponents.lat = place.geometry.location.lat();
+  //     addrComponents.lng = place.geometry.location.lng();
+  //
+  //     // onLocationGo(addrComponents);
+  //   }
+  //
+  //   // var address = '';
+  //   // if (place.address_components) {
+  //   //   address = [
+  //   //     (place.address_components[0] && place.address_components[0].short_name || ''),
+  //   //     (place.address_components[1] && place.address_components[1].short_name || ''),
+  //   //     (place.address_components[2] && place.address_components[2].short_name || '')
+  //   //   ].join(' ');
+  //   //
+  //   //   console.log(address);
+  //   // }
+  //
+  //   // infowindowContent.children['place-icon'].src = place.icon;
+  //   // infowindowContent.children['place-name'].textContent = place.name;
+  //   // infowindowContent.children['place-address'].textContent = address;
+  //   // infowindow.open(map, marker);
+  // });
 }
 
 const initDialogFlow = (addressMap) => {
@@ -176,7 +237,7 @@ const selectOption = (dropdown, options, type) => {
   }
 }
 
-createLocationFinder($('#location-autocomplete'));
+// createLocationFinder($('#location-autocomplete'));
 initListeners();
 // thing 1: recenter on map Marker
 initMap()
