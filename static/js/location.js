@@ -1,4 +1,3 @@
-let addressComponents = {};
 var politicalOptions = {" ":" ",
                         "specific-locale":"Specific Locale",
                         "city":"City / Town / Hamlet",
@@ -84,25 +83,16 @@ const initMap = () => {
     }
   }
 
-  var input = document.getElementById('location-autocomplete');
-  // var autocomplete = new google.maps.places.Autocomplete(input);
-  var searchBox = new google.maps.places.SearchBox(input);
+  var textInput = document.getElementById('location-autocomplete');
+  var searchBox = new google.maps.places.SearchBox(textInput);
   var searchButton = document.getElementById('location-go');
 
   searchButton.addEventListener('click', function() {
-    // marker.setVisible(false);
     service = new google.maps.places.PlacesService(map);
-    var searchTerm = input.value;
+    var searchTerm = textInput.value;
 
-    function findPlaces(places, status) {
-      updateMap(places);
-    }
-
-    var request = {
-      query: searchTerm
-    };
-
-    service.textSearch(request, findPlaces);
+    request = {query: searchTerm}
+    service.textSearch(request, updateMap);
   });
 
   searchBox.addListener('places_changed', function() {
