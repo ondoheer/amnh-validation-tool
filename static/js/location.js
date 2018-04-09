@@ -77,17 +77,9 @@ const initMap = () => {
     anchorPoint: new google.maps.Point(0, -29)
   });
 
-  var input = document.getElementById('location-autocomplete');
-  // var autocomplete = new google.maps.places.Autocomplete(input);
-  var searchBox = new google.maps.places.SearchBox(input);
-  var textSearch = new google.maps.places.PlacesService(map);
-  var searchButton = document.getElementById('location-go');
-
-  function updateMap(place) {
-    if (!place.geometry) {
-      // User entered the name of a Place that was not suggested and
-      // pressed the Enter key, or the Place Details request failed.
-      window.alert("No details available for input: '" + place.name + "'");
+  function updateMap(places) {
+    if (places.length == 0) {
+      window.alert("No details about the place you searched for");
       return;
     }
 
@@ -109,25 +101,39 @@ const initMap = () => {
     }
   }
 
+  var input = document.getElementById('location-autocomplete');
+  // var autocomplete = new google.maps.places.Autocomplete(input);
+  var searchBox = new google.maps.places.SearchBox(input);
+  var searchButton = document.getElementById('location-go');
+
+  searchButton.addEventListener('click', function() {
+    // marker.setVisible(false);
+    service = new google.maps.places.PlacesService(map);
+    var searchTerm = input.value;
+
+    function findPlaces(places, status) {
+      updateMap(places);
+    }
+
+    var request = {
+      query: searchTerm
+    };
+
+    service.textSearch(request, findPlaces);
+  });
+
+  searchBox.addListener('places_changed', function() {
+    marker.setVisible(false);
+    var places = searchBox.getPlaces();
+    updateMap(places);
+  });
+
   // autocomplete.addListener('place_changed', function() {
   //   marker.setVisible(false);
   //   var place = autocomplete.getPlaces();
   //   console.log(place);
   //   updateMap(place);
   // });
-
-  searchButton.addEventListener('click', function() {
-    marker.setVisible(false);
-    geocoder = new google.maps.Geocoder();
-
-
-  });
-
-  searchBox.addListener('places_changed', function() {
-    marker.setVisible(false);
-    var places = searchBox.getPlaces();
-    updateMap(places[0]);
-  });
 
   // autocomplete.addListener('place_changed', function() {
   //   // infowindow.close();
