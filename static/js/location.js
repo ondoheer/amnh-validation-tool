@@ -64,7 +64,7 @@ const initMap = () => {
       window.alert("No details about the place you searched for");
       return;
     }
-
+    place = places[0];
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
@@ -165,4 +165,4 @@ const selectOption = (dropdown, options, type) => {
 // createLocationFinder($('#location-autocomplete'));
 initListeners();
 // thing 1: recenter on map Marker
-initMap()
+initMap();
