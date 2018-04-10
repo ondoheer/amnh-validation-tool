@@ -169,7 +169,5 @@ const selectOption = (dropdown, options, type) => {
   }
 }
 
-// createLocationFinder($('#location-autocomplete'));
 initListeners();
-// thing 1: recenter on map Marker
 initMap();
