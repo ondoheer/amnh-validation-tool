@@ -59,11 +59,15 @@ const initMap = () => {
     anchorPoint: new google.maps.Point(0, -29)
   });
 
+  var geocoder = new google.maps.Geocoder;
+  var infowindow = new google.maps.InfoWindow;
+
   function updateMap(places) {
     if (places.length == 0) {
       window.alert("No details about the place you searched for");
       return;
     }
+    marker.setVisible(false);
 
     /* Depending on the search Google will return more than one place. We are
       choosing to display the first result (hopefully the most relevent) in the
@@ -101,9 +105,19 @@ const initMap = () => {
   });
 
   searchBox.addListener('places_changed', function() {
-    marker.setVisible(false);
     var places = searchBox.getPlaces();
     updateMap(places);
+  });
+
+  function geocodeLatLng(latLng, geocoder, map, infowindow) {
+
+  }
+
+  map.addListener('click', function(e) {
+    console.log(e.latLng);
+    geocoder.geocode({'location': e.latLng}, function(results, status) {
+      console.log(results);
+    })
   });
 }
 
