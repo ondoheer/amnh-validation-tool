@@ -43,7 +43,6 @@ const initListeners = () => {
 }
 
 const onLocationGo = (geoComponents) => {
-  // console.log(addressComponents);
   // initiate political and natural feature dialog flow
   initDialogFlow(geoComponents.types)
 }
@@ -107,17 +106,6 @@ const initMap = () => {
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
     updateMap(places);
-  });
-
-  function geocodeLatLng(latLng, geocoder, map, infowindow) {
-
-  }
-
-  map.addListener('click', function(e) {
-    console.log(e.latLng);
-    geocoder.geocode({'location': e.latLng}, function(results, status) {
-      console.log(results);
-    })
   });
 }
 
