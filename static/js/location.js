@@ -64,7 +64,12 @@ const initMap = () => {
       window.alert("No details about the place you searched for");
       return;
     }
+
+    /* Depending on the search Google will return more than one place. We are
+      choosing to display the first result (hopefully the most relevent) in the
+      list of places returned. */
     place = places[0];
+
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
