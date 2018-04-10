@@ -1,4 +1,3 @@
-let addressComponents = {};
 var politicalOptions = {" ":" ",
                         "specific-locale":"Specific Locale",
                         "city":"City / Town / Hamlet",
@@ -19,11 +18,6 @@ var naturalOptions = {" ":" ",
                       "mtn":"Mountain"};
 
 const initListeners = () => {
-  // on go, go
-  $('#location-go').click(function() {
-    onLocationGo();
-  });
-
   // on cancel, hide dialog
   $('#autopopulate_cancel').click(function() {
     $('#location_autocomplete_dialog').addClass("u-hidden");
@@ -48,37 +42,70 @@ const initListeners = () => {
   });
 }
 
-const createLocationFinder = (finder) => {
-  var autocomplete = new google.maps.places.Autocomplete(finder[0]);
-  google.maps.event.addListener(autocomplete, 'place_changed', function() {
-    addressComponents.types = autocomplete.getPlace().address_components;
-    addressComponents.lat = autocomplete.getPlace().geometry.location.lat();
-    addressComponents.lng = autocomplete.getPlace().geometry.location.lng();
-
-    onLocationGo()
-  });
-}
-
-const onLocationGo = () => {
-  if (jQuery.isEmptyObject(addressComponents)) {
-    return
-  }
-  // thing 1: recenter on map Marker
-  initMap(addressComponents.lat, addressComponents.lng)
+const onLocationGo = (geoComponents) => {
   // initiate political and natural feature dialog flow
-  initDialogFlow(addressComponents.types)
+  initDialogFlow(geoComponents.types)
 }
 
-//todo: fix map so it goes under header
-const initMap = (lat, lng) => {
-  var center = {lat: lat, lng: lng};
+const initMap = () => {
   var map = new google.maps.Map(document.getElementById('location-map'), {
-    zoom: 10,
-    center: center
+    zoom: 3,
+    center: {lat: .433014, lng: 0.752724 }
   });
+
   var marker = new google.maps.Marker({
-    position: center,
-    map: map
+    map: map,
+    anchorPoint: new google.maps.Point(0, -29)
+  });
+
+  var geocoder = new google.maps.Geocoder;
+  var infowindow = new google.maps.InfoWindow;
+
+  function updateMap(places) {
+    if (places.length == 0) {
+      window.alert("No details about the place you searched for");
+      return;
+    }
+    marker.setVisible(false);
+
+    /* Depending on the search Google will return more than one place. We are
+      choosing to display the first result (hopefully the most relevent) in the
+      list of places returned. */
+    place = places[0];
+
+    // If the place has a geometry, then present it on a map.
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);  // Why 17? Because it looks good.
+    }
+    marker.setPosition(place.geometry.location);
+    marker.setVisible(true);
+
+    if (place.address_components) {
+      var addrComponents = {}
+      addrComponents.types = place.address_components;
+      addrComponents.lat = place.geometry.location.lat();
+      addrComponents.lng = place.geometry.location.lng();
+    }
+  }
+
+  var textInput = document.getElementById('location-autocomplete');
+  var searchBox = new google.maps.places.SearchBox(textInput);
+  var searchButton = document.getElementById('location-go');
+
+  searchButton.addEventListener('click', function() {
+    service = new google.maps.places.PlacesService(map);
+    var searchTerm = textInput.value;
+
+    request = {query: searchTerm}
+    service.textSearch(request, updateMap);
+  });
+
+  searchBox.addListener('places_changed', function() {
+    var places = searchBox.getPlaces();
+    updateMap(places);
   });
 }
 
@@ -142,5 +169,5 @@ const selectOption = (dropdown, options, type) => {
   }
 }
 
-createLocationFinder($('#location-autocomplete'));
 initListeners();
+initMap();
