@@ -89,6 +89,8 @@ const initMap = () => {
       addrComponents.lat = place.geometry.location.lat();
       addrComponents.lng = place.geometry.location.lng();
     }
+
+    onLocationGo(addrComponents);
   }
 
   var textInput = document.getElementById('location-autocomplete');
