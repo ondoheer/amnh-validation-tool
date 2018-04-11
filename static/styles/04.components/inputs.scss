@@ -28,6 +28,15 @@
       width: 700px;
       line-height: 2;
     }
+
+    &--error {
+      border: 3px solid $bkg11;
+      color: $bkg11;
+
+      &::placeholder{
+        color: $bkg11;
+      }
+    }
   }
 
   textarea {
