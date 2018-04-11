@@ -1,3 +1,6 @@
+import errorsList from './errors';
+
+
 /**
  * Converts a valid html string representation into an html element
  * @param {html string representation} html 
@@ -24,8 +27,8 @@ const validateUserName = (value) => {
 /**
  * Displays an error message and adds the error class to the input field
  */
-const showError = () => {
-    const errorTemplate = `<div id="nameError" class='c-form__error-label u-align-center' >remeber to fill in a valid username</div>`;
+const showError = (text) => {
+    const errorTemplate = `<div id="nameError" class='c-form__error-label u-align-center' >${text}</div>`;
     const nameInput = document.getElementById("name");
 
     nameInput.insertAdjacentElement("afterend", htmlTextToElement(errorTemplate));
@@ -76,7 +79,7 @@ const validateAndRegisterUser = () => {
         nextPage();
     } else {
         
-        showError();
+        showError(errorsList.introIvalidUsername);
     }
     
 }
