@@ -3,4 +3,10 @@
 	&__fieldset{
 		display: grid;
 	}
+
+	&__error-label{
+		color: $bkg11;
+		font-size: $body-size;
+		line-height: 2;
+	}
 }
