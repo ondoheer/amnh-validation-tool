@@ -51,9 +51,10 @@ const cleanErrors = () => {
     const nameInput = document.getElementById("name");
     
     if(errorLabel){
-        console.log("is here");
+        
         errorLabel.remove();
         nameInput.classList.remove("c-input--error");
+        sessionStorage.removeItem("longFormNoUserError");
     }
 }
 
@@ -86,3 +87,9 @@ const validateAndRegisterUser = () => {
 const registerButton = document.querySelector("#registerUser");
 
 registerButton.addEventListener("click", validateAndRegisterUser);
+
+// check if an error from longform exists in the sessionStorage and display it
+const longFormError = sessionStorage.getItem("longFormNoUserError");
+if(longFormError){
+    showError(longFormError);
+}
