@@ -97,7 +97,6 @@ const initMap = () => {
       return;
     }
     updateMap(places[0]);
-    updateVerbatimAddress(textInput.value);
     updateLatLong(places[0]);
     displayAutocompleteDialog(places[0]);
   }
@@ -118,14 +117,6 @@ const initMap = () => {
     marker.setPosition(place.geometry.location);
     marker.setVisible(true);
   }
-}
-
-/**
- * Update the Verbatim Location/Adress field with the user input from the Location search box
- * @param {string} input
- */
-const updateVerbatimAddress = (input) => {
-  document.getElementById('verbatim-address').value = input;
 }
 
 /**
