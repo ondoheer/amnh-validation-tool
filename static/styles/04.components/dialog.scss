@@ -1,11 +1,11 @@
 .c-dialog {
-  background-color: $bkg5;
-  z-index:1;
-  left: 40%;
-  //margin-right: 10%;
-  // margin: 25px 10
-  margin: 0 0 0 -30%;
-  padding:25px;
-  width:80%;
-  position:absolute;
+  background-color: $bkg13;
+  border: 3px solid $bkg12;
+  border-radius: 5px;
+  z-index: 1;
+  left: 10%;
+  margin-top: 10px;
+  padding: 25px;
+  width: 80%;
+  position: absolute;
 }
