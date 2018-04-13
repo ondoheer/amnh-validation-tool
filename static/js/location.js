@@ -85,7 +85,6 @@ const initMap = () => {
     });
   });
 
-
   /**
    * Take the results returned by Google Maps and update the components of the
    * Locations section that we now have information about
@@ -98,6 +97,8 @@ const initMap = () => {
     }
     updateMap(places[0]);
     updateLatLong(places[0]);
+    resetFields('address-form');
+    resetFields('natural-place-form');
     displayAutocompleteDialog(places[0]);
   }
 
@@ -117,6 +118,13 @@ const initMap = () => {
     marker.setPosition(place.geometry.location);
     marker.setVisible(true);
   }
+}
+
+const resetFields = (form) => {
+  var elements = document.querySelectorAll(`#${form} input, #${form} select`);
+  elements.forEach((element) => {
+    element.value = ''
+  })
 }
 
 /**
