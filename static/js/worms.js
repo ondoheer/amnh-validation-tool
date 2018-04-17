@@ -1,3 +1,6 @@
+import errors from "./errors";
+import { showError, cleanErrors } from "./errors";
+
 const button = document.getElementById("worms");
 button.addEventListener("click", getSearchInfo);
 
@@ -23,6 +26,7 @@ function getSearchInfo() {
 
 function getWorms(genus, species) {
   const url = `http://www.marinespecies.org/rest/AphiaRecordsByMatchNames?scientificnames%5B%5D=${genus}%20${species}&marine_only=true`;
+  cleanErrors("Error", "searchTaxContainer");
   fetch(url)
     .then(response => {
       document.getElementById("whales-spinner").classList.add("u-hidden");
@@ -32,7 +36,12 @@ function getWorms(genus, species) {
     .then(json => {
       displayResponse(json);
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      // when there aren't results,it just returns an empty response
+      // and triggers an error
+
+      showError("searchTaxContainer", errors.noTaxnomoniesFound);
+    });
 }
 
 function displayResponse(response) {
