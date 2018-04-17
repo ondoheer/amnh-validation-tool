@@ -1,5 +1,6 @@
 import errors from "./errors";
 import { showError, cleanErrors } from "./errors";
+import { addStyleString } from "./css_injector";
 
 const button = document.getElementById("worms");
 button.addEventListener("click", getSearchInfo);
@@ -25,7 +26,10 @@ function getSearchInfo() {
 }
 
 function getWorms(genus, species) {
-  const url = `http://www.marinespecies.org/rest/AphiaRecordsByMatchNames?scientificnames%5B%5D=${genus}%20${species}&marine_only=true`;
+  const url = species
+    ? `http://www.marinespecies.org/rest/AphiaRecordsByMatchNames?scientificnames%5B%5D=${genus}%20${species}&marine_only=true`
+    : `http://www.marinespecies.org/rest/AphiaRecordsByMatchNames?scientificnames%5B%5D=${genus}&marine_only=true`;
+
   cleanErrors("Error", "searchTaxContainer");
   fetch(url)
     .then(response => {
@@ -35,11 +39,14 @@ function getWorms(genus, species) {
     })
     .then(json => {
       displayResponse(json);
+      addStyleString(`#taxonomy-data input:placeholder-shown {
+  border: 3px solid #080d29 !important; 
+}`);
     })
     .catch(error => {
       // when there aren't results,it just returns an empty response
       // and triggers an error
-
+      console.error(error);
       showError("searchTaxContainer", errors.noTaxnomoniesFound);
     });
 }
