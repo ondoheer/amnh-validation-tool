@@ -52,9 +52,14 @@ function collectFormData() {
 }
 
 export function clearRecords() {
-  clearDatabase().then(() => {
-    countRecords();
-  });
+  const clearConfirm = confirm(
+    "This will delete all the previously added Records, make sure you have already exported them to a CSV or don't need them. Do you want to delete the records?"
+  );
+  if (clearConfirm) {
+    clearDatabase().then(() => {
+      countRecords();
+    });
+  }
 }
 
 export function saveRecord() {
