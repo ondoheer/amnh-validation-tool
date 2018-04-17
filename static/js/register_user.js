@@ -42,8 +42,6 @@ const addUser = userName => {
   sessionStorage.setItem("userName", userName);
 };
 
-export const getUser = () => sessionStorage.getItem("userName");
-
 /**
  * Removes the error classes and html elements
  */
