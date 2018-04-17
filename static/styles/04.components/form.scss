@@ -1,12 +1,16 @@
-.c-form{
+.c-form {
+  &__fieldset {
+    display: grid;
+  }
 
-	&__fieldset{
-		display: grid;
-	}
-
-	&__error-label{
-		color: $bkg11;
-		font-size: $body-size;
-		line-height: 2;
-	}
+  &__error-label {
+    color: $bkg11;
+    font-size: $body-size;
+    line-height: 2;
+  }
 }
+
+// this is the way to target empty fields
+// input:placeholder-shown {
+//   border: 3px solid $dark-btn !important;
+// }
