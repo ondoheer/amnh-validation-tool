@@ -1,7 +1,6 @@
 import { kebabToCamel } from "./helpers.js";
 import { determinedByPeople, collectors, donors } from "./add_person.js";
 import { getAllRecords, clearDatabase, putRecord } from "./database.js";
-import { getUser } from "./register_user";
 
 const recordTally = document.getElementById("num_records");
 
@@ -9,6 +8,11 @@ function countRecords() {
   getAllRecords().then(records => {
     recordTally.innerHTML = records.length;
   });
+}
+
+function getUser() {
+  console.log("executing");
+  sessionStorage.getItem("userName");
 }
 
 function generateTrackingNumber() {
