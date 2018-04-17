@@ -59,6 +59,11 @@ const initMap = () => {
   var searchBox = new google.maps.places.SearchBox(textInput);
   var searchButton = document.getElementById('location-go');
 
+  map.addListener('click', function(e) {
+    placeMarkerAndPanTo(e.latLng, map);
+    updateLatLong(e.latLng.lat(), e.latLng.lng());
+  })
+
   // Called when user picks one of the autocomplete options
   searchBox.addListener('places_changed', function() {
     updateLocationSection(searchBox.getPlaces());
@@ -86,23 +91,6 @@ const initMap = () => {
   });
 
   /**
-   * Take the results returned by Google Maps and update the components of the
-   * Locations section that we now have information about
-   * @param {google.maps.places.Place} places
-   */
-  function updateLocationSection(places) {
-    if (places.length == 0) {
-      window.alert(errorsList.noPlacesFound);
-      return;
-    }
-    updateMap(places[0]);
-    updateLatLong(places[0]);
-    resetFields('address-form');
-    resetFields('natural-place-form');
-    displayAutocompleteDialog(places[0]);
-  }
-
-  /**
    * Redraw the map with it centered on the given place
    * @param {google.maps.places.Place} place
    */
@@ -118,6 +106,32 @@ const initMap = () => {
     marker.setPosition(place.geometry.location);
     marker.setVisible(true);
   }
+
+  function placeMarkerAndPanTo(latLng, map) {
+    var marker = new google.maps.Marker({
+      position: latLng,
+      map: map
+    });
+    map.panTo(latLng);
+  }
+
+  /**
+   * Take the results returned by Google Maps and update the components of the
+   * Locations section that we now have information about
+   * @param {google.maps.places.Place} places
+   */
+  function updateLocationSection(places) {
+    if (places.length == 0) {
+      window.alert(errorsList.noPlacesFound);
+      return;
+    }
+    updateMap(places[0]);
+    updateLatLong(places[0].geometry.location.lat(),
+                  places[0].geometry.location.lng());
+    resetFields('address-form');
+    resetFields('natural-place-form');
+    displayAutocompleteDialog(places[0]);
+  }
 }
 
 const resetFields = (form) => {
@@ -128,15 +142,15 @@ const resetFields = (form) => {
 }
 
 /**
- * Updates the Latitude and Longitude inputs of the place object returned by
- * by Google Maps
- * @param {google.maps.places.Place} place
+ * Given a latitude and a longitude update the relevant lat/long inputs in the Locations form
+ * @param {float} lat
+ * @param {float} long
  */
-const updateLatLong = (place) => {
-  document.getElementById('lat-from').value = place.geometry.location.lat().toFixed(3);
-  document.getElementById('lat-to').value = place.geometry.location.lat().toFixed(3);
-  document.getElementById('lon-to').value = place.geometry.location.lng().toFixed(3);
-  document.getElementById('lon-from').value = place.geometry.location.lng().toFixed(3);
+const updateLatLong = (lat, long) => {
+  document.getElementById('lat-from').value = lat.toFixed(3);
+  document.getElementById('lat-to').value = lat.toFixed(3);
+  document.getElementById('lon-to').value = long.toFixed(3);
+  document.getElementById('lon-from').value = long.toFixed(3);
 }
 
 /**
