@@ -108,10 +108,7 @@ const initMap = () => {
   }
 
   function placeMarkerAndPanTo(latLng, map) {
-    var marker = new google.maps.Marker({
-      position: latLng,
-      map: map
-    });
+    marker.setPosition(latLng);
     map.panTo(latLng);
   }
 
