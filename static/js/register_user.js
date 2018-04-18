@@ -1,17 +1,7 @@
 import errorsList from "./errors";
 import { showError, cleanErrors } from "./errors";
+import { validateName } from "./helpers";
 
-/**
- * Checks if the input is filled in
- * @param {string} value
- */
-const validateUserName = value => {
-  const cleanValue = value.replace(/\s+/g, "");
-  if (cleanValue.length === 0) {
-    return false;
-  }
-  return true;
-};
 
 /**
  * Adds the user tring to session storage
@@ -36,8 +26,9 @@ const nextPage = () => {
  */
 const validateAndRegisterUser = () => {
   cleanErrors("Error", "name");
+  sessionStorage.removeItem("longFormNoUserError");
   const nameValue = document.querySelector("#name").value;
-  if (validateUserName(nameValue)) {
+  if (validateName(nameValue)) {
     addUser(nameValue);
     nextPage();
   } else {

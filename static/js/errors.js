@@ -1,6 +1,7 @@
 const errors = {
   introIvalidUsername: "Remember to fill in a valid username",
   longFormNoUserName: "You have to enter your Name before entering data",
+  addPersonNoVerbatim: "You must enter a Verbatim Name before adding a Person",
   noPlacesFound: "No details about the place you searched for",
   googleMapsError: "Error Status in Google Maps search: ",
   noTaxnomoniesFound:
@@ -21,8 +22,9 @@ const htmlTextToElement = html => {
 /**
  * Displays an error message and adds the error class to the input field
  */
-export const showError = (elementId, text) => {
-  const errorTemplate = `<div id="Error" class='c-form__error-label u-align-center' >${text}</div>`;
+export const showError = (elementId, text, center=true) => {
+  var centerClass = center ? 'u-align-center' : ''
+  const errorTemplate = `<div id="Error" class='c-form__error-label ${centerClass}' >${text}</div>`;
   const nameInput = document.getElementById(elementId);
 
   nameInput.insertAdjacentElement("afterend", htmlTextToElement(errorTemplate));
@@ -39,7 +41,6 @@ export const cleanErrors = (labelId, inputId) => {
   if (errorLabel) {
     errorLabel.remove();
     nameInput.classList.remove("c-input--error");
-    sessionStorage.removeItem("longFormNoUserError");
   }
 };
 
