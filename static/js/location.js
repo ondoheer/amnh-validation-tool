@@ -1,4 +1,6 @@
 import errorsList from './errors';
+import { addPlaceHolderBorders } from "./css_injector";
+import { resetForm } from "./helpers.js"
 
 var politicalOptions = {" ":" ",
                         "specific-locale":"Specific Locale",
@@ -27,6 +29,7 @@ const initListeners = () => {
 
   $('#autopopulate_ok').click(function() {
     // for each dialog autoselect box
+
     var children = document.querySelectorAll('#autocomplete_list select');
     for (var i=0; i < children.length; i++) {
       var option = children[i].value;
@@ -60,17 +63,20 @@ const initMap = () => {
   var searchButton = document.getElementById('location-go');
 
   map.addListener('click', function(e) {
+    resetLocationsSection();
     placeMarkerAndPanTo(e.latLng, map);
     updateLatLong(e.latLng.lat(), e.latLng.lng());
   })
 
   // Called when user picks one of the autocomplete options
   searchBox.addListener('places_changed', function() {
+    resetLocationsSection();
     updateLocationSection(searchBox.getPlaces());
   });
 
   // Called when user clicks on Go! button or presses enter in the searchbox
   searchButton.addEventListener('click', function() {
+    resetLocationsSection();
     const placesService = new google.maps.places.PlacesService(map);
     var searchTerm = textInput.value;
     var request = {query: searchTerm};
@@ -125,17 +131,29 @@ const initMap = () => {
     updateMap(places[0]);
     updateLatLong(places[0].geometry.location.lat(),
                   places[0].geometry.location.lng());
-    resetFields('address-form');
-    resetFields('natural-place-form');
+
+    if (places[0].types[0] == 'natural_feature') {
+      addPlaceHolderBorders('natural-place-form');
+    }
+    else if (places[0].types[0] == 'locality') {
+      addPlaceHolderBorders('address-form');
+    }
+    else {
+      addPlaceHolderBorders('natural-place-form');
+      addPlaceHolderBorders('address-form');
+    }
     displayAutocompleteDialog(places[0]);
   }
 }
 
-const resetFields = (form) => {
-  var elements = document.querySelectorAll(`#${form} input, #${form} select`);
-  elements.forEach((element) => {
-    element.value = ''
-  })
+/**
+ * Reset all the forms in the Location section to their defaults
+ */
+const resetLocationsSection = () => {
+  resetForm('address-form');
+  resetForm('natural-place-form');
+  resetForm('lat-long-form');
+  document.getElementById('location_autocomplete_dialog').classList.add('u-hidden');
 }
 
 /**
