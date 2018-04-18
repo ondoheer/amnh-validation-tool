@@ -1,6 +1,6 @@
 import errors from "./errors";
 import { showError, cleanErrors } from "./errors";
-import { addStyleString } from "./css_injector";
+import { addPlaceHolderBorders } from "./css_injector";
 
 const button = document.getElementById("worms");
 button.addEventListener("click", getSearchInfo);
@@ -39,9 +39,7 @@ function getWorms(genus, species) {
     })
     .then(json => {
       displayResponse(json);
-      addStyleString(`#taxonomy-data input:placeholder-shown {
-  border: 3px solid #080d29 !important; 
-}`);
+      addPlaceHolderBorders('taxonomy-data');
     })
     .catch(error => {
       // when there aren't results,it just returns an empty response
