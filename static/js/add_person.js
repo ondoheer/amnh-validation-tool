@@ -16,8 +16,6 @@ class PeopleList {
     }
 
     createPerson() {
-
-
         let person = {};
 
         this.form.forEach((element) => {
