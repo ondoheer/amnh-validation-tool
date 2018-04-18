@@ -15,3 +15,28 @@ export const validateName = value => {
   }
   return true;
 };
+
+
+/**
+ * Removes any children style elements of a given parent node
+ * @param {parentId string}
+ */
+export const removeStyleNodes = (parentId) => {
+  var parent = document.getElementById(parentId)
+  var styleNodes = document.querySelectorAll(`#${parentId} style`);
+  styleNodes.forEach( (element) => {
+    parent.removeChild(element);
+  })
+}
+
+/**
+ * Reset all the input and select elements to default and remove styles of the given form
+ * @param {formId}
+ */
+export const resetForm = (formId) => {
+  var elements = document.querySelectorAll(`#${formId} input, #${formId} select`);
+  elements.forEach((element) => {
+    element.value = ''
+  })
+  removeStyleNodes(formId);
+}
