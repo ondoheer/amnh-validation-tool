@@ -24,7 +24,7 @@ var naturalOptions = {" ":" ",
 const initListeners = () => {
   // on cancel, hide dialog
   $('#autopopulate_cancel').click(function() {
-    $('#location_autocomplete_dialog').addClass("u-hidden");
+    $('#location_autocomplete_dialog').hide();
   });
 
   $('#autopopulate_ok').click(function() {
@@ -43,8 +43,13 @@ const initListeners = () => {
       }
     }
 
-    $('#location_autocomplete_dialog').addClass("u-hidden");
+    $('#location_autocomplete_dialog').hide();
   });
+}
+
+const initAutoCompleteDialog = () => {
+  $('#location_autocomplete_dialog').removeClass("u-hidden");
+  $('#location_autocomplete_dialog').hide();
 }
 
 const initMap = () => {
@@ -153,7 +158,7 @@ const resetLocationsSection = () => {
   resetForm('address-form');
   resetForm('natural-place-form');
   resetForm('lat-long-form');
-  document.getElementById('location_autocomplete_dialog').classList.add('u-hidden');
+  $('#location_autocomplete_dialog').hide();
 }
 
 /**
@@ -197,7 +202,7 @@ const displayAutocompleteDialog = (place) => {
   // populate dialog
   createDropdowns(dialog, addressComponents);
 
-  $('#location_autocomplete_dialog').removeClass("u-hidden");  // display dialog
+  $('#location_autocomplete_dialog').fadeIn(1000);
 }
 
 /**
@@ -257,5 +262,6 @@ const selectOption = (dropdown, options, type) => {
   }
 }
 
+initAutoCompleteDialog();
 initListeners();
 initMap();
