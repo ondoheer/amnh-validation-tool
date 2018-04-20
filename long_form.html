@@ -50,12 +50,9 @@
 
 					<p class="u-separator-md">
             <inline class="u-text-bold u-text-underline">Instructions:</inline>
-            For each of the below fields, type in the corresponding tracking data
-            given with the specimen. If there is additional tracking data that
-            does not correspond with the given fields, you can include that in
-            the Notes section.
+            For each of the below fields, enter the corresponding tracking data
+            as recorded during collection.
           </p>
-
 
 					<fieldset class="c-form__fieldset u-separator-md">
 						<label class="c-label" for="cat-number">Catalog Number</label>
@@ -89,7 +86,7 @@
             displayed below the search bar. If WoRMS does not have information about particular
             categories, the input boxes for each of those categories will be highlighted in yellow. If WoRMS cannot
             find the name in the database, you can do another search in the WoRMS results window which gives you
-            the options to do a more advanced search. You can add any additional Notes in the provided section.
+            the options to do a more advanced search.
           </p>
 
 					<fieldset class="c-searchbox c-form__fieldset u-separator-md">
@@ -154,10 +151,9 @@
           <p class="u-separator-md">
             <inline class="u-text-bold u-text-underline">Instructions:</inline>
             Type in the names for each person that was involved in determining
-            the specimen. If you are adding more than one person, type in all the
-            respective names for the first individual, then click on the "ADD PERSON"
-            button.  Repeat this process for each person. Repeat this process for
-            each person. You can add any additional Notes in the provided section.<br>
+            the specimen. If you are adding more than one person, type the
+            name(s) for the first individual, then click on the "ADD PERSON"
+            button.  Repeat this process for each person.<br>
             <inline class="u-text-italicize">
               Note: Be sure to include "Verbatim Name" before clicking on the "ADD PERSON" button.
             </inline>
@@ -212,9 +208,11 @@
 				<div class="l-wrapper">
 					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Specimen Data</h2>
 
-					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
-						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
-						esse modi quisquam?</p>
+          <p class="u-separator-md">
+            <inline class="u-text-bold u-text-underline">Instructions:</inline>
+            For each of the below fields, enter the corresponding specimen data
+            as recorded during collection.
+          </p>
 
 					<fieldset class="c-form__fieldset u-separator-xs">
 						<label class="c-label" for="spec-number">Number of Specimens</label>
@@ -339,11 +337,11 @@
 				<div class="l-wrapper">
 					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Host Information</h2>
 
-
-
-					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
-						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
-						esse modi quisquam?</p>
+          <p class="u-separator-md">
+            <inline class="u-text-bold u-text-underline">Instructions:</inline>
+            If the specimen was found in a host, click on the "Yes" button. This will display
+            the corresponding fields so that you can enter the relevant information about the host.
+          </p>
 
 					<fieldset class="c-form__fieldset u-separator-md">
 						<div>
@@ -415,9 +413,11 @@
 			<section id="collection-data" class="u-bkg10 u-padder-top--lg">
 				<div class="l-wrapper">
 					<h2 class="c-title c-title--light c-title--lg u-separator-lg">Collecting Data</h2>
-					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
-						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
-						esse modi quisquam?</p>
+          <p class="u-separator-md">
+            <inline class="u-text-bold u-text-underline">Instructions:</inline>
+            For each of the below fields, enter the corresponding collection data
+            as recorded during collection.
+          </p>
 
 					<fieldset class="c-form__fieldset u-separator-xs">
 						<label class="c-label" for="collection-method">Collecting Method</label>
@@ -495,11 +495,16 @@
 					</div>
 					<hr>
 					<!-- end from to sub-section -->
-					<div class="c-people-list u-separator-md">
-						<label class="c-label" for="">Collected By Added</label>
-						<ul id='collected-by-list'>
-						</ul>
-					</div>
+          <p class="u-separator-md">
+            <inline class="u-text-bold u-text-underline">Instructions:</inline>
+            Type in the names for each person that was involved in collecting
+            the specimen. If you are adding more than one person, type the
+            name(s) for the first individual, then click on the "ADD PERSON"
+            button. Repeat this process for each person.<br>
+            <inline class="u-text-italicize">
+              Note: Be sure to include "Verbatim Name" before clicking on the "ADD PERSON" button.
+            </inline>
+          </p>
 
 					<div id="collected-by-form" class="l-person u-separator-lg">
 
@@ -528,6 +533,13 @@
 							<input placeholder="enter verbatim name" id="collected-by-verbatim" class="c-input" type="text" data-key="verbatim">
 						</fieldset>
 					</div>
+
+          <div class="c-people-list u-separator-md">
+						<label class="c-label" for="">Collected By Added</label>
+						<ul id='collected-by-list'>
+						</ul>
+					</div>
+
 					<button id="collected-by-button" class="c-button c-button--uppercase c-button--centered">
 						<i class="fas fa-user"></i> Add person</button>
 
@@ -543,9 +555,30 @@
 			<section class="u-bkg8" id="location-data">
 				<div class="l-wrapper">
 					<h2 class="c-title c-title--light c-title--lg u-separator-lg">Location</h2>
-					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
-						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
-						esse modi quisquam?</p>
+          <p class="u-separator-md">
+            <inline class="u-text-bold u-text-underline">Instructions:</inline>
+            Type a location (city, state, province, country, etc.) or natural
+            landmark (island, mountain river, ocean, etc) into the search bar. You can
+            either choose one of the suggestions that the search bar gives you or
+            do a search for exactly what you typed in by clicking the "Go!" button.
+            If the place you searched for is found, it will display on the map
+            and a menu will appear to allow you to match place names with categories
+            (city, state, province, ocean, river, island, etc).
+            This will automatically fill the fields below the map including the
+            latitude and longitude. Any fields that are not autofilled will be
+            hightlighted in yellow, and you can enter those fields yourself. You
+            do not have to enter information for all the fields.
+            <br><br>
+            If there is a specific location on the map that you would like to
+            find the longitude and latitude for, you can click on that location
+            on the map and it will autofill the latitude and longitude fields
+            just below the map. If you need to convert a latitude and/or longitude
+            from degrees, minutes, seconds (DMS) to decimal degrees (DD), you can go
+            <a target="_blank" href="https://www.latlong.net/degrees-minutes-seconds-to-decimal-degrees">here</a>.
+            <br><br>
+            <inline class="u-text-italicize">Note: Any time you do a new search or click on the map, it will clear all
+            the fields below the map.</inline
+          </p>
 
 					<fieldset class="c-searchbox c-form__fieldset u-separator-md">
 						<label class="c-label" for="">Search location</label>
@@ -572,6 +605,33 @@
 					</div>
 
 					<div id="location-map" style="width:100%;height:600px;" class="u-separator-xl"></div>
+
+          <div id="lat-long-form" class="l-two-col">
+            <div class="l-two-col__block">
+              <fieldset class="c-form__fieldset u-separator-xs">
+                <label class="c-label" for="lat-from">Latitude From</label>
+                <input placeholder="enter latitude from" id="lat-from" class="c-input" type="text" data-key="fromLat">
+              </fieldset>
+
+              <fieldset class="c-form__fieldset u-separator-xs">
+                <label class="c-label" for="lon-from">Longitude From</label>
+                <input placeholder="enter longitude from" id="lon-from" class="c-input" type="text" data-key="fromLon">
+              </fieldset>
+            </div>
+            <div class="l-two-col__block">
+              <fieldset class="c-form__fieldset u-separator-xs">
+                <label class="c-label" for="lat-to">Latitude To</label>
+                <input placeholder="enter latitude to" id="lat-to" class="c-input" type="text" data-key="toLat">
+              </fieldset>
+
+              <fieldset class="c-form__fieldset u-separator-xs">
+                <label class="c-label" for="lon-to">Longitude To</label>
+                <input placeholder="enter longitude to" id="lon-to" class="c-input" type="text" data-key="toLon">
+              </fieldset>
+            </div>
+          </div>
+
+          <hr>
 
 					<fieldset class="c-form__fieldset u-separator-md">
 						<label class="c-label" for="verbatim-address">Verbatim Location / Address</label>
@@ -925,33 +985,6 @@
 							<fieldset class="c-form__fieldset u-separator-xs">
 								<label class="c-label" for="mtn">Mountain</label>
 								<input placeholder="enter a mountain" id="mtn" class="c-input" type="text" data-key="mountain">
-							</fieldset>
-						</div>
-					</div>
-
-					<hr>
-
-					<div id="lat-long-form" class="l-two-col">
-						<div class="l-two-col__block">
-							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label" for="lat-from">Latitude From</label>
-								<input placeholder="enter latitude from" id="lat-from" class="c-input" type="text" data-key="fromLat">
-							</fieldset>
-
-							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label" for="lon-from">Longitude From</label>
-								<input placeholder="enter longitude from" id="lon-from" class="c-input" type="text" data-key="fromLon">
-							</fieldset>
-						</div>
-						<div class="l-two-col__block">
-							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label" for="lat-to">Latitude To</label>
-								<input placeholder="enter latitude to" id="lat-to" class="c-input" type="text" data-key="toLat">
-							</fieldset>
-
-							<fieldset class="c-form__fieldset u-separator-xs">
-								<label class="c-label" for="lon-to">Longitude To</label>
-								<input placeholder="enter longitude to" id="lon-to" class="c-input" type="text" data-key="toLon">
 							</fieldset>
 						</div>
 					</div>
