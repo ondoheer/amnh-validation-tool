@@ -11,13 +11,13 @@ function countRecords() {
 }
 
 function getUser() {
-  console.log("executing");
-  sessionStorage.getItem("userName");
+  return sessionStorage.getItem("userName").replace(" ", "-");
 }
 
 function generateTrackingNumber() {
   var date = new Date(Date.now());
   var name = getUser();
+  console.log(name);
   return `${date.getFullYear()}-${date.getMonth() +
     1}-${date.getDate()}-${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}-${name}`;
 }
