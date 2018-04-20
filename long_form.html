@@ -153,7 +153,7 @@
             Type in the names for each person that was involved in determining
             the specimen. If you are adding more than one person, type the
             name(s) for the first individual, then click on the "ADD PERSON"
-            button.  Repeat this process for each person.<br>
+            button.  Repeat this process for each person.<br><br>
             <inline class="u-text-italicize">
               Note: Be sure to include "Verbatim Name" before clicking on the "ADD PERSON" button.
             </inline>
@@ -500,7 +500,7 @@
             Type in the names for each person that was involved in collecting
             the specimen. If you are adding more than one person, type the
             name(s) for the first individual, then click on the "ADD PERSON"
-            button. Repeat this process for each person.<br>
+            button. Repeat this process for each person.<br><br>
             <inline class="u-text-italicize">
               Note: Be sure to include "Verbatim Name" before clicking on the "ADD PERSON" button.
             </inline>
@@ -576,8 +576,8 @@
             from degrees, minutes, seconds (DMS) to decimal degrees (DD), you can go
             <a target="_blank" href="https://www.latlong.net/degrees-minutes-seconds-to-decimal-degrees">here</a>.
             <br><br>
-            <inline class="u-text-italicize">Note: Any time you do a new search or click on the map, it will clear all
-            the fields below the map.</inline
+            <inline class="u-text-italicize">Note: Any time you do a new search or click on the map, it will clear
+              any autofilled fields from the previous search or click on the map.</inline>
           </p>
 
 					<fieldset class="c-searchbox c-form__fieldset u-separator-md">
@@ -1022,9 +1022,11 @@
 			<section class="u-bkg9" id="donation-data">
 				<div class="l-wrapper">
 					<h2 class="c-title c-title--light c-title--lg u-separator-lg">Donors</h2>
-					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
-						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
-						esse modi quisquam?</p>
+          <p class="u-separator-md">
+            <inline class="u-text-bold u-text-underline">Instructions:</inline>
+            For each of the below fields, enter the corresponding donor data
+            as recorded during collection.
+          </p>
 
 					<fieldset class="c-form__fieldset c-datepicker u-separator-sm">
 
@@ -1051,12 +1053,18 @@
 						<input type="number" id="donated-year" placeholder="enter donated on year" class="c-input" data-key="year">
 					</fieldset>
 
+          <hr>
 
-					<div class="c-people-list u-separator-md">
-						<label class="c-label" for="">Donors Added</label>
-						<ul id="donated-by-list">
-						</ul>
-					</div>
+          <p class="u-separator-md">
+            <inline class="u-text-bold u-text-underline">Instructions:</inline>
+            Type in the names for each person that was involved in donating
+            the specimen. If you are adding more than one person, type the
+            name(s) for the first individual, then click on the "ADD PERSON"
+            button. Repeat this process for each person.<br><br>
+            <inline class="u-text-italicize">
+              Note: Be sure to include "Verbatim Name" before clicking on the "ADD PERSON" button.
+            </inline>
+          </p>
 
 					<div id="donated-by-form" class="l-person">
 
@@ -1085,6 +1093,13 @@
 							<input placeholder="enter verbatim name" id="donated-by-verbatim" class="c-input" type="text" data-key="verbatim">
 						</fieldset>
 					</div>
+
+          <div class="c-people-list u-separator-md">
+            <label class="c-label" for="">Donors Added</label>
+            <ul id="donated-by-list">
+            </ul>
+          </div>
+
 					<button id="donated-by-button" class="c-button c-button--uppercase c-button--centered u-separator-lg">
 						<i class="fas fa-user"></i> Add donor</button>
 
