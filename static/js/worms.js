@@ -14,6 +14,15 @@ function getFormInfo() {
   document.getElementById("loading-state").classList.add("active");
 }
 
+function cleanFields() {
+  const fields = document.querySelectorAll(
+    "#taxForm input:not([type='search'])"
+  );
+  for (let i = 0; i < fields.length; i++) {
+    fields[i].value = "";
+  }
+}
+
 function getSearchInfo() {
   const searchBox = document.getElementById("taxonomy-search").value.split(" ");
 
@@ -31,6 +40,7 @@ function getWorms(genus, species) {
     : `http://www.marinespecies.org/rest/AphiaRecordsByMatchNames?scientificnames%5B%5D=${genus}&marine_only=true`;
 
   cleanErrors("Error", "searchTaxContainer");
+  cleanFields();
   fetch(url)
     .then(response => {
       document.getElementById("whales-spinner").classList.add("u-hidden");
@@ -39,7 +49,7 @@ function getWorms(genus, species) {
     })
     .then(json => {
       displayResponse(json);
-      addPlaceHolderBorders('taxonomy-data');
+      addPlaceHolderBorders("taxonomy-data");
     })
     .catch(error => {
       // when there aren't results,it just returns an empty response
