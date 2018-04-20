@@ -55,7 +55,7 @@ function getWorms(genus, species) {
       // when there aren't results,it just returns an empty response
       // and triggers an error
       console.error(error);
-      showError("searchTaxContainer", errors.noTaxnomoniesFound);
+      showError("searchTaxContainer", errors.noTaxnomoniesFound, false);
     });
 }
 
