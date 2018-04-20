@@ -16,7 +16,7 @@ export const addStyleString = (parentId, rule) => {
  */
 export const addPlaceHolderBorders = (formId) => {
   addStyleString(formId, `#${formId} input:placeholder-shown {
-                    border: 3px solid #080d29 !important;
+                    border: 3px solid #ffa500 !important;
                   }`
   );
 }
