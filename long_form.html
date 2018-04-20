@@ -89,7 +89,7 @@
             displayed below the search bar. If WoRMS does not have information about particular
             categories, the input boxes for each of those categories will be highlighted in yellow. If WoRMS cannot
             find the name in the database, you can do another search in the WoRMS results window which gives you
-            the options to do a mre adavanced search.
+            the options to do a more advanced search. You can add any additional Notes in the provided section.
           </p>
 
 					<fieldset class="c-searchbox c-form__fieldset u-separator-md">
@@ -139,11 +139,6 @@
 						</div>
 					</div>
 
-
-
-
-
-
 					<fieldset class="c-form__fieldset">
 						<label class="c-label" for="track-notes-tax">Notes</label>
 						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-tax" class="c-input" data-key="notes"></textarea>
@@ -156,15 +151,17 @@
 				<div class="l-wrapper">
 					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Determined By</h2>
 
-					<p class="u-separator-md">Area instructions Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facere adipisci corrupti dolorem
-						voluptatum maiores. Odio, corporis harum voluptas animi, suscipit quidem earum distinctio voluptate laboriosam quas,
-						esse modi quisquam?</p>
-
-					<div class="c-people-list u-separator-md">
-						<label class="c-label" for="">Determined By Added</label>
-						<ul id="determined-by-list">
-						</ul>
-					</div>
+          <p class="u-separator-md">
+            <inline class="u-text-bold u-text-underline">Instructions:</inline>
+            Type in the names for each person that was involved in determining
+            the specimen. If you are adding more than one person, type in all the
+            respective names for the first individual, then click on the "ADD PERSON"
+            button.  Repeat this process for each person. Repeat this process for
+            each person. You can add any additional Notes in the provided section.<br>
+            <inline class="u-text-italicize">
+              Note: Be sure to include "Verbatim Name" before clicking on the "ADD PERSON" button.
+            </inline>
+          </p>
 
 					<div id="determined-by-form" class="l-person">
 
@@ -193,6 +190,12 @@
 							<input placeholder="enter verbatim name" id="determined-by-verbatim" class="c-input" type="text" data-key="verbatim">
 						</fieldset>
 					</div>
+
+          <div class="c-people-list u-separator-md">
+            <label class="c-label" for="">Determined By Added</label>
+            <ul id="determined-by-list">
+            </ul>
+          </div>
 
 					<button id="determined-by-button" class="c-button c-button--uppercase c-button--centered">
 						<i class="fas fa-user"></i> Add person</button>
