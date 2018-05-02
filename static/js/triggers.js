@@ -19,5 +19,8 @@ hostNoRadio.addEventListener("click", () => {
 
 newRecordButton.addEventListener("click", newRecord);
 saveButton.addEventListener("click", saveRecord);
-exportCSVButton.addEventListener("click", exportCSV);
+exportCSVButton.addEventListener("click", () => {
+  saveRecord();
+  exportCSV();
+});
 clearRecordsButton.addEventListener("click", clearRecords);
