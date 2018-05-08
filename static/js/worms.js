@@ -59,6 +59,7 @@ function getWorms(genus, species) {
       // clean just inc ase, there was a double error issue # 88
       cleanErrors("Error", "searchTaxContainer");
       showError("searchTaxContainer", errors.noTaxnomoniesFound, false);
+      updateiFrameDisplay("http://www.marinespecies.org/aphia.php?p=search");
     });
 }
 
