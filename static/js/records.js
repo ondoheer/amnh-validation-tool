@@ -47,6 +47,42 @@ function collectFormData() {
     locationData: getSection("location-data"),
     donationData: getSection("donation-data")
   };
+
+
+  const peopleFields = new Set(['firstName', 'middleName1', 'middleName2',
+                                'lastName1', 'lastName2', 'verbatim']);
+
+  let missingPerson = '';
+  for (var field in record.determinedBy) {
+    if (peopleFields.has(field)) {
+      missingPerson += 'Determined By';
+      break;
+    }
+  }
+  for (var field in record.collectionData) {
+    if (peopleFields.has(field)) {
+      if (missingPerson) {
+        missingPerson += ', '
+      }
+      missingPerson += 'Collecting Data';
+      break;
+    }
+  }
+  for (var field in record.donationData) {
+    if (peopleFields.has(field)) {
+      if (missingPerson) {
+        missingPerson += ', '
+      }
+      missingPerson += 'Donors';
+      break;
+    }
+  }
+
+  if (missingPerson) {
+    alert(`This record cannot be saved until you click the "ADD PERSON" button ` +
+          `or remove the names you entered in the ${missingPerson} section(s).`);
+  }
+
   if (record.hostData.hasHost === "no") record.hostData = { hasHost: "no" };
   record.recordData.trackingNumber = generateTrackingNumber();
   record.determinedBy.people = determinedByPeople.getPeople();
@@ -73,8 +109,9 @@ export function saveRecord() {
 }
 
 export function newRecord() {
-  saveRecord();
-  location.reload();
+  saveRecord().then(() => {
+    location.reload();
+  });
 }
 
 countRecords();
