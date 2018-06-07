@@ -1,6 +1,39 @@
 # amnh-validation-tool
 
-# mocks
+This is a tool based on the prototype we build at the AMNH Hack the Deep Hackaton 2018.
+
+It is a simple web application that helps AMNH Marine Samples volunteers to input and generate CSV records of
+the marine samples collected by the museum.
+
+It's goal is to help lower the number of input errors while performing the tasks.
+Most of the WebApp functionalities work offline, but some of them requirre internet access to work.
+I does not require a backend, it could be hosted on a free service such as github pages.
+
+## Features
+
+* Validates Taxonomical data using the Worms API
+* Validates long and lat locations by using the Gmaps API
+* Validates required input fields
+* Generates timestamp id for the records 
+* Requires and registers volunteers name while working on the records
+* Exports data to CSV 
+* In browser Database with IndexDB so many records can be added before exporting
+* Link to decimal longitute converter
+* Temperature converter
+
+## Usage
+
+1. Input Volunteer name 
+
+![intro](intro.png)
+
+2. Follow instructions for every section of the form
+
+3. Press **add another** record to save the current one and work on another, or press **download CSV** to finish for the day and download the CSV file.
+
+![save](save.png)
+
+### mocks
 
 https://ninjamock.com/s/DXFFHRx
 
