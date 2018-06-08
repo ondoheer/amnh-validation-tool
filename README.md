@@ -1,13 +1,13 @@
 # amnh-validation-tool
 
-This is a tool based on the prototype we build at the AMNH Hack the Deep Hackaton 2018.
+This is a tool based on the prototype we built at the AMNH Hack the Deep Hackaton 2018.
 
 It is a simple web application that helps AMNH Marine Samples volunteers to input and generate CSV records of
 the marine samples collected by the museum.
 
-It's goal is to help lower the number of input errors while performing the tasks.
-Most of the WebApp functionalities work offline, but some of them requirre internet access to work.
-I does not require a backend, it could be hosted on a free service such as github pages.
+It's goal is to help lower the number of input errors while recording each specimen.
+Most of the WebApp functionalities work offline, but some of them require internet access to work.
+It does not require a backend and can be hosted on a free service such as github pages.
 
 ## Features
 
