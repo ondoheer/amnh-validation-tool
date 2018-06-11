@@ -103,9 +103,13 @@ export function clearRecords() {
 }
 
 export function saveRecord() {
-  let record = collectFormData();
-  putRecord(record);
-  countRecords();
+  return new Promise((resolve, reject) => {
+    let record = collectFormData();
+    putRecord(record).then(result => {
+      countRecords();
+      resolve();
+    })
+  });
 }
 
 export function newRecord() {
