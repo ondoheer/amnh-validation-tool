@@ -49,8 +49,9 @@ More or less Style guide: https://xd.adobe.com/spec/cdc00271-692a-465e-8059-0f00
 
 1.  Install parcel `$ sudo npm install -g parcel-bundler` If you run by any problem it's probably the node version, [parcel](https://parceljs.org/) doesn't work on old versions.
 
-2.  run `npm run dev` on the root folder
-3.  Go to `localhost:1234` to see the project
+2. run `npm install`  
+3. run `npm run dev` on the root folder
+4. Go to `localhost:1234` to see the project
 
 ### SCSS
 
