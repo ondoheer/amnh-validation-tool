@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+
+
+	<title>Form - AMNH</title>
+
+	<script defer="" src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+	<script defer="" src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+	<link rel="stylesheet" href="/style.61daf52b.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/eggplant/jquery-ui.css">
+<script src="/style.61daf52b.js"></script></head>
+
+<body>
+
+	<header class="c-header c-header--dark c-header--fixed">
+		<img src="/logo_header.c6966471.png" alt="" class="c-header__logo">
+		<ul>
+			<li>
+				<button id="clear-records-button" class="c-button c-button--light c-button--small">
+					<i class="fas fa-trash"></i> Clear Records</button>
+			</li>
+			<li>
+				<span id="num_records">0</span> records added</li>
+			<li>
+				<i class="fas fa-user"></i>
+				<span id="userName">
+					&lt;no user&gt;
+				</span>
+			</li>
+			<li>
+				<button id="save-button" class="c-button c-button--light c-button--small">
+					<i class="fas fa-save"></i> Save </button>
+			</li>
+		</ul>
+	</header>
+	<main>
+		<div class="c-form">
+			<section class="u-bkg2" id="tracking-data">
+				<div class="l-wrapper">
+
+					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Tracking data</h2>
+
+					<p class="u-separator-md">
+            <span class="u-text-bold u-text-underline">Instructions:</span>
+            For each of the below fields, enter the corresponding tracking data
+            as recorded during collection.
+          </p>
+
+					<fieldset class="c-form__fieldset u-separator-md">
+						<label class="c-label" for="cat-number">Catalog Number</label>
+						<input placeholder="enter the catalog number" id="cat-number" class="c-input" type="text" data-key="catalog-number">
+					</fieldset>
+
+
+					<fieldset class="c-form__fieldset u-separator-md">
+						<label class="c-label" for="bar-number">Barcode Number</label>
+						<input placeholder="enter the barcode number" id="bar-number" class="c-input" type="text" data-key="barcode-number">
+					</fieldset>
+
+					<fieldset class="c-form__fieldset">
+						<label class="c-label" for="track-notes-track">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-track" class="c-input" data-key="notes"></textarea>
+					</fieldset>
+
+				</div>
+			</section>
+			<!-- End tracking section -->
+
+			<section class="u-bkg3" id="taxonomy-data">
+				<div class="l-wrapper">
+					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Taxonomy</h2>
+
+          <p class="u-separator-md">
+            <span class="u-text-bold u-text-underline">Instructions:</span>
+            Type in the name of the specimen in the search bar and click
+            the "Go!" button. This will search the World Register of Marine Species (WoRMS) database
+            for the specimen's Taxonomy Data (genus, family, order, etc). The results will be
+            displayed below the search bar. If WoRMS does not have information about particular
+            categories, the input boxes for each of those categories will be highlighted in yellow. If WoRMS cannot
+            find the name in the database, you can do another search in the WoRMS results window which gives you
+            the options to do a more advanced search.
+          </p>
+
+					<fieldset class="c-searchbox c-form__fieldset u-separator-md">
+						<label class="c-label" for="">Search Tanonomy</label>
+						<div id="searchTaxContainer">
+							<input id="taxonomy-search" placeholder="Enter species" class="c-input c-input--square" type="search">
+							<button id="worms" class="c-button c-button--captalize c-button--body-size">Go!</button>
+						</div>
+					</fieldset>
+					<div id="spinner">
+
+						<img id="whales-spinner" class="u-hidden" src="/giphy.92322797.gif" alt=""> </div>
+
+					<div class="l-two-col u-hidden" id="taxForm">
+						<div class="l-two-col__block">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="scientificname">Species</label>
+								<input placeholder="enter the Species" id="scientificname" class="c-input" type="text" data-key="species">
+							</fieldset>
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="genus">Genus</label>
+								<input placeholder="enter the Genus" id="genus" class="c-input" type="text" data-key="genus">
+							</fieldset>
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="family">Family</label>
+								<input placeholder="enter the Family" id="family" class="c-input" type="text" data-key="family">
+							</fieldset>
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="order">Order</label>
+								<input placeholder="enter the Order" id="order" class="c-input" type="text" data-key="order">
+							</fieldset>
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="suborder">Suborder</label>
+								<input placeholder="enter the Suborder" id="suborder" class="c-input" type="text" data-key="suborder">
+							</fieldset>
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="class">Class</label>
+								<input placeholder="class" id="class" class="c-input" type="text" data-key="class">
+							</fieldset>
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="subclass">Subclass</label>
+								<input placeholder="enter the Subclass" id="subclass" class="c-input" type="text" data-key="subclass">
+							</fieldset>
+						</div>
+						<div class="l-two-col__block">
+							<iframe id="worms-iframe" class="c-iframe--full-height" src="http://www.marinespecies.org/aphia.php?p=search" frameborder="0"></iframe>
+						</div>
+					</div>
+
+					<fieldset class="c-form__fieldset">
+						<label class="c-label" for="track-notes-tax">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-tax" class="c-input" data-key="notes"></textarea>
+					</fieldset>
+				</div>
+			</section>
+			<!-- End taxonomy section -->
+
+			<section class="u-bkg4" id="determined-by-data">
+				<div class="l-wrapper">
+					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Determined By</h2>
+
+          <p class="u-separator-md">
+            <span class="u-text-bold u-text-underline">Instructions:</span>
+            Type in the names for each person that was involved in determining
+            the specimen and click the "ADD PERSON" button. Repeat this process
+            for each person.<br><br>
+            <span class="u-text-italicize">
+              Note: If you type in any names, they will not be saved unless you click the
+              "ADD PERSON" button. If you no longer wish to enter those names,
+              be sure to delete them or you will not be able to save the record. Also, be
+              sure to include "Verbatim Name" before clicking the "ADD PERSON" button.
+            </span>
+          </p>
+
+					<div id="determined-by-form" class="l-person">
+
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="determined-first-name">First Name</label>
+							<input placeholder="enter first name" id="determined-first-name" class="c-input" type="text" data-key="first-name">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="determined-middle-name1">Middle Name 1</label>
+							<input placeholder="enter middle name 1" id="determined-middle-name1" class="c-input" type="text" data-key="middle-name1">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="determined-middle-name2">Middle Name 2</label>
+							<input placeholder="enter middle name 2" id="determined-middle-name2" class="c-input" type="text" data-key="middle-name2">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="determined-last-name1">Last Name 1</label>
+							<input placeholder="enter last name 1" id="determined-last-name1" class="c-input" type="text" data-key="last-name1">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="determined-last-name2">Last Name 2</label>
+							<input placeholder="enter last name 2" id="determined-last-name2" class="c-input" type="text" data-key="last-name2">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="determined-by-verbatim">Verbatim Name</label>
+							<input placeholder="enter verbatim name" id="determined-by-verbatim" class="c-input" type="text" data-key="verbatim">
+						</fieldset>
+					</div>
+
+          <div class="c-people-list u-separator-md">
+            <label class="c-label" for="">Determined By Added</label>
+            <ul id="determined-by-list">
+            </ul>
+          </div>
+
+					<button id="determined-by-button" class="c-button c-button--uppercase c-button--centered">
+						<i class="fas fa-user"></i> Add person</button>
+
+					<fieldset class="c-form__fieldset">
+						<label class="c-label" for="track-notes-det">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-det" class="c-input" data-key="notes"></textarea>
+					</fieldset>
+				</div>
+			</section>
+			<!-- End Determined section -->
+
+			<section class="u-bkg5" id="specimen-data">
+				<div class="l-wrapper">
+					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Specimen Data</h2>
+
+          <p class="u-separator-md">
+            <span class="u-text-bold u-text-underline">Instructions:</span>
+            For each of the below fields, enter the corresponding specimen data
+            as recorded during collection.
+          </p>
+
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label" for="spec-number">Number of Specimens</label>
+						<input type="number" id="spec-number" placeholder="# of specimens" class="c-input" data-key="number-of-specimens">
+					</fieldset>
+
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label" for="storage-medium">Storage Medium</label>
+						<select placeholder="Select input" id="storage-medium" class="c-input c-input--square c-input--select" data-key="storage-medium">
+							<option value="">select a storage medium...</option>
+							<option value="Dry">Dry</option>
+							<option value="Dry | Slide:">Dry | Slide:</option>
+							<option value"epoxy"="">Epoxy</option>
+							<option value="EtOH:">EtOH:</option>
+							<option value="EtOH: | Slide:">EtOH: | Slide:</option>
+							<option value="EtOH: 100%">EtOH: 100%</option>
+							<option value="EtOH: 100% molecular">EtOH: 100% molecular</option>
+							<option value="EtOH: 70%">EtOH: 70%</option>
+							<option value="EtOH: 75%">EtOH: 75%</option>
+							<option value="EtOH: 95%">EtOH: 95%</option>
+							<option value="EtOH: 96%">EtOH: 96%</option>
+							<option value="EtOH: 98%">EtOH: 98%</option>
+							<option value="EtOH: 99%">EtOH: 99%</option>
+							<option value="Formaldehyde">Formaldehyde</option>
+							<option value="Formalin:">Formalin:</option>
+							<option value="Formalin: 10%">Formalin: 10%</option>
+							<option value="Formalin: 4%">Formalin: 4%</option>
+							<option value="Formalin: 8%">Formalin: 8%</option>
+							<option value="Gluteraldehyde: 2% | OsO4: 1%">Gluteraldehyde: 2% | OsO4: 1%</option>
+							<option value="Glycerol">Glycerol</option>
+							<option value="Glycerol | EtOH">Glycerol | EtOH</option>
+							<option value="HemoD">HemoD</option>
+							<option value="Model">Model</option>
+							<option value="Paraffin Wax Block">Paraffin Wax Block</option>
+							<option value="Pinned">Pinned</option>
+							<option value="Pinned | Slide:">Pinned | Slide:</option>
+							<option value="Plastic">Plastic</option>
+							<option value="Plastic mount">Plastic mount</option>
+							<option value="RNAlater">RNAlater</option>
+							<option value="SEM Stub">SEM Stub</option>
+							<option value="Slide:">Slide:</option>
+							<option value="Slide: Balsam mounted">Slide: Balsam mounted</option>
+							<option value="Slide: Glycerine">Slide: Glycerine</option>
+						</select>
+					</fieldset>
+
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label" for="type-type">Type of Type</label>
+						<select placeholder="Select input" id="type-type" class="c-input c-input--square c-input--select" data-key="type-of-type">
+							<option value="">select a type of type...</option>
+							<option value="Allotype">Allotype</option>
+							<option value="Allotype (part)">Allotype (part)</option>
+							<option value="Cotype(s)">Cotype(s)</option>
+							<option value="Epitype">Epitype</option>
+							<option value="Holotype">Holotype</option>
+							<option value="Holotype (part)">Holotype (part)</option>
+							<option value="Holotype | Allotype">Holotype | Allotype</option>
+							<option value="Holotype | Cotype(s)">Holotype | Cotype(s)</option>
+							<option value="Holotype | Paratype(s)">Holotype | Paratype(s)</option>
+							<option value="Lectotype">Lectotype</option>
+							<option value="Lectotype | Allotype">Lectotype | Allotype</option>
+							<option value="Neotype">Neotype</option>
+							<option value="Paralectotype(s)">Paralectotype(s)</option>
+							<option value="Paratype(s)">Paratype(s)</option>
+							<option value="Paratype(s) (part)">Paratype(s) (part)</option>
+							<option value="Plesiotype">Plesiotype</option>
+							<option value="Syntype(s)">Syntype(s)</option>
+							<option value="Syntype(s) (part)">Syntype(s) (part)</option>
+							<option value="Topotype(s)">Topotype(s)</option>
+						</select>
+					</fieldset>
+
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label" for="sex">Sex</label>
+						<select placeholder="Select input" id="sex" class="c-input c-input--square c-input--select" data-key="sex">
+							<option value="">select a sex...</option>
+							<option value="Ambisexual">Ambisexual</option>
+							<option value="Female">Female</option>
+							<option value="Female | Female">Female | Female</option>
+							<option value="Female | Male">Female | Male</option>
+							<option value="Female | Unknown">Female | Unknown</option>
+							<option value="Gynandromorph">Gynandromorph</option>
+							<option value="Hermaphrodite">Hermaphrodite</option>
+							<option value="Intersex">Intersex</option>
+							<option value="Male | Unknown">Male | Unknown</option>
+							<option value="Male | Male">Male | Male</option>
+							<option value="Mixed">Mixed</option>
+							<option value="Unknown">Unknown</option>
+						</select>
+					</fieldset>
+
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label" for="dev-stage">Development Stage</label>
+						<select placeholder="Select input" id="dev-stage" class="c-input c-input--square c-input--select" data-key="development-stage">
+							<option value="">select a development stage...</option>
+							<option value="Adult">Adult</option>
+							<option value="Adult | Cocoon">Adult | Cocoon</option>
+							<option value="Adult | Juvenile">Adult | Juvenile</option>
+							<option value="Adult | Larva">Adult | Larva</option>
+							<option value="Adult | Ovigerous">Adult | Ovigerous</option>
+							<option value="Juvenile">Juvenile</option>
+							<option value="Larva">Larva</option>
+							<option value="Natant">Natant</option>
+							<option value="Nymph">Nymph</option>
+							<option value="Ovigerous">Ovigerous</option>
+							<option value="Ovigerous | Juvenile">Ovigerous | Juvenile</option>
+						</select>
+					</fieldset>
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label" for="body-part-location">Body part location</label>
+						<input placeholder="enter the body part" id="body-part-location" class="c-input" type="text" data-key="body-part-location">
+					</fieldset>
+
+					<fieldset class="c-form__fieldset">
+						<label class="c-label" for="track-notes-spec">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-spec" class="c-input" data-key="notes"></textarea>
+					</fieldset>
+				</div>
+			</section>
+			<!-- End Specimen section -->
+			<section class="u-bkg6" id="host-data">
+				<div class="l-wrapper">
+					<h2 class="c-title c-title--light  c-title--lg u-separator-lg">Host Information</h2>
+
+          <p class="u-separator-md">
+            <span class="u-text-bold u-text-underline">Instructions:</span>
+            If the specimen was found in a host, click on the "Yes" button. This will display
+            the corresponding fields so that you can enter the relevant information about the host.
+          </p>
+
+					<fieldset class="c-form__fieldset u-separator-md">
+						<div>
+							<label class="c-label c-label--medium" for="">Was this Specimen Found In a Host?</label>
+						</div>
+						<div class="c-radio c-radio--medium">
+							<label for="host-yes">
+								<input id="host-yes" name="host" type="radio" value="yes" data-key="has-host"> Yes
+							</label>
+						</div>
+						<div class="c-radio c-radio--medium">
+							<label for="host-no">
+								<input id="host-no" name="host" type="radio" value="no" data-key="has-host" checked=""> No
+							</label>
+						</div>
+					</fieldset>
+
+					<div id="optionalHostInfo" class="u-hidden">
+						<fieldset class=" c-form__fieldset u-separator-xs">
+							<label class="c-label" for="host-catalog">Host Catalog Number</label>
+							<input placeholder="enter the host catalog number" id="host-catalog" class="c-input" type="text" data-key="catalog-number">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="host-relationship">Host Relationship</label>
+							<input placeholder="enter the host-relationship" id="host-relationship" class="c-input" type="text" data-key="relationship">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="host-species">Host Species</label>
+							<input placeholder="enter the host species" id="host-pecies" class="c-input" type="text" data-key="species">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="host-genus">Host Genus Name</label>
+							<input placeholder="enter the host genus" id="host-genus" class="c-input" type="text" data-key="genus">
+						</fieldset>
+
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="host-sex">Sex</label>
+							<select placeholder="Select input" id="host-sex" class="c-input c-input--square c-input--select" data-key="sex">
+								<option selected="">select a sex...</option>
+								<option>Ambisexual</option>
+								<option>Female</option>
+								<option>Female | Female</option>
+								<option>Female | Male</option>
+								<option>Female | Unknown</option>
+								<option>Gynandromorph</option>
+								<option>Hermaphrodite</option>
+								<option>Intersex</option>
+								<option>Male | Unknown</option>
+								<option>Male | Male</option>
+								<option>Mixed</option>
+								<option>Unknown</option>
+							</select>
+						</fieldset>
+
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="host-condition">Host Condition</label>
+							<input placeholder="enter the host condition" id="host-condition" class="c-input" type="text" data-key="condition">
+						</fieldset>
+
+						<fieldset class="c-form__fieldset">
+							<label class="c-label" for="track-notes-host">Notes</label>
+							<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-host" class="c-input" data-key="notes"></textarea>
+						</fieldset>
+					</div>
+				</div>
+			</section>
+			<!-- End Host section -->
+
+			<section id="collection-data" class="u-bkg10 u-padder-top--lg">
+				<div class="l-wrapper">
+					<h2 class="c-title c-title--light c-title--lg u-separator-lg">Collecting Data</h2>
+          <p class="u-separator-md">
+            <span class="u-text-bold u-text-underline">Instructions:</span>
+            For each of the below fields, enter the corresponding collection data
+            as recorded during collection.
+          </p>
+
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label" for="collection-method">Collecting Method</label>
+						<input placeholder="enter the method" id="collection-method" class="c-input" type="text" data-key="method">
+					</fieldset>
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label" for="expedition-name">Expedition name</label>
+						<input placeholder="enter the expedition name" id="expedition-name" class="c-input" type="text" data-key="expedition-name">
+					</fieldset>
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label" for="verbatim-date">Verbatim date</label>
+						<input placeholder="enter the verbatim date" id="verbatim-date" class="c-input" type="text" data-key="verbatim-date">
+					</fieldset>
+
+					<div class="l-two-col">
+						<div class="l-two-col__block">
+
+							<fieldset class="c-form__fieldset c-datepicker u-separator-sm">
+
+								<label class="c-label" for="datePicker">Collected from</label>
+								<div>
+									<input id="collected-from" name="datePicker" placeholder="enter collected from date" type="text" class="c-input">
+									<span class="c-datepicker__icon">
+
+										<i class="fas fa-calendar-alt"></i>
+									</span>
+								</div>
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="from-day">Day</label>
+								<input type="number" id="from-day" placeholder="enter collected from day" class="c-input" data-key="from-day">
+							</fieldset>
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="from-month">Month</label>
+								<input type="number" id="from-month" placeholder="enter collected from month" class="c-input" data-key="from-month">
+							</fieldset>
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="from-year">Year</label>
+								<input type="number" id="from-year" placeholder="enter collected from year" class="c-input" data-key="from-year">
+							</fieldset>
+
+
+						</div>
+						<div class="l-two-col__block">
+
+							<fieldset class="c-form__fieldset c-datepicker u-separator-sm">
+
+								<label class="c-label" for="collected-to">Collected to</label>
+								<div>
+									<input id="collected-to" name="datePicker" placeholder="enter collected to date" type="text" class="c-input">
+									<span class="c-datepicker__icon">
+
+										<i class="fas fa-calendar-alt"></i>
+									</span>
+								</div>
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="to-day">Day</label>
+								<input type="number" id="to-day" placeholder="enter collected to day" class="c-input" data-key="to-day">
+							</fieldset>
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="to-month">Month</label>
+								<input type="number" id="to-month" placeholder="enter collected to month" class="c-input" data-key="to-month">
+							</fieldset>
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="to-year">Year</label>
+								<input type="number" id="to-year" placeholder="enter collected to year" class="c-input" data-key="to-year">
+							</fieldset>
+
+
+						</div>
+
+					</div>
+					<hr>
+					<!-- end from to sub-section -->
+
+          <p class="u-separator-md">
+            <span class="u-text-bold u-text-underline">Instructions:</span>
+            Type in the names for each person that was involved in collecting
+            the specimen and click the "ADD PERSON" button. Repeat this process
+            for each person.<br><br>
+            <span class="u-text-italicize">
+              Note: If you type in any names, they will not be saved unless you click the
+              "ADD PERSON" button. If you no longer wish to enter those names,
+              be sure to delete them or you will not be able to save the record. Also, be
+              sure to include "Verbatim Name" before clicking the "ADD PERSON" button.
+            </span>
+          </p>
+
+					<div id="collected-by-form" class="l-person u-separator-lg">
+
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="collected-first-name">First Name</label>
+							<input placeholder="enter first name" id="collected-first-name" class="c-input" type="text" data-key="first-name">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="collected-middle-name1">Middle Name 1</label>
+							<input placeholder="enter middle name 1" id="collected-middle-name1" class="c-input" type="text" data-key="middle-name1">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="collected-middle-name2">Middle Name 2</label>
+							<input placeholder="enter middle name 2" id="collected-middle-name2" class="c-input" type="text" data-key="middle-name2">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="collected-last-name1">Last Name 1</label>
+							<input placeholder="enter last name 1" id="collected-last-name1" class="c-input" type="text" data-key="last-name1">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="collected-last-name2">Last Name 2</label>
+							<input placeholder="enter last name 2" id="collected-last-name2" class="c-input" type="text" data-key="last-name2">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="collected-by-verbatim">Verbatim Name</label>
+							<input placeholder="enter verbatim name" id="collected-by-verbatim" class="c-input" type="text" data-key="verbatim">
+						</fieldset>
+					</div>
+
+          <div class="c-people-list u-separator-md">
+						<label class="c-label" for="">Collected By Added</label>
+						<ul id="collected-by-list">
+						</ul>
+					</div>
+
+					<button id="collected-by-button" class="c-button c-button--uppercase c-button--centered">
+						<i class="fas fa-user"></i> Add person</button>
+
+					<fieldset class="c-form__fieldset">
+						<label class="c-label" for="track-notes-coll">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-coll" class="c-input" data-key="notes"></textarea>
+					</fieldset>
+
+				</div>
+			</section>
+			<!-- End collecting data -->
+
+			<section class="u-bkg8" id="location-data">
+				<div class="l-wrapper">
+					<h2 class="c-title c-title--light c-title--lg u-separator-lg">Location</h2>
+          <p class="u-separator-md">
+            <span class="u-text-bold u-text-underline">Instructions:</span>
+            Type a location (city, state, department, country, etc.) or natural
+            landmark (island, mountain river, ocean, etc) into the search bar. You can
+            either choose one of the suggestions that the search bar gives you or
+            do a search for exactly what you typed in by clicking the "Go!" button.
+            If the place you searched for is found, it will display on the map
+            and a menu will appear to allow you to match place names with categories
+            (city, state, ocean, river, island, etc).
+            This will automatically fill the fields below the map including the
+            latitude and longitude. Any fields that are not autofilled will be
+            hightlighted in yellow, and you can enter those fields yourself. You
+            do not have to enter information for all the fields.
+            <br><br>
+            If there is a specific location on the map that you would like to
+            find the longitude and latitude for, you can click on that location
+            on the map and it will autofill the latitude and longitude fields
+            just below the map. If you need to convert a latitude and/or longitude
+            from degrees, minutes, seconds (DMS) to decimal degrees (DD), you can go
+            <a target="_blank" href="https://www.latlong.net/degrees-minutes-seconds-to-decimal-degrees">here</a>.
+            <br><br>
+            <span class="u-text-italicize">Note: Any time you do a new search or click on the map, it will clear
+              any autofilled fields from the previous search.</span>
+          </p>
+
+					<fieldset class="c-searchbox c-form__fieldset u-separator-md">
+						<label class="c-label" for="">Search location</label>
+						<div id="searchLocationContainer">
+							<input id="location-autocomplete" placeholder="Enter a location" class="c-input c-input--square">
+							<button id="location-go" class="c-button c-button--captalize c-button--body-size">Go!</button>
+						</div>
+					</fieldset>
+
+					<div id="location_autocomplete_dialog" class="c-dialog u-hidden" title="Verify Autocomplete Fields">
+						<p class="u-separator-sm">These are the places that came back from the Location search. Which category (city, state, island, ocean river, etc.)
+							is each place?</p>
+						<div id="autocomplete_list"></div>
+						<div class="l-two-col">
+							<div class="l-two-col__block">
+								<button id="autopopulate_cancel" class="c-button c-button--uppercase c-button--centered">
+									<i class="fas fa-thumbs-down"></i> Cancel</button>
+							</div>
+							<div class="l-two-col__block">
+								<button id="autopopulate_ok" class="c-button c-button--uppercase c-button--centered">
+									<i class="fas fa-thumbs-up"></i> Use</button>
+							</div>
+						</div>
+					</div>
+
+					<div id="location-map" style="width:100%;height:600px;" class="u-separator-xl"></div>
+
+          <div id="lat-long-form" class="l-two-col">
+            <div class="l-two-col__block">
+              <fieldset class="c-form__fieldset u-separator-xs">
+                <label class="c-label" for="lat-from">Latitude From</label>
+                <input placeholder="enter latitude from" id="lat-from" class="c-input" type="text" data-key="fromLat">
+              </fieldset>
+
+              <fieldset class="c-form__fieldset u-separator-xs">
+                <label class="c-label" for="lon-from">Longitude From</label>
+                <input placeholder="enter longitude from" id="lon-from" class="c-input" type="text" data-key="fromLon">
+              </fieldset>
+            </div>
+            <div class="l-two-col__block">
+              <fieldset class="c-form__fieldset u-separator-xs">
+                <label class="c-label" for="lat-to">Latitude To</label>
+                <input placeholder="enter latitude to" id="lat-to" class="c-input" type="text" data-key="toLat">
+              </fieldset>
+
+              <fieldset class="c-form__fieldset u-separator-xs">
+                <label class="c-label" for="lon-to">Longitude To</label>
+                <input placeholder="enter longitude to" id="lon-to" class="c-input" type="text" data-key="toLon">
+              </fieldset>
+            </div>
+          </div>
+
+          <hr>
+
+					<fieldset class="c-form__fieldset u-separator-md">
+						<label class="c-label" for="verbatim-address">Verbatim Location / Address</label>
+						<input placeholder="enter the verbatim location" id="verbatim-address" class="c-input" type="text" data-key="verbatim">
+					</fieldset>
+
+					<div class="l-two-col u-separator-lg">
+						<div id="address-form" class="l-two-col__block">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="continent">Continent</label>
+								<select placeholder="Select input" id="continent" class="c-input c-input--square c-input--select" data-key="continent">
+									<option unselected="" value="">select a continent...</option>
+									<option value="North America">North America</option>
+									<option value="South America">South America</option>
+									<option value="Africa">Africa</option>
+									<option value="Europe">Europe</option>
+									<option value="Asia">Asia</option>
+									<option value="Australia">Australia</option>
+									<option value="Antartica">Antartica</option>
+								</select>
+							</fieldset>
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="country">Country</label>
+								<select placeholder="Select input" id="country" class="c-input c-input--square c-input--select" data-key="country">
+									<option value="">select a country...</option>
+									<option value="AF">Afghanistan</option>
+									<option value="AX">Åland Islands</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua and Barbuda</option>
+									<option value="AR">Argentina</option>
+									<option value="AM">Armenia</option>
+									<option value="AW">Aruba</option>
+									<option value="AU">Australia</option>
+									<option value="AT">Austria</option>
+									<option value="AZ">Azerbaijan</option>
+									<option value="BS">Bahamas</option>
+									<option value="BH">Bahrain</option>
+									<option value="BD">Bangladesh</option>
+									<option value="BB">Barbados</option>
+									<option value="BY">Belarus</option>
+									<option value="BE">Belgium</option>
+									<option value="BZ">Belize</option>
+									<option value="BJ">Benin</option>
+									<option value="BM">Bermuda</option>
+									<option value="BT">Bhutan</option>
+									<option value="BO">Bolivia, Plurinational State of</option>
+									<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+									<option value="BA">Bosnia and Herzegovina</option>
+									<option value="BW">Botswana</option>
+									<option value="BV">Bouvet Island</option>
+									<option value="BR">Brazil</option>
+									<option value="IO">British Indian Ocean Territory</option>
+									<option value="BN">Brunei Darussalam</option>
+									<option value="BG">Bulgaria</option>
+									<option value="BF">Burkina Faso</option>
+									<option value="BI">Burundi</option>
+									<option value="KH">Cambodia</option>
+									<option value="CM">Cameroon</option>
+									<option value="CA">Canada</option>
+									<option value="CV">Cape Verde</option>
+									<option value="KY">Cayman Islands</option>
+									<option value="CF">Central African Republic</option>
+									<option value="TD">Chad</option>
+									<option value="CL">Chile</option>
+									<option value="CN">China</option>
+									<option value="CX">Christmas Island</option>
+									<option value="CC">Cocos (Keeling) Islands</option>
+									<option value="CO">Colombia</option>
+									<option value="KM">Comoros</option>
+									<option value="CG">Congo</option>
+									<option value="CD">Congo, the Democratic Republic of the</option>
+									<option value="CK">Cook Islands</option>
+									<option value="CR">Costa Rica</option>
+									<option value="CI">Côte d'Ivoire</option>
+									<option value="HR">Croatia</option>
+									<option value="CU">Cuba</option>
+									<option value="CW">Curaçao</option>
+									<option value="CY">Cyprus</option>
+									<option value="CZ">Czech Republic</option>
+									<option value="DK">Denmark</option>
+									<option value="DJ">Djibouti</option>
+									<option value="DM">Dominica</option>
+									<option value="DO">Dominican Republic</option>
+									<option value="EC">Ecuador</option>
+									<option value="EG">Egypt</option>
+									<option value="SV">El Salvador</option>
+									<option value="GQ">Equatorial Guinea</option>
+									<option value="ER">Eritrea</option>
+									<option value="EE">Estonia</option>
+									<option value="ET">Ethiopia</option>
+									<option value="FK">Falkland Islands (Malvinas)</option>
+									<option value="FO">Faroe Islands</option>
+									<option value="FJ">Fiji</option>
+									<option value="FI">Finland</option>
+									<option value="FR">France</option>
+									<option value="GF">French Guiana</option>
+									<option value="PF">French Polynesia</option>
+									<option value="TF">French Southern Territories</option>
+									<option value="GA">Gabon</option>
+									<option value="GM">Gambia</option>
+									<option value="GE">Georgia</option>
+									<option value="DE">Germany</option>
+									<option value="GH">Ghana</option>
+									<option value="GI">Gibraltar</option>
+									<option value="GR">Greece</option>
+									<option value="GL">Greenland</option>
+									<option value="GD">Grenada</option>
+									<option value="GP">Guadeloupe</option>
+									<option value="GU">Guam</option>
+									<option value="GT">Guatemala</option>
+									<option value="GG">Guernsey</option>
+									<option value="GN">Guinea</option>
+									<option value="GW">Guinea-Bissau</option>
+									<option value="GY">Guyana</option>
+									<option value="HT">Haiti</option>
+									<option value="HM">Heard Island and McDonald Islands</option>
+									<option value="VA">Holy See (Vatican City State)</option>
+									<option value="HN">Honduras</option>
+									<option value="HK">Hong Kong</option>
+									<option value="HU">Hungary</option>
+									<option value="IS">Iceland</option>
+									<option value="IN">India</option>
+									<option value="ID">Indonesia</option>
+									<option value="IR">Iran, Islamic Republic of</option>
+									<option value="IQ">Iraq</option>
+									<option value="IE">Ireland</option>
+									<option value="IM">Isle of Man</option>
+									<option value="IL">Israel</option>
+									<option value="IT">Italy</option>
+									<option value="JM">Jamaica</option>
+									<option value="JP">Japan</option>
+									<option value="JE">Jersey</option>
+									<option value="JO">Jordan</option>
+									<option value="KZ">Kazakhstan</option>
+									<option value="KE">Kenya</option>
+									<option value="KI">Kiribati</option>
+									<option value="KP">Korea, Democratic People's Republic of</option>
+									<option value="KR">Korea, Republic of</option>
+									<option value="KW">Kuwait</option>
+									<option value="KG">Kyrgyzstan</option>
+									<option value="LA">Lao People's Democratic Republic</option>
+									<option value="LV">Latvia</option>
+									<option value="LB">Lebanon</option>
+									<option value="LS">Lesotho</option>
+									<option value="LR">Liberia</option>
+									<option value="LY">Libya</option>
+									<option value="LI">Liechtenstein</option>
+									<option value="LT">Lithuania</option>
+									<option value="LU">Luxembourg</option>
+									<option value="MO">Macao</option>
+									<option value="MK">Macedonia, the former Yugoslav Republic of</option>
+									<option value="MG">Madagascar</option>
+									<option value="MW">Malawi</option>
+									<option value="MY">Malaysia</option>
+									<option value="MV">Maldives</option>
+									<option value="ML">Mali</option>
+									<option value="MT">Malta</option>
+									<option value="MH">Marshall Islands</option>
+									<option value="MQ">Martinique</option>
+									<option value="MR">Mauritania</option>
+									<option value="MU">Mauritius</option>
+									<option value="YT">Mayotte</option>
+									<option value="MX">Mexico</option>
+									<option value="FM">Micronesia, Federated States of</option>
+									<option value="MD">Moldova, Republic of</option>
+									<option value="MC">Monaco</option>
+									<option value="MN">Mongolia</option>
+									<option value="ME">Montenegro</option>
+									<option value="MS">Montserrat</option>
+									<option value="MA">Morocco</option>
+									<option value="MZ">Mozambique</option>
+									<option value="MM">Myanmar</option>
+									<option value="NA">Namibia</option>
+									<option value="NR">Nauru</option>
+									<option value="NP">Nepal</option>
+									<option value="NL">Netherlands</option>
+									<option value="NC">New Caledonia</option>
+									<option value="NZ">New Zealand</option>
+									<option value="NI">Nicaragua</option>
+									<option value="NE">Niger</option>
+									<option value="NG">Nigeria</option>
+									<option value="NU">Niue</option>
+									<option value="NF">Norfolk Island</option>
+									<option value="MP">Northern Mariana Islands</option>
+									<option value="NO">Norway</option>
+									<option value="OM">Oman</option>
+									<option value="PK">Pakistan</option>
+									<option value="PW">Palau</option>
+									<option value="PS">Palestinian Territory, Occupied</option>
+									<option value="PA">Panama</option>
+									<option value="PG">Papua New Guinea</option>
+									<option value="PY">Paraguay</option>
+									<option value="PE">Peru</option>
+									<option value="PH">Philippines</option>
+									<option value="PN">Pitcairn</option>
+									<option value="PL">Poland</option>
+									<option value="PT">Portugal</option>
+									<option value="PR">Puerto Rico</option>
+									<option value="QA">Qatar</option>
+									<option value="RE">Réunion</option>
+									<option value="RO">Romania</option>
+									<option value="RU">Russian Federation</option>
+									<option value="RW">Rwanda</option>
+									<option value="BL">Saint Barthélemy</option>
+									<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+									<option value="KN">Saint Kitts and Nevis</option>
+									<option value="LC">Saint Lucia</option>
+									<option value="MF">Saint Martin (French part)</option>
+									<option value="PM">Saint Pierre and Miquelon</option>
+									<option value="VC">Saint Vincent and the Grenadines</option>
+									<option value="WS">Samoa</option>
+									<option value="SM">San Marino</option>
+									<option value="ST">Sao Tome and Principe</option>
+									<option value="SA">Saudi Arabia</option>
+									<option value="SN">Senegal</option>
+									<option value="RS">Serbia</option>
+									<option value="SC">Seychelles</option>
+									<option value="SL">Sierra Leone</option>
+									<option value="SG">Singapore</option>
+									<option value="SX">Sint Maarten (Dutch part)</option>
+									<option value="SK">Slovakia</option>
+									<option value="SI">Slovenia</option>
+									<option value="SB">Solomon Islands</option>
+									<option value="SO">Somalia</option>
+									<option value="ZA">South Africa</option>
+									<option value="GS">South Georgia and the South Sandwich Islands</option>
+									<option value="SS">South Sudan</option>
+									<option value="ES">Spain</option>
+									<option value="LK">Sri Lanka</option>
+									<option value="SD">Sudan</option>
+									<option value="SR">Suriname</option>
+									<option value="SJ">Svalbard and Jan Mayen</option>
+									<option value="SZ">Swaziland</option>
+									<option value="SE">Sweden</option>
+									<option value="CH">Switzerland</option>
+									<option value="SY">Syrian Arab Republic</option>
+									<option value="TW">Taiwan, Province of China</option>
+									<option value="TJ">Tajikistan</option>
+									<option value="TZ">Tanzania, United Republic of</option>
+									<option value="TH">Thailand</option>
+									<option value="TL">Timor-Leste</option>
+									<option value="TG">Togo</option>
+									<option value="TK">Tokelau</option>
+									<option value="TO">Tonga</option>
+									<option value="TT">Trinidad and Tobago</option>
+									<option value="TN">Tunisia</option>
+									<option value="TR">Turkey</option>
+									<option value="TM">Turkmenistan</option>
+									<option value="TC">Turks and Caicos Islands</option>
+									<option value="TV">Tuvalu</option>
+									<option value="UG">Uganda</option>
+									<option value="UA">Ukraine</option>
+									<option value="AE">United Arab Emirates</option>
+									<option value="GB">United Kingdom</option>
+									<option value="US">United States</option>
+									<option value="UM">United States Minor Outlying Islands</option>
+									<option value="UY">Uruguay</option>
+									<option value="UZ">Uzbekistan</option>
+									<option value="VU">Vanuatu</option>
+									<option value="VE">Venezuela, Bolivarian Republic of</option>
+									<option value="VN">Viet Nam</option>
+									<option value="VG">Virgin Islands, British</option>
+									<option value="VI">Virgin Islands, U.S.</option>
+									<option value="WF">Wallis and Futuna</option>
+									<option value="EH">Western Sahara</option>
+									<option value="YE">Yemen</option>
+									<option value="ZM">Zambia</option>
+									<option value="ZW">Zimbabwe</option>
+								</select>
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="dept">Department / State</label>
+								<input placeholder="enter a department or state" id="dept" class="c-input" type="text" data-key="department">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="county">County</label>
+								<input placeholder="enter a county" id="county" class="c-input" type="text" data-key="county">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="city">City / Town / Hamlet</label>
+								<input placeholder="enter a city, town or hamlet" id="city" class="c-input" type="text" data-key="city-town-hamlet">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="specific-locale">Specific Locale</label>
+								<input placeholder="enter a specific locale" id="specific-locale" class="c-input" type="text" data-key="specific-locale">
+							</fieldset>
+						</div>
+						<div id="natural-place-form" class="l-two-col__block">
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="ocean">Ocean</label>
+								<select placeholder="Select input" id="ocean" class="c-input c-input--square c-input--select" data-key="ocean">
+									<option value="">select an ocean...</option>
+									<option value="Atlantic Ocean">Atlantic Ocean</option>
+									<option value="Pacific Ocean">Pacific Ocean</option>
+									<option value="Indian Ocean">Indian Ocean</option>
+									<option value="Arctic Ocean">Arctic Ocean</option>
+									<option value="Southern Ocean">Southern Ocean</option>
+								</select>
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="sea">Sea / Gulf / Strait</label>
+								<input placeholder="enter a sea, gulf or strait" id="sea" class="c-input" type="text" data-key="sea-gulf-strait">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="lake">Lake / Pond / Reservoir</label>
+								<input placeholder="enter a lake, pond, or reservoir" id="lake" class="c-input" type="text" data-key="lake-pond-reservoir">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="bay">Bay / Harbor</label>
+								<input placeholder="enter a bay or harbor" id="bay" class="c-input" type="text" data-key="bay-harbor">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="river">River / Creek</label>
+								<input placeholder="enter a river or creek" id="river" class="c-input" type="text" data-key="river-creek">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="stream">Stream</label>
+								<input placeholder="enter a stream" id="stream" class="c-input" type="text" data-key="stream">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="island-group">Island Group</label>
+								<input placeholder="enter an island group" id="island-group" class="c-input" type="text" data-key="island-group">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="island">Island</label>
+								<input placeholder="enter an island" id="island" class="c-input" type="text" data-key="island">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="mtn-range">Mountain Range</label>
+								<input placeholder="enter a mountain range" id="mtn-range" class="c-input" type="text" data-key="mountain-range">
+							</fieldset>
+
+							<fieldset class="c-form__fieldset u-separator-xs">
+								<label class="c-label" for="mtn">Mountain</label>
+								<input placeholder="enter a mountain" id="mtn" class="c-input" type="text" data-key="mountain">
+							</fieldset>
+						</div>
+					</div>
+
+					<hr>
+
+					<div class="l-two-col u-separator-lg">
+						<div class="l-two-col__block">
+							<fieldset class="c-input-group c-form__fieldset">
+								<label class="c-label" for="lat-input-grp">Temperature (°F)</label>
+								<div>
+									<input type="search" id="fahrenheit-input" placeholder="°F" class="c-input c-input--square" data-key="temperature-f">
+									<span class="c-input-group__sidekick">°F</span>
+								</div>
+							</fieldset>
+						</div>
+						<div class="l-two-col__block">
+							<fieldset class="c-input-group c-form__fieldset">
+								<label class="c-label" for="an-input-grp">Temperature (°C)</label>
+								<div>
+									<input type="search" id="celsius-input" placeholder="°C" class="c-input c-input--square" data-key="temperature-c">
+									<span class="c-input-group__sidekick">°C</span>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+
+					<fieldset class="c-form__fieldset">
+						<label class="c-label" for="track-notes-loc">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-loc" class="c-input" data-key="notes"></textarea>
+					</fieldset>
+				</div>
+			</section>
+			<!-- End of location section -->
+			<section class="u-bkg9" id="donation-data">
+				<div class="l-wrapper">
+					<h2 class="c-title c-title--light c-title--lg u-separator-lg">Donors</h2>
+          <p class="u-separator-md">
+            <span class="u-text-bold u-text-underline">Instructions:</span>
+            For each of the below fields, enter the corresponding donor data
+            as recorded during collection.
+          </p>
+
+					<fieldset class="c-form__fieldset c-datepicker u-separator-sm">
+
+						<label class="c-label" for="donated-on">Donated on</label>
+						<div>
+							<input id="donated-on" name="datePicker" placeholder="enter donated on date" type="text" class="c-input">
+							<span class="c-datepicker__icon">
+
+								<i class="fas fa-calendar-alt"></i>
+							</span>
+						</div>
+					</fieldset>
+
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label" for="donated-day">Day</label>
+						<input type="number" id="donated-day" placeholder="enter donated on day" class="c-input" data-key="day">
+					</fieldset>
+					<fieldset class="c-form__fieldset u-separator-xs">
+						<label class="c-label" for="donated-month">Month</label>
+						<input type="number" id="donated-month" placeholder="enter donated on month" class="c-input" data-key="month">
+					</fieldset>
+					<fieldset class="c-form__fieldset u-separator-lg">
+						<label class="c-label" for="donated-year">Year</label>
+						<input type="number" id="donated-year" placeholder="enter donated on year" class="c-input" data-key="year">
+					</fieldset>
+
+          <hr>
+
+          <p class="u-separator-md">
+            <span class="u-text-bold u-text-underline">Instructions:</span>
+            Type in the names for each person that was involved in donating
+            the specimen and click the "ADD PERSON" button. Repeat this process
+            for each person.<br><br>
+            <span class="u-text-italicize">
+              Note: If you type in any names, they will not be saved unless you click the
+              "ADD PERSON" button. If you no longer wish to enter those names,
+              be sure to delete them or you will not be able to save the record. Also, be
+              sure to include "Verbatim Name" before clicking the "ADD PERSON" button.
+            </span>
+          </p>
+
+					<div id="donated-by-form" class="l-person">
+
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="donated-first-name">First Name</label>
+							<input placeholder="enter first name" id="donated-first-name" class="c-input" type="text" data-key="first-name">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="donated-middle-name1">Middle Name 1</label>
+							<input placeholder="enter middle name 1" id="donated-middle-name1" class="c-input" type="text" data-key="middle-name1">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="donated-middle-name2">Middle Name 2</label>
+							<input placeholder="enter middle name 2" id="donated-middle-name2" class="c-input" type="text" data-key="middle-name2">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="donated-last-name1">Last Name 1</label>
+							<input placeholder="enter last name 1" id="donated-last-name1" class="c-input" type="text" data-key="last-name1">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="donated-last-name2">Last Name 2</label>
+							<input placeholder="enter last name 2" id="donated-last-name2" class="c-input" type="text" data-key="last-name2">
+						</fieldset>
+						<fieldset class="c-form__fieldset u-separator-xs">
+							<label class="c-label" for="donated-by-verbatim">Verbatim Name</label>
+							<input placeholder="enter verbatim name" id="donated-by-verbatim" class="c-input" type="text" data-key="verbatim">
+						</fieldset>
+					</div>
+
+          <div class="c-people-list u-separator-md">
+            <label class="c-label" for="">Donors Added</label>
+            <ul id="donated-by-list">
+            </ul>
+          </div>
+
+					<button id="donated-by-button" class="c-button c-button--uppercase c-button--centered u-separator-lg">
+						<i class="fas fa-user"></i> Add donor</button>
+
+
+					<fieldset class="c-form__fieldset">
+						<label class="c-label" for="track-notes-donor">Notes</label>
+						<textarea cols="30" rows="6" placeholder="Enter notes" id="track-notes-donor" class="c-input" data-key="notes"></textarea>
+					</fieldset>
+				</div>
+			</section>
+			<!-- end of donnor data -->
+
+			<section class="u-bkg10">
+				<div class="l-wrapper">
+					<div class="l-two-col">
+						<div class="l-two-col__block">
+							<button class="c-button c-button--uppercase c-button--centered" id="add-record-button">
+								<i class="fas fa-plus"></i> Add another</button>
+						</div>
+						<div class="l-two-col__block">
+							<button class="c-button c-button--uppercase c-button--centered" id="export-csv-button">
+								<i class="fas fa-download"></i> Download CSV</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end finishing buttons -->
+			<footer class="u-bkg12 c-footer">
+
+				<p>Made with
+					<span class="u-text-red">
+						<i class="fas fa-heart"></i>
+					</span> at the
+					<a target="_blank" href="https://recurse.com">Recurse Center</a>
+				</p>
+			</footer>
+		</div>
+		<!--  end of form -->
+	</main>
+
+	<a href="/index.html" class="u-hidden" ,="" id="next"></a>
+	<script src="https://unpkg.com/mapbox@1.0.0-beta9/dist/mapbox-sdk.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyAWWaaJ2atEq-dBAFaX0iNwKdeWDPASF8A"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin=" anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin=" anonymous"></script>
+
+	<script src="/longFormHasUser.40e16457.js"></script>
+	<script src="/worms.58f1db12.js"></script>
+	<script src="/triggers.59667a16.js"></script>
+	<script src="/calendars.71e94341.js"></script>
+	<script src="/temperature.62cbd542.js"></script>
+	<script src="/location.f399f30d.js"></script>
+</body>
+
+</html>
